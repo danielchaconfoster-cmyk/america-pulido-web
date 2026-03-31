@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <title>America Pulido SPA | Pulido Profesional de Pisos en Santiago</title>
-  <meta name="description" content="Especialistas en pulido y restauraci&oacute;n de pisos en Santiago. Hormig&oacute;n industrial, madera, m&aacute;rmol, baldosas. M&aacute;s de 10 a&ntilde;os de experiencia. Presupuesto gratis.">
-  <meta property="og:title" content="America Pulido SPA | Pulido Profesional de Pisos">
-  <meta property="og:description" content="Transformamos pisos deteriorados en superficies impecables. Santiago, Chile.">
-  <meta property="og:image" content="img/logo-showcase.jpg">
+  <title>America Pulido SPA | Pulido y Restauraci&oacute;n Premium de Pisos en Santiago</title>
+  <meta name="description" content="Pulido y restauraci&oacute;n premium de pisos en Santiago. Hormig&oacute;n industrial, madera, m&aacute;rmol, baldosas. Visita t&eacute;cnica gratuita. +10 a&ntilde;os de experiencia.">
+  <meta property="og:title" content="America Pulido SPA | Pulido Premium de Pisos">
+  <meta property="og:description" content="Soluciones de alta resistencia para la industria y acabados de lujo para tu hogar.">
+  <meta property="og:image" content="img/baldosa-comercial.jpg">
   <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,8 +16,8 @@
     *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
     :root{
       --gold:#D4A843;--gold-light:#E8C875;--gold-dark:#B8912E;
-      --dark:#0A0A0A;--dark-card:#111;--dark-border:#1A1A1A;
-      --gray-300:#AAA;--gray-500:#666;--white:#FFF;
+      --dark:#0A0A0A;--dark-card:#111111;--dark-border:#1A1A1A;
+      --gray-100:#F5F5F5;--gray-200:#E8E8E8;--gray-300:#AAA;--gray-500:#666;--white:#FFF;
       --gradient-gold:linear-gradient(135deg,#D4A843 0%,#E8C875 50%,#B8912E 100%);
     }
     html{scroll-behavior:smooth}
@@ -25,35 +25,22 @@
     ::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:var(--dark)}::-webkit-scrollbar-thumb{background:var(--gold-dark);border-radius:3px}
     img{max-width:100%;display:block}
 
-    /* NAV */
-    nav{position:fixed;top:0;width:100%;z-index:1000;background:rgba(10,10,10,0.9);backdrop-filter:blur(20px) saturate(180%);border-bottom:1px solid rgba(212,168,67,0.1);padding:0 5%;transition:all .3s}
+    /* ============ NAV ============ */
+    nav{position:fixed;top:0;width:100%;z-index:1000;background:rgba(10,10,10,0.85);backdrop-filter:blur(24px) saturate(180%);border-bottom:1px solid rgba(212,168,67,0.08);padding:0 5%;transition:all .3s}
     .nav-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;height:72px}
-    .logo{font-weight:900;font-size:1.3rem;letter-spacing:-.5px;display:flex;align-items:center;gap:10px}
+    .logo{font-weight:800;font-size:1.2rem;letter-spacing:-.3px;display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--white)}
     .logo-icon{width:40px;height:40px;border-radius:50%;overflow:hidden;flex-shrink:0}
     .logo-icon img{width:100%;height:100%;object-fit:cover}
     .logo span{color:var(--gold)}
-    .nav-links{display:flex;gap:32px;align-items:center}
-    .nav-links a{color:var(--gray-300);text-decoration:none;font-size:.85rem;font-weight:500;letter-spacing:.5px;transition:color .3s}
+    .nav-links{display:flex;gap:28px;align-items:center}
+    .nav-links a{color:var(--gray-300);text-decoration:none;font-size:.82rem;font-weight:500;letter-spacing:.3px;transition:color .3s}
     .nav-links a:hover{color:var(--gold)}
-    .nav-cta{background:var(--gradient-gold)!important;color:var(--dark)!important;padding:10px 24px;border-radius:50px;font-weight:700!important;font-size:.8rem!important;transition:transform .3s,box-shadow .3s!important}
+    .nav-cta{background:var(--gradient-gold)!important;color:var(--dark)!important;padding:10px 24px;border-radius:50px;font-weight:700!important;font-size:.78rem!important;letter-spacing:.5px!important;transition:transform .3s,box-shadow .3s!important}
     .nav-cta:hover{transform:scale(1.05);box-shadow:0 4px 20px rgba(212,168,67,.4)}
     .mobile-menu{display:none;background:0;border:0;cursor:pointer;padding:8px}
     .mobile-menu span{display:block;width:24px;height:2px;background:var(--white);margin:5px 0;transition:.3s}
 
-    /* HERO - FULLSCREEN VIDEO */
-    .hero{min-height:100vh;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
-    .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:.35;filter:brightness(1.1)}
-    .hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.7) 0%,rgba(10,10,10,.4) 40%,rgba(10,10,10,.8) 100%)}
-    .hero-content{position:relative;z-index:2;max-width:900px;text-align:center;padding:120px 5% 80px}
-    .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(212,168,67,.12);border:1px solid rgba(212,168,67,.3);padding:8px 20px;border-radius:50px;font-size:.8rem;color:var(--gold);font-weight:600;letter-spacing:1px;margin-bottom:32px}
-    .hero-badge .dot{width:6px;height:6px;border-radius:50%;background:var(--gold);animation:pulse-dot 2s infinite}
-    @keyframes pulse-dot{0%,100%{opacity:1}50%{opacity:.3}}
-    .hero h1{font-size:clamp(2.8rem,7vw,5.5rem);font-weight:900;line-height:1.05;letter-spacing:-2px;margin-bottom:24px}
-    .hero h1 .gold{background:var(--gradient-gold);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-    .hero p{color:var(--gray-300);font-size:1.2rem;max-width:600px;margin:0 auto 48px;line-height:1.8;font-weight:300}
-    .hero-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
-
-    /* BUTTONS */
+    /* ============ BUTTONS ============ */
     .btn{display:inline-flex;align-items:center;gap:10px;padding:16px 36px;border-radius:12px;font-weight:700;font-size:.95rem;text-decoration:none;transition:all .4s cubic-bezier(.4,0,.2,1);position:relative;overflow:hidden;border:0;cursor:pointer;font-family:inherit}
     .btn::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.15),transparent);transition:left .6s}
     .btn:hover::before{left:100%}
@@ -61,156 +48,168 @@
     .btn-gold:hover{transform:translateY(-3px);box-shadow:0 8px 40px rgba(212,168,67,.5)}
     .btn-outline{border:1.5px solid rgba(212,168,67,.4);color:var(--gold);background:transparent}
     .btn-outline:hover{background:rgba(212,168,67,.1);border-color:var(--gold);transform:translateY(-3px)}
-
-    /* STATS */
-    .stats-bar{display:flex;gap:48px;justify-content:center;margin-top:72px;padding-top:40px;border-top:1px solid rgba(255,255,255,.05)}
-    .stat{text-align:center}.stat-value{font-size:2rem;font-weight:900;color:var(--gold)}.stat-label{font-size:.75rem;color:var(--gray-500);text-transform:uppercase;letter-spacing:2px;margin-top:4px}
-
-    /* SECTIONS */
-    section{padding:120px 5%;position:relative}
-    .section-inner{max-width:1200px;margin:0 auto}
-    .section-tag{display:inline-flex;align-items:center;gap:8px;color:var(--gold);font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:3px;margin-bottom:16px}
-    .section-tag::before{content:'';width:24px;height:1px;background:var(--gold)}
-    .section-title{font-size:clamp(2rem,4vw,3.2rem);font-weight:800;letter-spacing:-1px;margin-bottom:16px;line-height:1.15}
-    .section-sub{color:var(--gray-500);font-size:1.05rem;max-width:520px;line-height:1.8;font-weight:300}
-
-    /* MARQUEE */
-    .marquee-section{padding:40px 0;overflow:hidden;background:#080808;border-top:1px solid var(--dark-border);border-bottom:1px solid var(--dark-border)}
-    .marquee-track{display:flex;gap:24px;animation:scroll-left 30s linear infinite;width:max-content}
-    .marquee-track:hover{animation-play-state:paused}
-    @keyframes scroll-left{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-    .marquee-item{height:200px;border-radius:12px;overflow:hidden;flex-shrink:0;position:relative}
-    .marquee-item img{height:100%;width:auto;object-fit:cover}
-
-    /* SERVICES */
-    .services-bg{background:linear-gradient(180deg,var(--dark) 0%,#080808 100%)}
-    .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:64px}
-    .service-card{background:var(--dark-card);border:1px solid var(--dark-border);border-radius:20px;overflow:hidden;transition:all .4s cubic-bezier(.4,0,.2,1);position:relative}
-    .service-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--gradient-gold);opacity:0;transition:opacity .4s}
-    .service-card:hover{transform:translateY(-8px);border-color:rgba(212,168,67,.2);box-shadow:0 20px 60px rgba(0,0,0,.5)}
-    .service-card:hover::after{opacity:1}
-    .service-img{width:100%;height:200px;object-fit:cover;transition:transform .6s}
-    .service-card:hover .service-img{transform:scale(1.05)}
-    .service-body{padding:28px 24px}
-    .service-card h3{font-size:1.15rem;font-weight:700;margin-bottom:10px}
-    .service-card p{color:var(--gray-500);font-size:.9rem;line-height:1.7}
-
-    /* FULLSCREEN VIDEO SECTION */
-    .video-section{padding:0;height:70vh;max-height:600px;position:relative;overflow:hidden}
-    .video-section video{width:100%;height:100%;object-fit:cover;object-position:center}
-    .video-section .overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.3) 0%,rgba(10,10,10,.7) 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:5%}
-    .video-section h2{font-size:clamp(2rem,5vw,3.5rem);font-weight:900;margin-bottom:16px;letter-spacing:-1px}
-    .video-section p{color:var(--gray-300);font-size:1.1rem;max-width:500px;margin-bottom:32px}
-
-    /* PORTFOLIO */
-    .portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:64px}
-    .portfolio-card{aspect-ratio:4/3;border-radius:16px;overflow:hidden;position:relative;cursor:pointer;border:1px solid var(--dark-border);transition:all .4s}
-    .portfolio-card:hover{transform:scale(1.03);border-color:rgba(212,168,67,.3)}
-    .portfolio-card img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
-    .portfolio-card:hover img{transform:scale(1.1)}
-    .portfolio-overlay{position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,10,10,.9) 0%,transparent 60%);display:flex;flex-direction:column;justify-content:flex-end;padding:24px;opacity:0;transition:opacity .4s}
-    .portfolio-card:hover .portfolio-overlay{opacity:1}
-    .portfolio-tag{display:inline-block;background:var(--gradient-gold);color:var(--dark);padding:4px 14px;border-radius:50px;font-size:.7rem;font-weight:700;letter-spacing:1px;margin-bottom:8px;width:fit-content}
-
-    /* BEFORE/AFTER SLIDER */
-    .ba-section{background:#080808}
-    .ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:64px;align-items:center}
-    .ba-slider{position:relative;border-radius:20px;overflow:hidden;cursor:col-resize;user-select:none;-webkit-user-select:none;touch-action:none;aspect-ratio:3/4;max-height:550px}
-    .ba-slider img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
-    .ba-slider .ba-after{clip-path:inset(0 0 0 50%)}
-    .ba-handle{position:absolute;top:0;bottom:0;left:50%;width:4px;background:var(--gold);z-index:10;transform:translateX(-50%);transition:none}
-    .ba-handle::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:48px;height:48px;border-radius:50%;background:var(--gradient-gold);box-shadow:0 4px 20px rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center}
-    .ba-handle::after{content:'\2039  \203A';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:var(--dark);font-size:1.3rem;font-weight:900;letter-spacing:8px;z-index:11;pointer-events:none}
-    .ba-label-before,.ba-label-after{position:absolute;top:16px;z-index:5;padding:6px 18px;border-radius:50px;font-size:.75rem;font-weight:800;letter-spacing:1px;pointer-events:none}
-    .ba-label-before{left:16px;background:rgba(10,10,10,.8);color:var(--white);border:1px solid rgba(255,255,255,.2)}
-    .ba-label-after{right:16px;background:var(--gradient-gold);color:var(--dark)}
-    .ba-text{display:flex;flex-direction:column;gap:20px}
-    .ba-text h2{font-size:clamp(1.8rem,3vw,2.5rem);font-weight:800;letter-spacing:-1px}
-    .ba-text p{color:var(--gray-500);font-size:1rem;line-height:1.8}
-    .ba-stats{display:flex;gap:32px;margin-top:12px}
-    .ba-stat-value{font-size:1.5rem;font-weight:900;color:var(--gold)}
-    .ba-stat-label{font-size:.7rem;color:var(--gray-500);text-transform:uppercase;letter-spacing:1px}
-
-    /* PROCESS */
-    .process-section{background:var(--dark)}
-    .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;margin-top:64px}
-    .process-step{text-align:center}
-    .process-number{width:64px;height:64px;border-radius:50%;background:rgba(212,168,67,.1);border:2px solid rgba(212,168,67,.3);display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:900;color:var(--gold);margin:0 auto 20px}
-    .process-step h3{font-size:1rem;font-weight:700;margin-bottom:8px}
-    .process-step p{color:var(--gray-500);font-size:.85rem;line-height:1.6}
-
-    /* CONTACT */
-    .contact-section{background:radial-gradient(ellipse at 50% 0%,rgba(212,168,67,.06) 0%,transparent 60%),#080808}
-    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;margin-top:64px;align-items:start}
-    .contact-info{display:flex;flex-direction:column;gap:24px}
-    .contact-item{display:flex;gap:16px;align-items:center;padding:20px;background:var(--dark-card);border:1px solid var(--dark-border);border-radius:14px;text-decoration:none;color:inherit;transition:all .3s}
-    .contact-item:hover{border-color:rgba(212,168,67,.3);transform:translateX(4px)}
-    .contact-icon{width:48px;height:48px;border-radius:12px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:1.3rem}
-    .contact-icon.wa{background:rgba(37,211,102,.15)}.contact-icon.ig{background:rgba(225,48,108,.15)}.contact-icon.phone{background:rgba(212,168,67,.15)}.contact-icon.loc{background:rgba(52,152,219,.15)}
-    .contact-item h3{font-size:.9rem;font-weight:600}.contact-item p{color:var(--gray-500);font-size:.85rem}
-    .contact-form{background:var(--dark-card);border:1px solid var(--dark-border);border-radius:20px;padding:40px}
-    .contact-form h3{font-size:1.3rem;font-weight:700;margin-bottom:24px}
-    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-    .form-group{display:flex;flex-direction:column;gap:6px;margin-bottom:16px}
-    .form-group label{font-size:.8rem;font-weight:600;color:var(--gray-300);text-transform:uppercase;letter-spacing:1px}
-    .form-group input,.form-group select,.form-group textarea{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:14px 16px;color:var(--white);font-size:.95rem;font-family:inherit;transition:all .3s;width:100%}
-    .form-group input::placeholder,.form-group textarea::placeholder{color:rgba(255,255,255,.2)}
-    .form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:0;border-color:var(--gold);box-shadow:0 0 0 3px rgba(212,168,67,.1)}
-    .form-group select{appearance:none;cursor:pointer}.form-group select option{background:#111}
-    .form-group textarea{resize:vertical;min-height:100px}
-
-    /* CTA BANNER */
-    .cta-banner{background:var(--gradient-gold);padding:80px 5%;text-align:center}
-    .cta-banner h2{color:var(--dark);font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;margin-bottom:16px;letter-spacing:-1px}
-    .cta-banner p{color:rgba(10,10,10,.7);font-size:1.1rem;max-width:500px;margin:0 auto 32px}
     .btn-dark{background:var(--dark);color:var(--white);box-shadow:0 4px 24px rgba(0,0,0,.3)}
     .btn-dark:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,.5)}
 
-    /* FLOAT */
-    .wa-float{position:fixed;bottom:28px;right:28px;z-index:999;width:60px;height:60px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:1.6rem;box-shadow:0 4px 24px rgba(37,211,102,.4);transition:all .3s;animation:float-pulse 3s infinite}
+    /* ============ BLOQUE 1: HERO ============ */
+    .hero{min-height:100vh;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
+    .hero-bg{position:absolute;inset:0}
+    .hero-bg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.5s ease-in-out}
+    .hero-bg img.active{opacity:1}
+    .hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.75) 0%,rgba(10,10,10,.45) 40%,rgba(10,10,10,.85) 100%)}
+    .hero-content{position:relative;z-index:2;max-width:820px;text-align:center;padding:120px 5% 80px}
+    .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(212,168,67,.1);border:1px solid rgba(212,168,67,.25);padding:8px 22px;border-radius:50px;font-size:.75rem;color:var(--gold);font-weight:600;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:32px}
+    .hero-badge .dot{width:6px;height:6px;border-radius:50%;background:var(--gold);animation:pulse-dot 2s infinite}
+    @keyframes pulse-dot{0%,100%{opacity:1}50%{opacity:.3}}
+    .hero h1{font-size:clamp(2.5rem,6vw,4.8rem);font-weight:900;line-height:1.08;letter-spacing:-2px;margin-bottom:24px}
+    .hero h1 .gold{background:var(--gradient-gold);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .hero p{color:var(--gray-300);font-size:1.15rem;max-width:560px;margin:0 auto 48px;line-height:1.8;font-weight:300}
+
+    /* ============ BLOQUE 2: PROBLEMA ============ */
+    .problema{background:var(--gray-100);color:var(--dark);padding:100px 5%;text-align:center}
+    .problema-inner{max-width:700px;margin:0 auto}
+    .problema h2{font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:800;letter-spacing:-1px;margin-bottom:24px;line-height:1.2;color:var(--dark)}
+    .problema p{font-size:1.1rem;line-height:1.9;color:var(--gray-500);font-weight:400}
+    .problema-line{width:60px;height:3px;background:var(--gradient-gold);margin:0 auto 32px;border-radius:2px}
+
+    /* ============ BLOQUE 3: SLIDER ANTES/DESPUES ============ */
+    .wow-section{background:var(--dark);padding:100px 5%}
+    .wow-inner{max-width:800px;margin:0 auto;text-align:center}
+    .wow-inner .section-tag{margin-bottom:16px}
+    .wow-inner h2{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:800;letter-spacing:-1px;margin-bottom:12px}
+    .wow-inner .sub{color:var(--gray-500);font-size:1rem;margin-bottom:48px}
+    .ba-slider{position:relative;border-radius:20px;overflow:hidden;cursor:col-resize;user-select:none;-webkit-user-select:none;touch-action:none;aspect-ratio:3/4;max-height:550px;margin:0 auto;max-width:600px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+    .ba-slider img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+    .ba-slider .ba-after{clip-path:inset(0 0 0 50%)}
+    .ba-handle{position:absolute;top:0;bottom:0;left:50%;width:3px;background:var(--white);z-index:10;transform:translateX(-50%)}
+    .ba-handle::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:52px;height:52px;border-radius:50%;background:var(--white);box-shadow:0 4px 24px rgba(0,0,0,.4)}
+    .ba-handle::after{content:'\2039  \203A';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:var(--dark);font-size:1.4rem;font-weight:900;letter-spacing:10px;z-index:11;pointer-events:none}
+    .ba-label-before,.ba-label-after{position:absolute;top:20px;z-index:5;padding:8px 20px;border-radius:50px;font-size:.7rem;font-weight:800;letter-spacing:1.5px;pointer-events:none;text-transform:uppercase}
+    .ba-label-before{left:20px;background:rgba(0,0,0,.7);color:var(--white);backdrop-filter:blur(8px)}
+    .ba-label-after{right:20px;background:var(--gradient-gold);color:var(--dark)}
+    .ba-hint{display:inline-flex;align-items:center;gap:8px;margin-top:20px;color:var(--gray-500);font-size:.82rem;font-weight:500}
+    .ba-hint svg{animation:hint-slide 2s ease-in-out infinite}
+    @keyframes hint-slide{0%,100%{transform:translateX(0)}50%{transform:translateX(6px)}}
+
+    /* ============ BLOQUE 4: SERVICIOS ============ */
+    .servicios{background:var(--dark);padding:100px 5%}
+    .servicios-inner{max-width:1000px;margin:0 auto}
+    .servicios-intro{text-align:center;margin-bottom:56px}
+    .servicios-intro p{color:var(--gray-300);font-size:1.05rem;max-width:600px;margin:0 auto;line-height:1.8}
+    .servicios-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+    .servicio-card{background:var(--dark-card);border:1px solid var(--dark-border);border-radius:24px;overflow:hidden;transition:all .5s cubic-bezier(.4,0,.2,1);position:relative}
+    .servicio-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--gradient-gold);opacity:0;transition:opacity .4s}
+    .servicio-card:hover{transform:translateY(-8px);border-color:rgba(212,168,67,.2);box-shadow:0 24px 60px rgba(0,0,0,.5)}
+    .servicio-card:hover::after{opacity:1}
+    .servicio-img{width:100%;height:240px;object-fit:cover;transition:transform .6s}
+    .servicio-card:hover .servicio-img{transform:scale(1.05)}
+    .servicio-body{padding:32px 28px}
+    .servicio-badge{display:inline-flex;align-items:center;gap:8px;font-size:.7rem;font-weight:700;color:var(--gold);text-transform:uppercase;letter-spacing:2px;margin-bottom:12px}
+    .servicio-card h3{font-size:1.3rem;font-weight:800;margin-bottom:12px;letter-spacing:-.3px}
+    .servicio-card p{color:var(--gray-500);font-size:.95rem;line-height:1.8}
+
+    /* ============ BLOQUE 5: GARANTIAS ============ */
+    .garantias{background:var(--gray-100);color:var(--dark);padding:100px 5%}
+    .garantias-inner{max-width:1000px;margin:0 auto}
+    .garantias-header{text-align:center;margin-bottom:56px}
+    .garantias-header h2{font-size:clamp(1.8rem,3vw,2.4rem);font-weight:800;letter-spacing:-1px;margin-bottom:12px;color:var(--dark)}
+    .garantias-header p{color:var(--gray-500);font-size:1rem}
+    .garantias-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+    .garantia-card{text-align:center;padding:32px 20px}
+    .garantia-icon{width:64px;height:64px;margin:0 auto 20px;display:flex;align-items:center;justify-content:center;border-radius:16px;background:rgba(212,168,67,.1)}
+    .garantia-icon svg{width:28px;height:28px;color:var(--gold-dark)}
+    .garantia-card h3{font-size:.95rem;font-weight:700;margin-bottom:8px;color:var(--dark)}
+    .garantia-card p{color:var(--gray-500);font-size:.85rem;line-height:1.7}
+
+    /* ============ BLOQUE 6: PRUEBA SOCIAL ============ */
+    .social-proof{background:var(--dark);padding:100px 5%}
+    .social-inner{max-width:1000px;margin:0 auto;text-align:center}
+    .social-inner h2{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;letter-spacing:-1px;margin-bottom:48px}
+    .testimonials{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    .testimonial{background:var(--dark-card);border:1px solid var(--dark-border);border-radius:20px;padding:32px 24px;text-align:left;transition:all .3s}
+    .testimonial:hover{border-color:rgba(212,168,67,.2);transform:translateY(-4px)}
+    .testimonial-stars{color:var(--gold);font-size:.9rem;letter-spacing:2px;margin-bottom:16px}
+    .testimonial p{color:var(--gray-300);font-size:.92rem;line-height:1.8;font-style:italic;margin-bottom:20px}
+    .testimonial-author{display:flex;align-items:center;gap:12px}
+    .testimonial-avatar{width:40px;height:40px;border-radius:50%;background:var(--gradient-gold);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.85rem;color:var(--dark)}
+    .testimonial-name{font-size:.85rem;font-weight:600}
+    .testimonial-role{font-size:.75rem;color:var(--gray-500)}
+
+    /* ============ BLOQUE 7: FILTRO CONTACTO ============ */
+    .filtro{background:linear-gradient(180deg,var(--dark) 0%,#080808 100%);padding:100px 5%}
+    .filtro-card{max-width:700px;margin:0 auto;background:var(--dark-card);border:1px solid rgba(212,168,67,.15);border-radius:28px;padding:60px 48px;text-align:center;position:relative;overflow:hidden}
+    .filtro-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gradient-gold)}
+    .filtro-card h2{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;letter-spacing:-1px;margin-bottom:12px}
+    .filtro-card .sub{color:var(--gray-500);font-size:1rem;margin-bottom:40px;max-width:480px;margin-left:auto;margin-right:auto}
+    .filtro-buttons{display:flex;gap:20px;justify-content:center;flex-wrap:wrap}
+    .filtro-btn{flex:1;min-width:240px;max-width:300px;padding:28px 24px;border-radius:20px;border:2px solid var(--dark-border);background:rgba(255,255,255,.02);text-decoration:none;color:var(--white);transition:all .4s;display:flex;flex-direction:column;align-items:center;gap:12px}
+    .filtro-btn:hover{border-color:var(--gold);background:rgba(212,168,67,.05);transform:translateY(-6px);box-shadow:0 16px 48px rgba(0,0,0,.4)}
+    .filtro-btn .emoji{font-size:2.5rem}
+    .filtro-btn h3{font-size:1.1rem;font-weight:700}
+    .filtro-btn p{color:var(--gray-500);font-size:.82rem;line-height:1.5}
+    .filtro-btn .arrow{color:var(--gold);font-size:.85rem;font-weight:600;margin-top:4px;transition:transform .3s}
+    .filtro-btn:hover .arrow{transform:translateX(4px)}
+
+    /* ============ BLOQUE 8: FOOTER ============ */
+    footer{background:var(--dark);border-top:1px solid var(--dark-border);padding:48px 5%}
+    .footer-inner{max-width:800px;margin:0 auto;text-align:center}
+    .footer-logo{display:flex;align-items:center;gap:10px;justify-content:center;margin-bottom:20px;font-weight:800;font-size:1.1rem}
+    .footer-logo .logo-icon{width:36px;height:36px}
+    .footer-logo span{color:var(--gold)}
+    .footer-links{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin-bottom:20px}
+    .footer-links a{color:var(--gray-300);text-decoration:none;font-size:.85rem;transition:color .3s}
+    .footer-links a:hover{color:var(--gold)}
+    footer .copy{color:#444;font-size:.75rem;margin-top:20px}
+    footer .copy a{color:#555;text-decoration:none}
+
+    /* ============ WA FLOAT ============ */
+    .wa-float{position:fixed;bottom:28px;right:28px;z-index:999;width:60px;height:60px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 4px 24px rgba(37,211,102,.4);transition:all .3s;animation:float-pulse 3s infinite}
     .wa-float:hover{transform:scale(1.1);box-shadow:0 8px 40px rgba(37,211,102,.6)}
+    .wa-float svg{width:28px;height:28px;fill:white}
     @keyframes float-pulse{0%,100%{box-shadow:0 4px 24px rgba(37,211,102,.4)}50%{box-shadow:0 4px 40px rgba(37,211,102,.7)}}
 
-    /* FOOTER */
-    footer{background:var(--dark);border-top:1px solid var(--dark-border);padding:48px 5%;text-align:center}
-    footer p{color:var(--gray-500);font-size:.85rem}footer a{color:var(--gold);text-decoration:none}
-
-    /* ANIMATIONS */
+    /* ============ UTILS ============ */
+    .section-tag{display:inline-flex;align-items:center;gap:8px;color:var(--gold);font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:3px}
+    .section-tag::before{content:'';width:24px;height:1px;background:var(--gold)}
     .fade-up{opacity:0;transform:translateY(30px);transition:all .8s cubic-bezier(.4,0,.2,1)}.fade-up.visible{opacity:1;transform:translateY(0)}
 
-    /* RESPONSIVE */
-    @media(max-width:1024px){.services-grid,.portfolio-grid{grid-template-columns:repeat(2,1fr)}.process-grid{grid-template-columns:repeat(2,1fr)}}
+    /* ============ RESPONSIVE ============ */
+    @media(max-width:1024px){
+      .garantias-grid{grid-template-columns:repeat(2,1fr)}
+      .testimonials{grid-template-columns:1fr 1fr}
+    }
     @media(max-width:768px){
       .nav-links{display:none}.mobile-menu{display:block}
-      .nav-links.open{display:flex;flex-direction:column;position:absolute;top:72px;left:0;right:0;background:rgba(10,10,10,.98);padding:24px 5%;border-bottom:1px solid var(--dark-border)}
-      .services-grid,.portfolio-grid{grid-template-columns:1fr}
-      .process-grid{grid-template-columns:1fr 1fr}
-      .contact-grid,.ba-grid{grid-template-columns:1fr}
-      .hero-buttons{flex-direction:column;align-items:center}
-      .stats-bar{gap:24px;flex-wrap:wrap}
-      .form-row{grid-template-columns:1fr}
+      .nav-links.open{display:flex;flex-direction:column;position:absolute;top:72px;left:0;right:0;background:rgba(10,10,10,.98);padding:24px 5%;border-bottom:1px solid var(--dark-border);gap:16px}
+      .servicios-grid{grid-template-columns:1fr}
+      .garantias-grid{grid-template-columns:1fr 1fr}
+      .testimonials{grid-template-columns:1fr}
+      .filtro-buttons{flex-direction:column;align-items:center}
+      .filtro-btn{min-width:100%;max-width:100%}
+      .filtro-card{padding:40px 24px}
       .hero h1{letter-spacing:-1px}
-      .video-section{height:50vh;max-height:400px}
-      .marquee-item{height:140px}
-      .ba-slider{max-height:450px}
+      .ba-slider{max-height:420px}
+      .problema{padding:72px 5%}
+    }
+    @media(max-width:480px){
+      .garantias-grid{grid-template-columns:1fr}
     }
   </style>
 </head>
 <body>
 
-<!-- NAV -->
+<!-- ========== NAV ========== -->
 <nav>
   <div class="nav-inner">
-    <div class="logo">
+    <a href="#" class="logo">
       <div class="logo-icon"><img src="img/logo.jpg" alt="America Pulido Logo"></div>
       AMERICA <span>PULIDO</span>
-    </div>
+    </a>
     <div class="nav-links" id="navLinks">
       <a href="#servicios">Servicios</a>
-      <a href="#trabajos">Trabajos</a>
-      <a href="#proceso">Proceso</a>
-      <a href="#contacto">Contacto</a>
-      <a href="https://wa.me/56978685664?text=Hola%2C%20quiero%20un%20presupuesto%20gratis%20para%20mi%20piso" target="_blank" class="nav-cta">COTIZAR GRATIS</a>
+      <a href="#garantias">Garant&iacute;as</a>
+      <a href="#testimonios">Clientes</a>
+      <a href="#contacto" class="nav-cta">AGENDAR VISITA GRATIS</a>
     </div>
     <button class="mobile-menu" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -218,336 +217,265 @@
   </div>
 </nav>
 
-<!-- HERO WITH VIDEO BG -->
+<!-- ========== BLOQUE 1: HERO ========== -->
 <section class="hero">
-  <video class="hero-video" autoplay muted loop playsinline>
-    <source src="video/pulido-2.mp4" type="video/mp4">
-  </video>
+  <div class="hero-bg">
+    <img src="img/baldosa-comercial.jpg" alt="Piso pulido brillante" class="active" id="heroBg1">
+    <img src="img/madera-parquet.jpg" alt="Parquet de madera pulido" id="heroBg2">
+  </div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <div class="hero-badge"><span class="dot"></span> Santiago Oriente &middot; +10 a&ntilde;os de experiencia</div>
-    <h1>Transformamos<br>pisos en <span class="gold">obras de arte</span></h1>
-    <p>Pulido profesional de hormig&oacute;n, madera, m&aacute;rmol, baldosas y piedras preciosas. Resultados que se ven y se sienten desde el primer momento.</p>
-    <div class="hero-buttons">
-      <a href="https://wa.me/56978685664?text=Hola%2C%20quiero%20un%20presupuesto%20gratis%20para%20mi%20piso" target="_blank" class="btn btn-gold">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Cotizar por WhatsApp
-      </a>
-      <a href="#servicios" class="btn btn-outline">Ver Servicios</a>
+    <div class="hero-badge"><span class="dot"></span> Santiago &middot; +10 a&ntilde;os de experiencia</div>
+    <h1>Pulido y Restauraci&oacute;n<br><span class="gold">Premium</span> de Pisos</h1>
+    <p>Soluciones de alta resistencia para la industria y acabados de lujo para tu hogar.</p>
+    <a href="#contacto" class="btn btn-gold">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+      Agendar visita t&eacute;cnica gratuita
+    </a>
+  </div>
+</section>
+
+<!-- ========== BLOQUE 2: PROBLEMA ========== -->
+<section class="problema">
+  <div class="problema-inner fade-up">
+    <div class="problema-line"></div>
+    <h2>&iquest;Tu piso actual arruina la est&eacute;tica de tus ambientes?</h2>
+    <p>Sabemos lo frustrante que es invertir en la remodelaci&oacute;n de tus espacios y que un piso opaco, rayado o manchado reste valor a todo el lugar. No necesitas reemplazarlo; nosotros revelamos su belleza original.</p>
+  </div>
+</section>
+
+<!-- ========== BLOQUE 3: EFECTO WOW - SLIDER ========== -->
+<section class="wow-section">
+  <div class="wow-inner">
+    <div class="section-tag">Transformaci&oacute;n Real</div>
+    <h2>La prueba est&aacute; en el resultado</h2>
+    <p class="sub">Cada proyecto comienza con un piso deteriorado y termina con una superficie impecable.</p>
+    <div class="ba-slider fade-up" id="baSlider">
+      <img src="img/antes-despues.jpg" alt="Antes" class="ba-before" draggable="false">
+      <img src="img/antes-despues-2.jpg" alt="Despu&eacute;s" class="ba-after" draggable="false">
+      <span class="ba-label-before">ANTES</span>
+      <span class="ba-label-after">DESPU&Eacute;S</span>
+      <div class="ba-handle" id="baHandle"></div>
     </div>
-    <div class="stats-bar">
-      <div class="stat"><div class="stat-value">10+</div><div class="stat-label">A&ntilde;os</div></div>
-      <div class="stat"><div class="stat-value">5&#9733;</div><div class="stat-label">Calidad</div></div>
-      <div class="stat"><div class="stat-value">$0</div><div class="stat-label">Presupuesto</div></div>
-      <div class="stat"><div class="stat-value">RM</div><div class="stat-label">Cobertura</div></div>
+    <div class="ba-hint">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      Desliza para ver el cambio
     </div>
   </div>
 </section>
 
-<!-- SCROLLING MARQUEE -->
-<div class="marquee-section">
-  <div class="marquee-track">
-    <div class="marquee-item"><img src="img/hormigon-helicoptero.jpg" alt="Pulido hormig&oacute;n con helic&oacute;ptero"></div>
-    <div class="marquee-item"><img src="img/madera-parquet.jpg" alt="Piso de madera pulido"></div>
-    <div class="marquee-item"><img src="img/baldosa-comercial.jpg" alt="Baldosa comercial pulida"></div>
-    <div class="marquee-item"><img src="img/hormigon-galpon.jpg" alt="Galp&oacute;n hormig&oacute;n industrial"></div>
-    <div class="marquee-item"><img src="img/empresa-piso.jpg" alt="Piso empresarial"></div>
-    <div class="marquee-item"><img src="img/calidad-brillo.jpg" alt="Calidad y brillo"></div>
-    <div class="marquee-item"><img src="img/servicio-completo.jpg" alt="Servicio completo"></div>
-    <div class="marquee-item"><img src="img/madera-brillo.jpg" alt="Madera brillante"></div>
-    <!-- Duplicate for infinite scroll -->
-    <div class="marquee-item"><img src="img/hormigon-helicoptero.jpg" alt="Pulido hormig&oacute;n"></div>
-    <div class="marquee-item"><img src="img/madera-parquet.jpg" alt="Madera pulida"></div>
-    <div class="marquee-item"><img src="img/baldosa-comercial.jpg" alt="Baldosa pulida"></div>
-    <div class="marquee-item"><img src="img/hormigon-galpon.jpg" alt="Galp&oacute;n industrial"></div>
-    <div class="marquee-item"><img src="img/empresa-piso.jpg" alt="Piso empresa"></div>
-    <div class="marquee-item"><img src="img/calidad-brillo.jpg" alt="Brillo"></div>
-    <div class="marquee-item"><img src="img/servicio-completo.jpg" alt="Servicio"></div>
-    <div class="marquee-item"><img src="img/madera-brillo.jpg" alt="Madera"></div>
-  </div>
-</div>
-
-<!-- SERVICES -->
-<section class="services-bg" id="servicios">
-  <div class="section-inner">
-    <div class="section-tag">Nuestros Servicios</div>
-    <h2 class="section-title">Expertos en cada<br>tipo de superficie</h2>
-    <p class="section-sub">Cada material requiere un tratamiento distinto. Dominamos todos con equipos de &uacute;ltima generaci&oacute;n.</p>
-    <div class="services-grid">
-      <div class="service-card fade-up">
-        <img src="img/hormigon-helicoptero.jpg" alt="Pulido de Hormig&oacute;n Industrial" class="service-img" loading="lazy">
-        <div class="service-body">
-          <h3>Hormig&oacute;n Industrial</h3>
-          <p>Pulido y pintado con m&aacute;quina helic&oacute;ptero para galpones, bodegas, obras y construcci&oacute;n. Superficies de alto tr&aacute;nsito.</p>
+<!-- ========== BLOQUE 4: SERVICIOS ========== -->
+<section class="servicios" id="servicios">
+  <div class="servicios-inner">
+    <div class="servicios-intro fade-up">
+      <div class="section-tag" style="justify-content:center">Nuestros Servicios</div>
+      <h2 style="font-size:clamp(1.8rem,3vw,2.4rem);font-weight:800;letter-spacing:-1px;margin-bottom:12px;text-align:center">La soluci&oacute;n para cada superficie</h2>
+      <p>Aplicamos la t&eacute;cnica exacta de decapado y vitrificado que tu superficie necesita para durar a&ntilde;os intacta.</p>
+    </div>
+    <div class="servicios-grid">
+      <div class="servicio-card fade-up">
+        <img src="img/madera-parquet.jpg" alt="Restauraci&oacute;n residencial premium" class="servicio-img" loading="lazy">
+        <div class="servicio-body">
+          <div class="servicio-badge">&#127968; Residencial Premium</div>
+          <h3>Acabados de lujo para tu hogar</h3>
+          <p>Restauraci&oacute;n profunda para m&aacute;rmol, madera y baldosas. Logramos acabados tipo espejo que elevan el est&aacute;ndar de tu hogar.</p>
         </div>
       </div>
-      <div class="service-card fade-up">
-        <img src="img/madera-parquet.jpg" alt="Pisos de Madera" class="service-img" loading="lazy">
-        <div class="service-body">
-          <h3>Pisos de Madera</h3>
-          <p>Restauraci&oacute;n completa de pisos de madera y parquet. Recuperamos el brillo natural y aplicamos vitrificado protector.</p>
-        </div>
-      </div>
-      <div class="service-card fade-up">
-        <img src="img/baldosa-comercial.jpg" alt="Baldosas y Cer&aacute;micas" class="service-img" loading="lazy">
-        <div class="service-body">
-          <h3>Baldosas y Cer&aacute;micas</h3>
-          <p>Eliminamos rayones y manchas. Devolvemos el brillo original a baldosas, cer&aacute;micas y pisos comerciales.</p>
-        </div>
-      </div>
-      <div class="service-card fade-up">
-        <img src="img/hormigon-galpon.jpg" alt="Superficies Industriales" class="service-img" loading="lazy">
-        <div class="service-body">
-          <h3>Superficies Industriales</h3>
-          <p>Terminaciones profesionales para galpones, bodegas y proyectos de construcci&oacute;n. Resistencia y acabado garantizado.</p>
-        </div>
-      </div>
-      <div class="service-card fade-up">
-        <img src="img/empresa-piso.jpg" alt="Pisos Empresariales" class="service-img" loading="lazy">
-        <div class="service-body">
-          <h3>Pisos Comerciales</h3>
-          <p>Pulido para locales comerciales, oficinas y empresas. M&aacute;ximo brillo y durabilidad para alto tr&aacute;fico.</p>
-        </div>
-      </div>
-      <div class="service-card fade-up">
-        <img src="img/calidad-brillo.jpg" alt="Restauraci&oacute;n Integral" class="service-img" loading="lazy">
-        <div class="service-body">
-          <h3>Restauraci&oacute;n Integral</h3>
-          <p>Decapado profundo + vitrificado y encerado. Transformamos cualquier piso deteriorado en una superficie impecable.</p>
+      <div class="servicio-card fade-up">
+        <img src="img/baldosa-comercial.jpg" alt="Hormig&oacute;n industrial" class="servicio-img" loading="lazy">
+        <div class="servicio-body">
+          <div class="servicio-badge">&#127981; Hormig&oacute;n Industrial</div>
+          <h3>Pisos preparados para el trabajo pesado</h3>
+          <p>Pulido con helic&oacute;ptero para superficies de alto tr&aacute;fico. Pisos ultra resistentes, nivelados y preparados para la industria.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FULLSCREEN VIDEO SECTION -->
-<section class="video-section">
-  <video autoplay muted loop playsinline>
-    <source src="video/pulido-3.mp4" type="video/mp4">
-  </video>
-  <div class="overlay">
-    <div class="section-tag" style="color:var(--gold-light)">Calidad Visible</div>
-    <h2>Calidad y brillo que<br>se notan desde el <span style="color:var(--gold)">primer momento</span></h2>
-    <p>Cada proyecto es una transformaci&oacute;n. Trabajamos con equipos profesionales de &uacute;ltima generaci&oacute;n.</p>
-    <a href="https://wa.me/56978685664?text=Hola%2C%20quiero%20un%20presupuesto%20gratis" target="_blank" class="btn btn-gold">Cotizar Ahora</a>
-  </div>
-</section>
-
-<!-- PORTFOLIO -->
-<section id="trabajos">
-  <div class="section-inner">
-    <div class="section-tag">Nuestros Trabajos</div>
-    <h2 class="section-title">Resultados que<br>hablan solos</h2>
-    <p class="section-sub">Cada proyecto es una transformaci&oacute;n completa. Mira nuestro trabajo real.</p>
-    <div class="portfolio-grid">
-      <div class="portfolio-card fade-up">
-        <img src="img/hormigon-helicoptero.jpg" alt="Pulido hormig&oacute;n con helic&oacute;ptero" loading="lazy">
-        <div class="portfolio-overlay">
-          <span class="portfolio-tag">HORMIG&Oacute;N</span>
-          <h3>Pulido Industrial con Helic&oacute;ptero</h3>
-        </div>
-      </div>
-      <div class="portfolio-card fade-up">
-        <img src="img/madera-parquet.jpg" alt="Piso madera parquet restaurado" loading="lazy">
-        <div class="portfolio-overlay">
-          <span class="portfolio-tag">MADERA</span>
-          <h3>Restauraci&oacute;n Parquet Residencial</h3>
-        </div>
-      </div>
-      <div class="portfolio-card fade-up">
-        <img src="img/baldosa-comercial.jpg" alt="Baldosa local comercial" loading="lazy">
-        <div class="portfolio-overlay">
-          <span class="portfolio-tag">BALDOSA</span>
-          <h3>Local Comercial &mdash; Piso Brillante</h3>
-        </div>
-      </div>
-      <div class="portfolio-card fade-up">
-        <img src="img/hormigon-galpon.jpg" alt="Galp&oacute;n industrial" loading="lazy">
-        <div class="portfolio-overlay">
-          <span class="portfolio-tag">INDUSTRIAL</span>
-          <h3>Galp&oacute;n &mdash; Superficie 500m&sup2;</h3>
-        </div>
-      </div>
-      <div class="portfolio-card fade-up">
-        <img src="img/empresa-piso.jpg" alt="Piso empresarial brillante" loading="lazy">
-        <div class="portfolio-overlay">
-          <span class="portfolio-tag">COMERCIAL</span>
-          <h3>Piso Empresarial de Alto Tr&aacute;fico</h3>
-        </div>
-      </div>
-      <div class="portfolio-card fade-up">
-        <img src="img/servicio-completo.jpg" alt="Servicio completo de pulido" loading="lazy">
-        <div class="portfolio-overlay">
-          <span class="portfolio-tag">COMPLETO</span>
-          <h3>Restauraci&oacute;n Integral</h3>
-        </div>
-      </div>
+<!-- ========== BLOQUE 5: GARANTIAS ========== -->
+<section class="garantias" id="garantias">
+  <div class="garantias-inner">
+    <div class="garantias-header fade-up">
+      <div class="section-tag" style="justify-content:center;color:var(--gold-dark)">Garant&iacute;as de Servicio</div>
+      <h2>Rompemos tus barreras</h2>
+      <p>Para que contactar sea la decisi&oacute;n m&aacute;s f&aacute;cil.</p>
     </div>
-    <p style="text-align:center;margin-top:40px">
-      <a href="https://www.instagram.com/americapulidospa" target="_blank" class="btn btn-outline">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
-        Ver m&aacute;s en @americapulidospa
-      </a>
-    </p>
-  </div>
-</section>
-
-<!-- BEFORE / AFTER SLIDER -->
-<section class="ba-section">
-  <div class="section-inner">
-    <div class="ba-grid">
-      <div class="ba-slider fade-up" id="baSlider">
-        <img src="img/antes-despues.jpg" alt="Antes" class="ba-before" draggable="false">
-        <img src="img/antes-despues-2.jpg" alt="Despu&eacute;s" class="ba-after" draggable="false">
-        <span class="ba-label-before">ANTES</span>
-        <span class="ba-label-after">DESPU&Eacute;S</span>
-        <div class="ba-handle" id="baHandle"></div>
-      </div>
-      <div class="ba-text fade-up">
-        <div class="section-tag">Transformaci&oacute;n Real</div>
-        <h2>De deteriorado a <span style="color:var(--gold)">impecable</span></h2>
-        <p>Arrastra el control para ver la transformaci&oacute;n completa. Nuestro proceso incluye decapado profundo, pulido profesional y vitrificado protector.</p>
-        <div class="ba-stats">
-          <div><div class="ba-stat-value">100%</div><div class="ba-stat-label">Satisfacci&oacute;n</div></div>
-          <div><div class="ba-stat-value">24h</div><div class="ba-stat-label">Entrega r&aacute;pida</div></div>
-          <div><div class="ba-stat-value">$0</div><div class="ba-stat-label">Cotizaci&oacute;n</div></div>
+    <div class="garantias-grid">
+      <!-- Trabajo Limpio -->
+      <div class="garantia-card fade-up">
+        <div class="garantia-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l.146.146A2 2 0 0118 18.158V18a2 2 0 01-2 2H8a2 2 0 01-2-2v-.158a2 2 0 01.586-1.414l.146-.146z"/></svg>
         </div>
-        <a href="https://wa.me/56978685664?text=Hola%2C%20vi%20el%20antes%20y%20despu%C3%A9s.%20Quiero%20un%20presupuesto." target="_blank" class="btn btn-gold" style="width:fit-content;margin-top:12px">Quiero este resultado</a>
+        <h3>Trabajo Limpio</h3>
+        <p>Tecnolog&iacute;a de extracci&oacute;n: minimizamos el polvo durante el pulido para proteger tus muebles y el entorno.</p>
+      </div>
+      <!-- Tiempos Eficientes -->
+      <div class="garantia-card fade-up">
+        <div class="garantia-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h3>Tiempos Eficientes</h3>
+        <p>Cero paralizaci&oacute;n prolongada: procesos &aacute;giles y secado r&aacute;pido para que vuelvas a usar tu espacio en tiempo r&eacute;cord.</p>
+      </div>
+      <!-- Brillo Permanente -->
+      <div class="garantia-card fade-up">
+        <div class="garantia-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <h3>Brillo Permanente</h3>
+        <p>No solo pulimos, sellamos. Usamos vitrificantes de alto tr&aacute;fico que repelen manchas y evitan nuevas rayas.</p>
+      </div>
+      <!-- Transparencia Total -->
+      <div class="garantia-card fade-up">
+        <div class="garantia-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4-4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <h3>Transparencia Total</h3>
+        <p>Sin sorpresas: visita t&eacute;cnica y evaluaci&oacute;n en terreno 100% gratuita. Presupuesto claro desde el d&iacute;a uno.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PROCESS -->
-<section class="process-section" id="proceso">
-  <div class="section-inner">
-    <div class="section-tag">Nuestro Proceso</div>
-    <h2 class="section-title">Simple y transparente</h2>
-    <p class="section-sub">Del contacto al piso perfecto, en 4 pasos.</p>
-    <div class="process-grid">
-      <div class="process-step fade-up"><div class="process-number">1</div><h3>Contacto</h3><p>Escr&iacute;benos por WhatsApp o llena el formulario. Es gratis y sin compromiso.</p></div>
-      <div class="process-step fade-up"><div class="process-number">2</div><h3>Visita</h3><p>Visitamos tu espacio, evaluamos el piso y te entregamos un presupuesto detallado.</p></div>
-      <div class="process-step fade-up"><div class="process-number">3</div><h3>Ejecuci&oacute;n</h3><p>Nuestro equipo trabaja con maquinaria helic&oacute;ptero de &uacute;ltima generaci&oacute;n.</p></div>
-      <div class="process-step fade-up"><div class="process-number">4</div><h3>Resultado</h3><p>Entregamos un piso impecable con garant&iacute;a de calidad total.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA BANNER -->
-<div class="cta-banner">
-  <h2>Tu piso merece verse incre&iacute;ble</h2>
-  <p>Cotiza gratis hoy y transforma tu espacio. Sin compromiso, sin costo.</p>
-  <a href="https://wa.me/56978685664?text=Hola%2C%20quiero%20cotizar%20el%20pulido%20de%20mi%20piso" target="_blank" class="btn btn-dark">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-    Cotizar por WhatsApp
-  </a>
-</div>
-
-<!-- CONTACT -->
-<section class="contact-section" id="contacto">
-  <div class="section-inner">
-    <div class="section-tag">Contacto</div>
-    <h2 class="section-title">Solicita tu presupuesto</h2>
-    <p class="section-sub">Cu&eacute;ntanos tu proyecto y te respondemos en menos de 2 horas.</p>
-    <div class="contact-grid">
-      <div class="contact-info">
-        <a href="https://wa.me/56978685664?text=Hola%2C%20quiero%20un%20presupuesto%20gratis" target="_blank" class="contact-item">
-          <div class="contact-icon wa">&#128172;</div>
-          <div><h3>WhatsApp</h3><p>+56 9 7868 5664 &middot; Respuesta inmediata</p></div>
-        </a>
-        <a href="tel:+56978685664" class="contact-item">
-          <div class="contact-icon phone">&#128222;</div>
-          <div><h3>Llamada Directa</h3><p>Lunes a S&aacute;bado, 8:00 - 20:00</p></div>
-        </a>
-        <a href="https://www.instagram.com/americapulidospa" target="_blank" class="contact-item">
-          <div class="contact-icon ig">&#128247;</div>
-          <div><h3>Instagram</h3><p>@americapulidospa &middot; Ve nuestros trabajos</p></div>
-        </a>
-        <div class="contact-item">
-          <div class="contact-icon loc">&#128205;</div>
-          <div><h3>Ubicaci&oacute;n</h3><p>Santiago Oriente &middot; Cobertura toda la RM</p></div>
-        </div>
-      </div>
-      <div class="contact-form">
-        <h3>Cotizaci&oacute;n R&aacute;pida</h3>
-        <form id="cotizacion" onsubmit="return false">
-          <div class="form-row">
-            <div class="form-group"><label>Nombre</label><input type="text" placeholder="Tu nombre" id="nombre" required></div>
-            <div class="form-group"><label>Tel&eacute;fono</label><input type="tel" placeholder="+56 9 ..." id="telefono" required></div>
+<!-- ========== BLOQUE 6: PRUEBA SOCIAL ========== -->
+<section class="social-proof" id="testimonios">
+  <div class="social-inner">
+    <div class="section-tag" style="justify-content:center;margin-bottom:12px">Lo que dicen nuestros clientes</div>
+    <h2>Resultados que hablan solos</h2>
+    <div class="testimonials">
+      <div class="testimonial fade-up">
+        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>El parquet de mi departamento qued&oacute; como nuevo. Pens&eacute; que ten&iacute;a que cambiarlo completo, pero ellos lo restauraron incre&iacute;ble. Lo recomiendo al 100%.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">C</div>
+          <div>
+            <div class="testimonial-name">Carolina M.</div>
+            <div class="testimonial-role">Departamento en &Ntilde;u&ntilde;oa</div>
           </div>
-          <div class="form-group"><label>Tipo de Superficie</label>
-            <select id="tipo" required><option value="">Selecciona...</option><option>Hormig&oacute;n Industrial</option><option>Madera</option><option>M&aacute;rmol</option><option>Baldosas / Cer&aacute;mica</option><option>Piedras Preciosas</option><option>Otro</option></select>
+        </div>
+      </div>
+      <div class="testimonial fade-up">
+        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>Nos pulieron 800m&sup2; de galp&oacute;n industrial en 3 d&iacute;as. Trabajo impecable, limpio y dentro del presupuesto. Ya los contratamos para la segunda nave.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">R</div>
+          <div>
+            <div class="testimonial-name">Roberto S.</div>
+            <div class="testimonial-role">Gerente de Operaciones</div>
           </div>
-          <div class="form-group"><label>Metros cuadrados (aprox.)</label><input type="text" placeholder="ej: 50 m2" id="metros"></div>
-          <div class="form-group"><label>Detalles adicionales</label><textarea placeholder="Describe tu proyecto, estado actual del piso, urgencia..." id="mensaje"></textarea></div>
-          <button type="button" class="btn btn-gold" style="width:100%;justify-content:center" onclick="enviarWA()">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            Enviar Cotizaci&oacute;n por WhatsApp
-          </button>
-          <p style="color:var(--gray-500);font-size:.75rem;text-align:center;margin-top:12px">Te responderemos en menos de 2 horas &middot; 100% gratis</p>
-        </form>
+        </div>
+      </div>
+      <div class="testimonial fade-up">
+        <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>La baldosa de mi local comercial parec&iacute;a irrecuperable. Ahora brilla y mis clientes siempre lo comentan. Excelente servicio y muy profesionales.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">M</div>
+          <div>
+            <div class="testimonial-name">Mar&iacute;a Jos&eacute; L.</div>
+            <div class="testimonial-role">Due&ntilde;a de local, Providencia</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ========== BLOQUE 7: FILTRO MAGICO ========== -->
+<section class="filtro" id="contacto">
+  <div class="filtro-card fade-up">
+    <h2>&iquest;Qu&eacute; tipo de piso necesitas restaurar?</h2>
+    <p class="sub">Selecciona tu opci&oacute;n y hablemos directamente para agendar tu visita gratuita.</p>
+    <div class="filtro-buttons">
+      <a href="https://wa.me/56968221431?text=Hola%20America%20Pulido.%20Vengo%20de%20la%20web%2C%20necesito%20restaurar%20el%20piso%20de%20mi%20casa%2Fdepto%20y%20me%20gustar%C3%ADa%20agendar%20la%20visita%20t%C3%A9cnica%20gratuita." target="_blank" class="filtro-btn">
+        <span class="emoji">&#127968;</span>
+        <h3>Mi Casa / Depto</h3>
+        <p>Madera, m&aacute;rmol, baldosas,<br>piedras preciosas</p>
+        <span class="arrow">Chatear por WhatsApp &rarr;</span>
+      </a>
+      <a href="https://wa.me/56968221431?text=Hola%20America%20Pulido.%20Vengo%20de%20la%20web%2C%20necesito%20pulir%20una%20superficie%20industrial%2Fgalp%C3%B3n%20y%20me%20gustar%C3%ADa%20solicitar%20una%20evaluaci%C3%B3n%20en%20terreno." target="_blank" class="filtro-btn">
+        <span class="emoji">&#127981;</span>
+        <h3>Mi Empresa / Galp&oacute;n</h3>
+        <p>Hormig&oacute;n industrial, bodegas,<br>superficies de alto tr&aacute;fico</p>
+        <span class="arrow">Chatear por WhatsApp &rarr;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== BLOQUE 8: FOOTER ========== -->
 <footer>
-  <div class="logo" style="justify-content:center;margin-bottom:16px"><div class="logo-icon"><img src="img/logo.jpg" alt="America Pulido Logo"></div> AMERICA <span>PULIDO</span></div>
-  <p>Pulido Profesional de Pisos &middot; Santiago, Chile</p>
-  <p style="margin-top:8px"><a href="tel:+56978685664">+56 9 7868 5664</a> &middot; <a href="https://www.instagram.com/americapulidospa" target="_blank">@americapulidospa</a></p>
-  <p style="margin-top:16px;font-size:.75rem;color:#333">Desarrollado por <a href="#" style="color:#444">Flow Agency</a></p>
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <div class="logo-icon"><img src="img/logo.jpg" alt="America Pulido Logo"></div>
+      AMERICA <span>PULIDO</span> SPA
+    </div>
+    <div class="footer-links">
+      <a href="tel:+56968221431">+56 9 6822 1431</a>
+      <a href="https://www.instagram.com/americapulidospa" target="_blank">@americapulidospa</a>
+      <a href="#">Santiago, Chile</a>
+    </div>
+    <p class="copy">Desarrollado por <a href="#">Flow Agency</a></p>
+  </div>
 </footer>
 
-<!-- WHATSAPP FLOAT -->
-<a href="https://wa.me/56978685664?text=Hola%2C%20quiero%20un%20presupuesto%20gratis%20para%20mi%20piso" target="_blank" class="wa-float" title="WhatsApp">&#128172;</a>
+<!-- ========== WA FLOAT ========== -->
+<a href="https://wa.me/56968221431?text=Hola%2C%20quiero%20agendar%20una%20visita%20t%C3%A9cnica%20gratuita" target="_blank" class="wa-float" title="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
 
 <script>
-function enviarWA(){
-  const n=document.getElementById('nombre').value||'Cliente';
-  const t=document.getElementById('telefono').value||'';
-  const tipo=document.getElementById('tipo').value||'No especificado';
-  const m=document.getElementById('metros').value||'';
-  const msg=document.getElementById('mensaje').value||'';
-  let txt=`Hola America Pulido! %F0%9F%91%8B%0A%0A*Nombre:* ${n}%0A*Tipo de piso:* ${tipo}%0A`;
-  if(m)txt+=`*Metros:* ${m}%0A`;if(t)txt+=`*Tel:* ${t}%0A`;if(msg)txt+=`*Detalle:* ${msg}%0A`;
-  txt+=`%0AMe gustar%C3%ADa recibir un presupuesto gratis.`;
-  window.open(`https://wa.me/56978685664?text=${txt}`,'_blank');
-}
-document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{e.preventDefault();const t=document.querySelector(a.getAttribute('href'));if(t){t.scrollIntoView({behavior:'smooth'});document.getElementById('navLinks').classList.remove('open')}})});
-const obs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting)el.target.classList.add('visible')})},{threshold:.1});
-document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
-
-// BEFORE/AFTER SLIDER
+/* ===== HERO CROSSFADE ===== */
 (function(){
-  const slider=document.getElementById('baSlider');
-  if(!slider)return;
-  const handle=document.getElementById('baHandle');
-  const afterImg=slider.querySelector('.ba-after');
-  let isDragging=false;
+  const imgs=document.querySelectorAll('.hero-bg img');
+  if(imgs.length<2)return;
+  let current=0;
+  setInterval(function(){
+    imgs[current].classList.remove('active');
+    current=(current+1)%imgs.length;
+    imgs[current].classList.add('active');
+  },5000);
+})();
 
-  function setPosition(x){
-    const rect=slider.getBoundingClientRect();
-    let pct=((x-rect.left)/rect.width)*100;
+/* ===== SMOOTH SCROLL ===== */
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  a.addEventListener('click',function(e){
+    e.preventDefault();
+    var t=document.querySelector(a.getAttribute('href'));
+    if(t){t.scrollIntoView({behavior:'smooth'});document.getElementById('navLinks').classList.remove('open')}
+  });
+});
+
+/* ===== FADE UP OBSERVER ===== */
+var obs=new IntersectionObserver(function(e){e.forEach(function(el){if(el.isIntersecting)el.target.classList.add('visible')})},{threshold:.1});
+document.querySelectorAll('.fade-up').forEach(function(el){obs.observe(el)});
+
+/* ===== BEFORE/AFTER SLIDER ===== */
+(function(){
+  var slider=document.getElementById('baSlider');
+  if(!slider)return;
+  var handle=document.getElementById('baHandle');
+  var afterImg=slider.querySelector('.ba-after');
+  var isDragging=false;
+
+  function setPos(x){
+    var rect=slider.getBoundingClientRect();
+    var pct=((x-rect.left)/rect.width)*100;
     pct=Math.max(2,Math.min(98,pct));
     handle.style.left=pct+'%';
     afterImg.style.clipPath='inset(0 0 0 '+pct+'%)';
   }
-
   function onStart(e){
     isDragging=true;
-    slider.style.cursor='col-resize';
-    const x=e.touches?e.touches[0].clientX:e.clientX;
-    setPosition(x);
-    e.preventDefault();
+    var x=e.touches?e.touches[0].clientX:e.clientX;
+    setPos(x);e.preventDefault();
   }
   function onMove(e){
     if(!isDragging)return;
-    const x=e.touches?e.touches[0].clientX:e.clientX;
-    setPosition(x);
-    e.preventDefault();
+    var x=e.touches?e.touches[0].clientX:e.clientX;
+    setPos(x);e.preventDefault();
   }
-  function onEnd(){isDragging=false;slider.style.cursor='col-resize'}
+  function onEnd(){isDragging=false}
 
   slider.addEventListener('mousedown',onStart);
   slider.addEventListener('touchstart',onStart,{passive:false});
@@ -556,13 +484,15 @@ document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
   window.addEventListener('mouseup',onEnd);
   window.addEventListener('touchend',onEnd);
 
-  // initial position at 50%
-  setPosition(slider.getBoundingClientRect().left+slider.getBoundingClientRect().width/2);
-  // re-set on resize
+  // init at 50%
+  setTimeout(function(){
+    var rect=slider.getBoundingClientRect();
+    setPos(rect.left+rect.width/2);
+  },100);
   window.addEventListener('resize',function(){
-    const rect=slider.getBoundingClientRect();
-    const currentPct=parseFloat(handle.style.left)||50;
-    setPosition(rect.left+rect.width*(currentPct/100));
+    var rect=slider.getBoundingClientRect();
+    var pct=parseFloat(handle.style.left)||50;
+    setPos(rect.left+rect.width*(pct/100));
   });
 })();
 </script>
