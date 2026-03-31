@@ -65,6 +65,12 @@
     .hero h1 .gold{background:var(--gradient-gold);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
     .hero p{color:var(--gray-300);font-size:1.15rem;max-width:560px;margin:0 auto 48px;line-height:1.8;font-weight:300}
 
+    /* ============ PARTICLE LOGO ============ */
+    .particle-logo{position:relative;width:100%;height:80vh;min-height:500px;max-height:700px;background:var(--dark);overflow:hidden;display:flex;align-items:center;justify-content:center}
+    .particle-logo canvas{position:absolute;inset:0;width:100%;height:100%;cursor:crosshair}
+    .particle-logo .hint{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.3);font-size:.75rem;letter-spacing:2px;text-transform:uppercase;animation:hint-fade 3s ease-in-out infinite;pointer-events:none;z-index:2}
+    @keyframes hint-fade{0%,100%{opacity:.2}50%{opacity:.6}}
+
     /* ============ BLOQUE 2: PROBLEMA ============ */
     .problema{background:var(--gray-100);color:var(--dark);padding:100px 5%;text-align:center}
     .problema-inner{max-width:700px;margin:0 auto}
@@ -234,6 +240,12 @@
     </a>
   </div>
 </section>
+
+<!-- ========== PARTICLE LOGO INTERACTIVO ========== -->
+<div class="particle-logo">
+  <canvas id="particleCanvas"></canvas>
+  <span class="hint">Mueve el cursor para interactuar</span>
+</div>
 
 <!-- ========== BLOQUE 2: PROBLEMA ========== -->
 <section class="problema">
@@ -494,6 +506,164 @@ document.querySelectorAll('.fade-up').forEach(function(el){obs.observe(el)});
     var pct=parseFloat(handle.style.left)||50;
     setPos(rect.left+rect.width*(pct/100));
   });
+})();
+
+/* ===== PARTICLE LOGO SYSTEM ===== */
+(function(){
+  var canvas=document.getElementById('particleCanvas');
+  if(!canvas)return;
+  var ctx=canvas.getContext('2d',{willReadFrequently:true});
+  var container=canvas.parentElement;
+  var particles=[];
+  var mouse={x:-9999,y:-9999,radius:80};
+  var logoLoaded=false;
+  var animId;
+
+  // Paleta del logo real (espiral arcoiris)
+  var COLORS=['#8dc63f','#f7931e','#ed1c24','#662d91','#3498db','#e67e22','#D4A843'];
+
+  function resize(){
+    canvas.width=container.clientWidth;
+    canvas.height=container.clientHeight;
+    if(logoLoaded) initParticles();
+  }
+
+  // Cargar imagen del logo
+  var logoImg=new Image();
+  logoImg.crossOrigin='anonymous';
+  logoImg.onload=function(){
+    logoLoaded=true;
+    resize();
+    animate();
+  };
+  logoImg.src='img/logo.jpg';
+
+  function initParticles(){
+    particles=[];
+    var w=canvas.width;
+    var h=canvas.height;
+
+    // Dibujar logo centrado en canvas offscreen
+    var logoSize=Math.min(w,h)*0.55;
+    var offCanvas=document.createElement('canvas');
+    offCanvas.width=w;
+    offCanvas.height=h;
+    var offCtx=offCanvas.getContext('2d');
+
+    // Dibujar logo centrado como circulo
+    var lx=(w-logoSize)/2;
+    var ly=(h-logoSize)/2;
+    offCtx.drawImage(logoImg,lx,ly,logoSize,logoSize);
+
+    // Escanear pixeles
+    var imgData=offCtx.getImageData(0,0,w,h);
+    var data=imgData.data;
+    var gap=3; // Densidad de particulas
+
+    for(var y=0;y<h;y+=gap){
+      for(var x=0;x<w;x+=gap){
+        var i=(y*w+x)*4;
+        var r=data[i],g=data[i+1],b=data[i+2],a=data[i+3];
+        // Solo pixeles visibles y no del fondo blanco
+        if(a>128 && !(r>230&&g>230&&b>230)){
+          var color='rgb('+r+','+g+','+b+')';
+          particles.push(new Particle(x,y,color));
+        }
+      }
+    }
+  }
+
+  function Particle(targetX,targetY,color){
+    // Nacer desde posiciones aleatorias (efecto de explosion)
+    this.x=canvas.width/2+(Math.random()-0.5)*canvas.width*1.5;
+    this.y=canvas.height/2+(Math.random()-0.5)*canvas.height*1.5;
+    this.baseX=targetX;
+    this.baseY=targetY;
+    this.size=1.8+Math.random()*0.8;
+    this.color=color;
+    this.density=(Math.random()*30)+5;
+    this.vx=0;
+    this.vy=0;
+  }
+
+  Particle.prototype.draw=function(){
+    ctx.fillStyle=this.color;
+    ctx.beginPath();
+    ctx.arc(this.x,this.y,this.size,0,Math.PI*2);
+    ctx.fill();
+  };
+
+  Particle.prototype.update=function(){
+    // Repulsion del mouse
+    var dxM=mouse.x-this.x;
+    var dyM=mouse.y-this.y;
+    var distM=Math.sqrt(dxM*dxM+dyM*dyM);
+
+    // Atraccion a posicion base
+    var dxB=this.baseX-this.x;
+    var dyB=this.baseY-this.y;
+
+    if(distM<mouse.radius&&distM>0){
+      var fuerza=(mouse.radius-distM)/mouse.radius;
+      var dirX=dxM/distM;
+      var dirY=dyM/distM;
+      this.vx-=dirX*fuerza*(this.density*0.6);
+      this.vy-=dirY*fuerza*(this.density*0.6);
+    }else{
+      // Tension elastica hacia la posicion base
+      this.vx+=dxB*0.04;
+      this.vy+=dyB*0.04;
+    }
+
+    // Friccion
+    this.vx*=0.82;
+    this.vy*=0.82;
+
+    this.x+=this.vx;
+    this.y+=this.vy;
+
+    this.draw();
+  };
+
+  function animate(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    for(var i=0;i<particles.length;i++){
+      particles[i].update();
+    }
+    animId=requestAnimationFrame(animate);
+  }
+
+  // Mouse events
+  canvas.addEventListener('mousemove',function(e){
+    var rect=canvas.getBoundingClientRect();
+    mouse.x=e.clientX-rect.left;
+    mouse.y=e.clientY-rect.top;
+  });
+  canvas.addEventListener('mouseleave',function(){
+    mouse.x=-9999;mouse.y=-9999;
+  });
+  canvas.addEventListener('touchmove',function(e){
+    var rect=canvas.getBoundingClientRect();
+    mouse.x=e.touches[0].clientX-rect.left;
+    mouse.y=e.touches[0].clientY-rect.top;
+    e.preventDefault();
+  },{passive:false});
+  canvas.addEventListener('touchend',function(){
+    mouse.x=-9999;mouse.y=-9999;
+  });
+
+  window.addEventListener('resize',resize);
+  resize();
+
+  // Pausar cuando no es visible (performance)
+  var observer=new IntersectionObserver(function(entries){
+    if(entries[0].isIntersecting){
+      if(!animId&&logoLoaded) animate();
+    }else{
+      if(animId){cancelAnimationFrame(animId);animId=null;}
+    }
+  },{threshold:0.1});
+  observer.observe(container);
 })();
 </script>
 </body>

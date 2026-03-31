@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "landing",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", "-l", "64100", "C:/Users/usuario/OneDrive/Desktop/america-pulido-web"],
+      "port": 64100
+    }
+  ]
+}
