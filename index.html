@@ -29,8 +29,8 @@
     nav{position:fixed;top:0;width:100%;z-index:1000;background:rgba(10,10,10,0.9);backdrop-filter:blur(20px) saturate(180%);border-bottom:1px solid rgba(212,168,67,0.1);padding:0 5%;transition:all .3s}
     .nav-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;height:72px}
     .logo{font-weight:900;font-size:1.3rem;letter-spacing:-.5px;display:flex;align-items:center;gap:10px}
-    .logo-icon{width:36px;height:36px;border-radius:50%;background:conic-gradient(#E74C3C,#E67E22,#F1C40F,#2ECC71,#3498DB,#9B59B6,#E74C3C);position:relative;display:flex;align-items:center;justify-content:center}
-    .logo-icon::after{content:'';width:22px;height:22px;border-radius:50%;background:var(--dark);position:absolute}
+    .logo-icon{width:40px;height:40px;border-radius:50%;overflow:hidden;flex-shrink:0}
+    .logo-icon img{width:100%;height:100%;object-fit:cover}
     .logo span{color:var(--gold)}
     .nav-links{display:flex;gap:32px;align-items:center}
     .nav-links a{color:var(--gray-300);text-decoration:none;font-size:.85rem;font-weight:500;letter-spacing:.5px;transition:color .3s}
@@ -42,7 +42,7 @@
 
     /* HERO - FULLSCREEN VIDEO */
     .hero{min-height:100vh;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}
-    .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.35}
+    .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:.35;filter:brightness(1.1)}
     .hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.7) 0%,rgba(10,10,10,.4) 40%,rgba(10,10,10,.8) 100%)}
     .hero-content{position:relative;z-index:2;max-width:900px;text-align:center;padding:120px 5% 80px}
     .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(212,168,67,.12);border:1px solid rgba(212,168,67,.3);padding:8px 20px;border-radius:50px;font-size:.8rem;color:var(--gold);font-weight:600;letter-spacing:1px;margin-bottom:32px}
@@ -96,8 +96,8 @@
     .service-card p{color:var(--gray-500);font-size:.9rem;line-height:1.7}
 
     /* FULLSCREEN VIDEO SECTION */
-    .video-section{padding:0;height:70vh;position:relative;overflow:hidden}
-    .video-section video{width:100%;height:100%;object-fit:cover}
+    .video-section{padding:0;height:70vh;max-height:600px;position:relative;overflow:hidden}
+    .video-section video{width:100%;height:100%;object-fit:cover;object-position:center}
     .video-section .overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.3) 0%,rgba(10,10,10,.7) 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:5%}
     .video-section h2{font-size:clamp(2rem,5vw,3.5rem);font-weight:900;margin-bottom:16px;letter-spacing:-1px}
     .video-section p{color:var(--gray-300);font-size:1.1rem;max-width:500px;margin-bottom:32px}
@@ -112,12 +112,18 @@
     .portfolio-card:hover .portfolio-overlay{opacity:1}
     .portfolio-tag{display:inline-block;background:var(--gradient-gold);color:var(--dark);padding:4px 14px;border-radius:50px;font-size:.7rem;font-weight:700;letter-spacing:1px;margin-bottom:8px;width:fit-content}
 
-    /* BEFORE/AFTER */
+    /* BEFORE/AFTER SLIDER */
     .ba-section{background:#080808}
     .ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:64px;align-items:center}
-    .ba-card{border-radius:20px;overflow:hidden;position:relative}
-    .ba-card img{width:100%;height:400px;object-fit:cover}
-    .ba-label{position:absolute;top:16px;left:16px;background:var(--gradient-gold);color:var(--dark);padding:6px 18px;border-radius:50px;font-size:.75rem;font-weight:800;letter-spacing:1px}
+    .ba-slider{position:relative;border-radius:20px;overflow:hidden;cursor:col-resize;user-select:none;-webkit-user-select:none;touch-action:none;aspect-ratio:3/4;max-height:550px}
+    .ba-slider img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+    .ba-slider .ba-after{clip-path:inset(0 0 0 50%)}
+    .ba-handle{position:absolute;top:0;bottom:0;left:50%;width:4px;background:var(--gold);z-index:10;transform:translateX(-50%);transition:none}
+    .ba-handle::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:48px;height:48px;border-radius:50%;background:var(--gradient-gold);box-shadow:0 4px 20px rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center}
+    .ba-handle::after{content:'\2039  \203A';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:var(--dark);font-size:1.3rem;font-weight:900;letter-spacing:8px;z-index:11;pointer-events:none}
+    .ba-label-before,.ba-label-after{position:absolute;top:16px;z-index:5;padding:6px 18px;border-radius:50px;font-size:.75rem;font-weight:800;letter-spacing:1px;pointer-events:none}
+    .ba-label-before{left:16px;background:rgba(10,10,10,.8);color:var(--white);border:1px solid rgba(255,255,255,.2)}
+    .ba-label-after{right:16px;background:var(--gradient-gold);color:var(--dark)}
     .ba-text{display:flex;flex-direction:column;gap:20px}
     .ba-text h2{font-size:clamp(1.8rem,3vw,2.5rem);font-weight:800;letter-spacing:-1px}
     .ba-text p{color:var(--gray-500);font-size:1rem;line-height:1.8}
@@ -184,8 +190,9 @@
       .stats-bar{gap:24px;flex-wrap:wrap}
       .form-row{grid-template-columns:1fr}
       .hero h1{letter-spacing:-1px}
-      .video-section{height:50vh}
+      .video-section{height:50vh;max-height:400px}
       .marquee-item{height:140px}
+      .ba-slider{max-height:450px}
     }
   </style>
 </head>
@@ -195,7 +202,7 @@
 <nav>
   <div class="nav-inner">
     <div class="logo">
-      <div class="logo-icon"></div>
+      <div class="logo-icon"><img src="img/logo.jpg" alt="America Pulido Logo"></div>
       AMERICA <span>PULIDO</span>
     </div>
     <div class="nav-links" id="navLinks">
@@ -385,18 +392,21 @@
   </div>
 </section>
 
-<!-- BEFORE / AFTER -->
+<!-- BEFORE / AFTER SLIDER -->
 <section class="ba-section">
   <div class="section-inner">
     <div class="ba-grid">
-      <div class="ba-card fade-up">
-        <img src="img/antes-despues.jpg" alt="Antes y despu&eacute;s restauraci&oacute;n" loading="lazy">
-        <span class="ba-label">ANTES / DESPU&Eacute;S</span>
+      <div class="ba-slider fade-up" id="baSlider">
+        <img src="img/antes-despues.jpg" alt="Antes" class="ba-before" draggable="false">
+        <img src="img/antes-despues-2.jpg" alt="Despu&eacute;s" class="ba-after" draggable="false">
+        <span class="ba-label-before">ANTES</span>
+        <span class="ba-label-after">DESPU&Eacute;S</span>
+        <div class="ba-handle" id="baHandle"></div>
       </div>
       <div class="ba-text fade-up">
         <div class="section-tag">Transformaci&oacute;n Real</div>
         <h2>De deteriorado a <span style="color:var(--gold)">impecable</span></h2>
-        <p>Cada proyecto comienza con un piso da&ntilde;ado y termina con una superficie que brilla. Nuestro proceso de restauraci&oacute;n incluye decapado profundo, pulido profesional y vitrificado protector.</p>
+        <p>Arrastra el control para ver la transformaci&oacute;n completa. Nuestro proceso incluye decapado profundo, pulido profesional y vitrificado protector.</p>
         <div class="ba-stats">
           <div><div class="ba-stat-value">100%</div><div class="ba-stat-label">Satisfacci&oacute;n</div></div>
           <div><div class="ba-stat-value">24h</div><div class="ba-stat-label">Entrega r&aacute;pida</div></div>
@@ -483,7 +493,7 @@
 
 <!-- FOOTER -->
 <footer>
-  <div class="logo" style="justify-content:center;margin-bottom:16px"><div class="logo-icon"></div> AMERICA <span>PULIDO</span></div>
+  <div class="logo" style="justify-content:center;margin-bottom:16px"><div class="logo-icon"><img src="img/logo.jpg" alt="America Pulido Logo"></div> AMERICA <span>PULIDO</span></div>
   <p>Pulido Profesional de Pisos &middot; Santiago, Chile</p>
   <p style="margin-top:8px"><a href="tel:+56978685664">+56 9 7868 5664</a> &middot; <a href="https://www.instagram.com/americapulidospa" target="_blank">@americapulidospa</a></p>
   <p style="margin-top:16px;font-size:.75rem;color:#333">Desarrollado por <a href="#" style="color:#444">Flow Agency</a></p>
@@ -507,6 +517,54 @@ function enviarWA(){
 document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{e.preventDefault();const t=document.querySelector(a.getAttribute('href'));if(t){t.scrollIntoView({behavior:'smooth'});document.getElementById('navLinks').classList.remove('open')}})});
 const obs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting)el.target.classList.add('visible')})},{threshold:.1});
 document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+
+// BEFORE/AFTER SLIDER
+(function(){
+  const slider=document.getElementById('baSlider');
+  if(!slider)return;
+  const handle=document.getElementById('baHandle');
+  const afterImg=slider.querySelector('.ba-after');
+  let isDragging=false;
+
+  function setPosition(x){
+    const rect=slider.getBoundingClientRect();
+    let pct=((x-rect.left)/rect.width)*100;
+    pct=Math.max(2,Math.min(98,pct));
+    handle.style.left=pct+'%';
+    afterImg.style.clipPath='inset(0 0 0 '+pct+'%)';
+  }
+
+  function onStart(e){
+    isDragging=true;
+    slider.style.cursor='col-resize';
+    const x=e.touches?e.touches[0].clientX:e.clientX;
+    setPosition(x);
+    e.preventDefault();
+  }
+  function onMove(e){
+    if(!isDragging)return;
+    const x=e.touches?e.touches[0].clientX:e.clientX;
+    setPosition(x);
+    e.preventDefault();
+  }
+  function onEnd(){isDragging=false;slider.style.cursor='col-resize'}
+
+  slider.addEventListener('mousedown',onStart);
+  slider.addEventListener('touchstart',onStart,{passive:false});
+  window.addEventListener('mousemove',onMove);
+  window.addEventListener('touchmove',onMove,{passive:false});
+  window.addEventListener('mouseup',onEnd);
+  window.addEventListener('touchend',onEnd);
+
+  // initial position at 50%
+  setPosition(slider.getBoundingClientRect().left+slider.getBoundingClientRect().width/2);
+  // re-set on resize
+  window.addEventListener('resize',function(){
+    const rect=slider.getBoundingClientRect();
+    const currentPct=parseFloat(handle.style.left)||50;
+    setPosition(rect.left+rect.width*(currentPct/100));
+  });
+})();
 </script>
 </body>
 </html>
