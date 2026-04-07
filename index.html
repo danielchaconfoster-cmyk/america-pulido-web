@@ -276,16 +276,6 @@
     .footer-bottom-links a{color:#888;text-decoration:none;font-size:.75rem;transition:color .3s}
     .footer-bottom-links a:hover{color:var(--brand-orange)}
 
-    @media(max-width:1024px){
-      .footer-grid{grid-template-columns:1fr 1fr;gap:40px}
-    }
-    @media(max-width:640px){
-      .footer-grid{grid-template-columns:1fr;gap:40px;text-align:center}
-      .footer-col h4::after{left:50%;transform:translateX(-50%)}
-      .footer-brand .logo-img{margin:0 auto 20px}
-      .footer-bottom{justify-content:center;text-align:center}
-    }
-
     /* ============ WA FLOAT ============ */
     .wa-float{position:fixed;bottom:28px;right:28px;z-index:999;width:60px;height:60px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 4px 24px rgba(37,211,102,.4);transition:all .3s;animation:float-pulse 3s infinite}
     .wa-float:hover{transform:scale(1.1);box-shadow:0 8px 40px rgba(37,211,102,.6)}
@@ -298,32 +288,93 @@
     .fade-up{opacity:0;transform:translateY(30px);transition:all .8s cubic-bezier(.4,0,.2,1)}.fade-up.visible{opacity:1;transform:translateY(0)}
 
     /* ============ RESPONSIVE ============ */
+
+    /* --- TABLET 1024px --- */
     @media(max-width:1024px){
       .garantias-grid{grid-template-columns:repeat(2,1fr)}
-      .testimonials{grid-template-columns:1fr 1fr}
       .proceso-steps{grid-template-columns:repeat(2,1fr)}
+      .footer-grid{grid-template-columns:1fr 1fr;gap:40px}
     }
+
+    /* --- TABLET 768px --- */
     @media(max-width:768px){
-      .nav-links{display:none}.mobile-menu{display:block}
-      .nav-links.open{display:flex;flex-direction:column;position:absolute;top:72px;left:0;right:0;background:rgba(10,10,10,.98);padding:24px 5%;border-bottom:1px solid var(--dark-border);gap:16px}
-      .servicios-grid{grid-template-columns:1fr}
-      .garantias-grid{grid-template-columns:1fr 1fr}
-      .filtro-buttons{flex-direction:column;align-items:center}
-      .filtro-btn{min-width:100%;max-width:100%}
-      .filtro-card{padding:40px 24px}
-      .hero h1{letter-spacing:-1px}
-      .ba-slider{max-height:260px}
-      .proceso-steps{grid-template-columns:1fr 1fr}
-      /* Evitar overflow horizontal */
+      nav{padding:0 4%}
+      .nav-links{display:none}
+      .mobile-menu{display:block}
+      .nav-links.open{display:flex;flex-direction:column;position:absolute;top:72px;left:0;right:0;background:rgba(10,10,10,.98);padding:24px 5%;border-bottom:1px solid var(--dark-border);gap:16px;z-index:999}
+
       .hero-content{padding:0 6% 40px}
+      .hero h1{letter-spacing:-1px;font-size:clamp(2rem,7vw,3.2rem)}
+      .hero p{font-size:1rem;margin-bottom:32px}
+      .hero-badge{font-size:.75rem;gap:10px;margin-bottom:24px}
+
       .wow-section,.servicios,.expertos,.garantias,.filtro{padding:60px 5%}
+      .proceso-steps{grid-template-columns:1fr 1fr}
+      .proceso-step{padding:20px 16px}
+      .ba-slider{max-height:240px}
+
+      .servicios-grid{grid-template-columns:1fr}
+      .servicio-img{height:240px}
+
+      .garantias-grid{grid-template-columns:1fr 1fr}
+
+      .filtro-card{padding:40px 20px}
+      .filtro-buttons{flex-direction:column;align-items:stretch}
+      .filtro-btn{min-width:100%;max-width:100%;padding:24px 20px}
+
+      /* Footer centrado en tablet */
+      .footer-grid{grid-template-columns:1fr 1fr;gap:32px;text-align:center}
+      .footer-col h4::after{left:50%;transform:translateX(-50%)}
+      .footer-brand .logo-img{margin:0 auto 16px;width:160px}
+      .footer-brand p{margin:0 auto;text-align:center}
+      .footer-contact-item{justify-content:center;text-align:left}
+      .footer-links-list a{justify-content:center}
+      .footer-bottom{justify-content:center;text-align:center;flex-direction:column;gap:12px}
+      .footer-bottom-links{justify-content:center;flex-wrap:wrap;gap:16px}
     }
+
+    /* --- MÓVIL 480px --- */
     @media(max-width:480px){
+      nav{padding:0 4%}
+
+      .hero h1{font-size:1.9rem;letter-spacing:-.5px}
+      .hero p{font-size:.92rem}
+      .hero-badge{font-size:.68rem;gap:8px}
+      .btn{padding:14px 24px;font-size:.85rem;width:100%;justify-content:center;box-sizing:border-box}
+
+      .wow-section,.servicios,.expertos,.garantias,.filtro{padding:48px 4%}
+      .proceso-steps{grid-template-columns:1fr;gap:14px}
+      .proceso-step{padding:20px 16px}
+      .ba-slider{max-height:180px}
+
+      .servicio-img{height:200px}
+      .servicio-body{padding:20px 16px}
+
       .garantias-grid{grid-template-columns:1fr}
-      .proceso-steps{grid-template-columns:1fr}
-      .hero h1{font-size:2.2rem}
-      .hero p{font-size:1rem}
-      .ba-slider{max-height:200px}
+      .garantias-header{margin-bottom:32px}
+      .garantia-card{padding:24px 16px}
+
+      .expertos-grid{grid-template-columns:1fr}
+      .experto-card{padding:28px 16px}
+
+      .filtro-card{padding:32px 16px;border-radius:20px}
+      .filtro-card h2{font-size:1.3rem}
+      .filtro-btn{padding:20px 16px}
+
+      /* Footer 1 columna en móvil */
+      .footer-grid{grid-template-columns:1fr;gap:32px;text-align:center}
+      footer{padding:48px 4% 32px}
+      .footer-brand .logo-img{width:140px;margin:0 auto 16px}
+      .footer-contact-item{justify-content:center}
+      .footer-links-list li{margin-bottom:10px}
+      .footer-bottom{margin-top:32px;padding-top:20px;flex-direction:column;gap:10px}
+      .footer-bottom-links{flex-wrap:wrap;justify-content:center;gap:12px}
+
+      .cobertura-tags{gap:6px}
+      .cobertura-tag{font-size:.68rem;padding:6px 10px}
+
+      .wa-float{bottom:16px;right:16px;width:52px;height:52px}
+      .wa-float svg{width:24px;height:24px}
     }
   </style>
 </head>
