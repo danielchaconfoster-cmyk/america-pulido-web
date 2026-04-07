@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>America Pulido SPA | Vórtice de Partículas Premium</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #fcfcfc;
+            --font-main: 'Syncopate', sans-serif;
+            --brand-green: #8dc63f;
+            --brand-orange: #f7931e;
+            --brand-red: #ed1c24;
+            --brand-purple: #662d91;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg);
+            overflow: hidden;
+            font-family: var(--font-main);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        canvas {
+            display: block;
+            cursor: crosshair;
+        }
+        .ui {
+            position: absolute;
+            bottom: 40px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.2);
+            font-size: 0.7rem;
+            letter-spacing: 4px;
+            pointer-events: none;
+            text-transform: uppercase;
+            animation: fadeIn 2s forwards;
+            font-weight: 700;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="ui">Magnetic Particle Field | America Pulido SPA</div>
+    <canvas id="logoCanvas"></canvas>
+    <script>
+        const canvas = document.getElementById('logoCanvas');
+        const ctx = canvas.getContext('2d', { willReadFrequently: true });
+        let particulas = [];
+        
+        const paletaColores = ['#8dc63f', '#f7931e', '#ed1c24', '#662d91', '#ffffff'];
+        
+        const dpr = window.devicePixelRatio || 1;
+        let ww, wh;
+
+        let mouse = { x: -1000, y: -1000, radius: 100 };
+
+        window.addEventListener('mousemove', (e) => {
+            mouse.x = e.clientX;
+            mouse.y = e.clientY;
+        });
+
+        window.addEventListener('touchmove', (e) => {
+            mouse.x = e.touches[0].clientX;
+            mouse.y = e.touches[0].clientY;
+        });
+
+        function resize() {
+            ww = window.innerWidth;
+            wh = window.innerHeight;
+            
+            canvas.width = ww * dpr;
+            canvas.height = wh * dpr;
+            canvas.style.width = ww + 'px';
+            canvas.style.height = wh + 'px';
+            
+            ctx.scale(dpr, dpr);
+            inicializar();
+        }
+        function inicializar() {
+            particulas = [];
+            
+            ctx.fillStyle = "white";
+            ctx.textAlign = "center";
+            ctx.textBaseline = "middle";
+            
+            const mainFontSize = Math.min(ww * 0.12, 140);
+            const subFontSize = mainFontSize * 0.5;
+            
+            ctx.letterSpacing = "4px"; 
+            
+            ctx.font = `800 ${mainFontSize}px 'Syncopate', sans-serif`;
+            ctx.fillText("AMERICA PULIDO", ww / 2, wh / 2 - (mainFontSize * 0.35));
+            
+            ctx.font = `700 ${subFontSize}px 'Syncopate', sans-serif`;
+            ctx.fillText("SPA", ww / 2, wh / 2 + (mainFontSize * 0.5));
+
+            const textData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+            ctx.clearRect(0, 0, ww, wh);
+
+            // Step 2 para muestreo balanceado
+            const step = 2; 
+            for (let y = 0; y < canvas.height; y += step) {
+                for (let x = 0; x < canvas.width; x += step) {
+                    const index = (y * canvas.width + x) * 4;
+                    if (textData.data[index + 3] > 128) {
+                        if (Math.random() > 0.15) {
+                            const color = paletaColores[Math.floor(Math.random() * paletaColores.length)];
+                            particulas.push(new Particula(x / dpr, y / dpr, color));
+                        }
+                    }
+                }
+            }
+        }
+
+        class Particula {
+            constructor(targetX, targetY, color) {
+                this.x = Math.random() * ww;
+                this.y = Math.random() * wh;
+                this.baseX = targetX;
+                this.baseY = targetY;
+                // Tamaño balanceado para fuentes grandes: permite ver detalles internos
+                this.size = Math.random() * 0.7 + 0.8; 
+                this.color = color;
+                this.density = (Math.random() * 25) + 15;
+                this.vx = 0;
+                this.vy = 0;
+                this.friction = 0.9;
+                this.ease = 0.08;
+            }
+
+            dibujar() {
+                ctx.fillStyle = this.color;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+
+            actualizar() {
+                let dx = mouse.x - this.x;
+                let dy = mouse.y - this.y;
+                let distance = Math.sqrt(dx * dx + dy * dy);
+                
+                if (distance < mouse.radius) {
+                    let force = (mouse.radius - distance) / mouse.radius;
+                    this.vx -= (dx / distance) * force * this.density;
+                    this.vy -= (dy / distance) * force * this.density;
+                } else {
+                    this.vx += (this.baseX - this.x) * this.ease;
+                    this.vy += (this.baseY - this.y) * this.ease;
+                }
+
+                this.vx *= this.friction;
+                this.vy *= this.friction;
+                this.x += this.vx;
+                this.y += this.vy;
+                this.dibujar();
+            }
+        }
+
+        function animar() {
+            ctx.clearRect(0, 0, ww, wh);
+            for (let i = 0; i < particulas.length; i++) {
+                particulas[i].actualizar();
+            }
+            requestAnimationFrame(animar);
+        }
+
+        window.addEventListener('resize', resize);
+        
+        document.fonts.ready.then(() => {
+            resize();
+            animar();
+        });
+    </script>
+</body>
+</html></html>
