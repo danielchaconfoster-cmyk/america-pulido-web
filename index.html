@@ -314,9 +314,6 @@
       .hero h1{letter-spacing:-1px}
       .ba-slider{max-height:260px}
       .proceso-steps{grid-template-columns:1fr 1fr}
-      /* Logo canvas → texto en móvil */
-      #logoCanvas{display:none!important}
-      .logo-mobile-text{display:flex!important}
       /* Evitar overflow horizontal */
       .hero-content{padding:0 6% 40px}
       .wow-section,.servicios,.expertos,.garantias,.filtro{padding:60px 5%}
@@ -336,11 +333,7 @@
 <nav>
   <div class="nav-inner">
     <a href="#" class="logo" aria-label="Inicio - America Pulido" style="padding-top: 5px; overflow: visible;">
-      <canvas id="logoCanvas" width="600" height="80" style="display:block; margin-top:-5px; margin-left: 0;"></canvas>
-      <span class="logo-mobile-text" style="display:none;align-items:center;gap:8px;font-weight:800;font-size:.95rem;letter-spacing:.5px;">
-        <img src="img/logo.jpg" alt="Logo" style="width:32px;height:32px;border-radius:50%;object-fit:cover;">
-        <span style="background:var(--gradient-brand);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">AMERICA PULIDO</span>
-      </span>
+      <canvas id="logoCanvas" style="display:block;"></canvas>
     </a>
     <div class="nav-links" id="navLinks">
       <a href="#servicios">Servicios</a>
@@ -658,24 +651,29 @@ document.querySelectorAll('.fade-up').forEach(function(el){obs.observe(el)});
   });
 })();
 
-/* ===== PARTICLE LOGO (V5 - FINE DETAIL) ===== */
+/* ===== PARTICLE LOGO (responsive, todos los dispositivos) ===== */
 (function(){
   const canvas = document.getElementById('logoCanvas');
   if(!canvas)return;
   const ctx = canvas.getContext('2d', { willReadFrequently: true });
   let particulas = [];
-  
+
   const paletaReal = ['#8dc63f', '#f7931e', '#ed1c24', '#662d91', '#ffffff'];
-  
   const dpr = window.devicePixelRatio || 1;
-  const logicalWidth = 600; 
-  const logicalHeight = 80;
-  
-  canvas.style.width = logicalWidth + 'px';
-  canvas.style.height = logicalHeight + 'px';
-  canvas.width = logicalWidth * dpr;
-  canvas.height = logicalHeight * dpr;
-  ctx.scale(dpr, dpr);
+  let logicalWidth, logicalHeight;
+
+  function calcSize() {
+    // Ancho disponible = pantalla menos espacio para botones del nav (~280px desktop, ~80px móvil)
+    const reservado = window.innerWidth < 768 ? 80 : 290;
+    logicalWidth = Math.min(580, window.innerWidth - reservado);
+    logicalHeight = 56;
+    canvas.style.width  = logicalWidth + 'px';
+    canvas.style.height = logicalHeight + 'px';
+    canvas.width  = logicalWidth * dpr;
+    canvas.height = logicalHeight * dpr;
+    ctx.setTransform(1,0,0,1,0,0);
+    ctx.scale(dpr, dpr);
+  }
 
   let mouse = { x: -1000, y: -1000, radius: 55 };
 
@@ -685,17 +683,19 @@ document.querySelectorAll('.fade-up').forEach(function(el){obs.observe(el)});
       mouse.y = e.clientY - rect.top;
   });
   window.addEventListener('mouseleave', () => { mouse.x = -1000; mouse.y = -1000; });
-  window.addEventListener('touchmove', (e) => {
+  canvas.addEventListener('touchmove', (e) => {
       const rect = canvas.getBoundingClientRect();
       mouse.x = e.touches[0].clientX - rect.left;
       mouse.y = e.touches[0].clientY - rect.top;
-  });
+  }, {passive:true});
 
   function dibujarLogoOculto() {
       ctx.clearRect(0, 0, logicalWidth, logicalHeight);
       ctx.fillStyle = "white";
+      // Fuente proporcional al ancho disponible
+      const fs = Math.max(12, Math.min(22, logicalWidth * 0.037));
+      ctx.font = `700 ${fs}px 'Syncopate', sans-serif`;
       ctx.letterSpacing = "2px";
-      ctx.font = "700 26px 'Syncopate', sans-serif";
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
       ctx.fillText("AMERICA PULIDO SPA", logicalWidth / 2, logicalHeight / 2);
@@ -706,9 +706,9 @@ document.querySelectorAll('.fade-up').forEach(function(el){obs.observe(el)});
       dibujarLogoOculto();
 
       const textCoordinates = ctx.getImageData(0, 0, canvas.width, canvas.height);
-      ctx.clearRect(0, 0, logicalWidth, logicalHeight); 
+      ctx.clearRect(0, 0, logicalWidth, logicalHeight);
 
-      const step = 2; 
+      const step = 2;
       for (let y = 0; y < canvas.height; y += step) {
           for (let x = 0; x < canvas.width; x += step) {
               const index = (y * canvas.width + x) * 4;
@@ -776,8 +776,16 @@ document.querySelectorAll('.fade-up').forEach(function(el){obs.observe(el)});
       requestAnimationFrame(animar);
   }
 
+  function reiniciar() {
+    calcSize();
+    inicializar();
+  }
+
+  window.addEventListener('resize', reiniciar);
+
   document.fonts.ready.then(() => {
-    setTimeout(inicializar, 500); 
+    calcSize();
+    setTimeout(inicializar, 300);
     animar();
   });
 
