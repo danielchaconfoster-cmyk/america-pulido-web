@@ -1,0 +1,44 @@
+# America Pulido SPA
+
+> Empresa especialista en pulido y restauración profesional de pisos en Santiago, Chile.
+
+## Descripción
+
+America Pulido SPA es una empresa chilena con más de 10 años de experiencia en restauración y pulido de pisos en la Región Metropolitana de Santiago. Ofrecen soluciones tanto para el hogar (residencial) como para industrias y empresas (comercial/industrial).
+
+## Servicios
+
+- **Pulido de Madera y Parquet**: Lijado sin polvo, vitrificado mate, satinado o brillante
+- **Pulido de Mármol y Piedras Naturales**: Recuperación de brillo espejo, sellado hidrófugo
+- **Pulido de Hormigón Industrial**: Endurecimiento técnico, acabado brillante para galpones y locales
+- **Pulido de Baldosas Graníticas**: Limpieza profunda de fragüe, recuperación de color
+- **Restauración de Pisos en General**: Madera, mármol, terrazo, cemento, baldosa
+
+## Cobertura
+
+Región Metropolitana completa — con especialización en Santiago Oriente.
+
+## Contacto
+
+- **Teléfono / WhatsApp**: +56 9 7868 5664
+- **Email**: americapulido609@gmail.com
+- **Instagram**: @americapulidospa
+- **Web**: https://www.americapulidospa.cl
+- **Dirección**: Carmen Covarrubias 32 Of 601, Ñuñoa, Región Metropolitana, Chile
+
+## Propuesta de Valor
+
+1. Visita técnica gratuita con evaluación y cotización detallada
+2. Trabajo limpio — aspiración de polvo directo desde la máquina
+3. Brillo permanente con selladores de alta durabilidad
+4. Transparencia total: revisión del trabajo terminado junto al cliente
+
+## Página Web
+
+La landing page presenta:
+- Hero con galería de pisos restaurados
+- Slider antes/después interactivo
+- Grid de servicios residenciales e industriales
+- Sección de garantías
+- CTAs directos a WhatsApp con mensajes pre-escritos
+- Footer con datos de contacto y cobertura geográfica

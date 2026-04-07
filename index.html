@@ -12,6 +12,8 @@
   <meta property="og:url" content="https://americapulidospa.cl">
   <meta property="og:locale" content="es_CL">
   <meta name="robots" content="index, follow">
+  <link rel="icon" href="img/logo.jpg" sizes="any">
+  <link rel="apple-touch-icon" href="img/logo.jpg">
   <link rel="preload" as="image" href="img/baldosa-comercial.jpg">
   <script type="application/ld+json">
   {
@@ -162,10 +164,10 @@
     .proceso-step::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gradient-brand);opacity:0;transition:opacity 0.4s;z-index:3;}
     .proceso-step .step-bg{position:absolute;inset:0;background-size:cover;background-position:center;z-index:-2;opacity:0.5;transition:all 0.8s ease;filter:grayscale(60%);}
     .proceso-step .step-overlay{position:absolute;inset:0;background:linear-gradient(180deg, rgba(15,15,15,0.5), rgba(10,10,10,0.85));z-index:-1;transition:background 0.5s ease;}
-    .step-bg-1{background-image:url('file:///C:/Users/usuario/.gemini/antigravity/brain/5b5b5756-7c0b-4a39-a859-ddcad3e4bbd1/textura_ceramica_1775532798991.png');}
-    .step-bg-2{background-image:url('file:///C:/Users/usuario/.gemini/antigravity/brain/5b5b5756-7c0b-4a39-a859-ddcad3e4bbd1/textura_parquet_1775532768030.png');}
-    .step-bg-3{background-image:url('file:///C:/Users/usuario/.gemini/antigravity/brain/5b5b5756-7c0b-4a39-a859-ddcad3e4bbd1/textura_hormigon_1775532783970.png');}
-    .step-bg-4{background-image:url('file:///C:/Users/usuario/.gemini/antigravity/brain/5b5b5756-7c0b-4a39-a859-ddcad3e4bbd1/textura_marmol_1775532815973.png');}
+    .step-bg-1{background-image:url('img/servicio-completo.jpg');}
+    .step-bg-2{background-image:url('img/madera-parquet.jpg');}
+    .step-bg-3{background-image:url('img/hormigon-industrial.jpg');}
+    .step-bg-4{background-image:url('img/calidad-brillo.jpg');}
     .proceso-step:hover{transform:translateY(-8px);box-shadow:0 24px 48px rgba(0,0,0,0.8);border-color:rgba(255,255,255,0.25);}
     .proceso-step:hover::before{opacity:1;}
     .proceso-step:hover .step-bg{opacity:0.85;transform:scale(1.1);filter:grayscale(0%);}
@@ -310,12 +312,21 @@
       .filtro-btn{min-width:100%;max-width:100%}
       .filtro-card{padding:40px 24px}
       .hero h1{letter-spacing:-1px}
-      .ba-slider{max-height:420px}
+      .ba-slider{max-height:260px}
       .proceso-steps{grid-template-columns:1fr 1fr}
+      /* Logo canvas → texto en móvil */
+      #logoCanvas{display:none!important}
+      .logo-mobile-text{display:flex!important}
+      /* Evitar overflow horizontal */
+      .hero-content{padding:0 6% 40px}
+      .wow-section,.servicios,.expertos,.garantias,.filtro{padding:60px 5%}
     }
     @media(max-width:480px){
       .garantias-grid{grid-template-columns:1fr}
       .proceso-steps{grid-template-columns:1fr}
+      .hero h1{font-size:2.2rem}
+      .hero p{font-size:1rem}
+      .ba-slider{max-height:200px}
     }
   </style>
 </head>
@@ -326,6 +337,10 @@
   <div class="nav-inner">
     <a href="#" class="logo" aria-label="Inicio - America Pulido" style="padding-top: 5px; overflow: visible;">
       <canvas id="logoCanvas" width="600" height="80" style="display:block; margin-top:-5px; margin-left: 0;"></canvas>
+      <span class="logo-mobile-text" style="display:none;align-items:center;gap:8px;font-weight:800;font-size:.95rem;letter-spacing:.5px;">
+        <img src="img/logo.jpg" alt="Logo" style="width:32px;height:32px;border-radius:50%;object-fit:cover;">
+        <span style="background:var(--gradient-brand);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">AMERICA PULIDO</span>
+      </span>
     </a>
     <div class="nav-links" id="navLinks">
       <a href="#servicios">Servicios</a>
@@ -342,6 +357,8 @@
 <section class="hero">
   <div class="hero-bg">
     <img src="Gemini_Generated_Image_f298ltf298ltf298.png" alt="Piso pulido brillante espectacular" class="active" style="object-position: center 0%;">
+    <img src="img/hormigon-industrial.jpg" alt="Pulido de hormig&oacute;n industrial">
+    <img src="img/foto-real-comercial.jpg" alt="Piso comercial pulido brillante">
   </div>
   <div class="hero-overlay" style="background: linear-gradient(180deg,rgba(10,10,10,0.1) 0%,rgba(10,10,10,0.05) 40%,rgba(10,10,10,0.95) 100%);"></div>
   <div class="hero-content">
@@ -392,6 +409,24 @@
         <p>Despejamos el lugar y revisamos el trabajo finalizado junto a ti para confirmar que la terminaci&oacute;n de los pisos cumpla exactamente con lo cotizado.</p>
       </div>
     </div>
+
+    <div class="ba-slider" id="baSlider">
+      <div class="ba-layer">
+        <img src="img/antes-despues.jpg" alt="Piso antes del pulido">
+        <span class="ba-label-before">ANTES</span>
+      </div>
+      <div class="ba-layer ba-after">
+        <img src="img/antes-despues-2.jpg" alt="Piso despu&eacute;s del pulido">
+        <span class="ba-label-after">DESPU&Eacute;S</span>
+      </div>
+      <div class="ba-handle" id="baHandle"></div>
+    </div>
+    <p class="ba-hint">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      Arrastra para comparar el antes y despu&eacute;s
+    </p>
+
+  </div>
 </section>
 <!-- ========== BLOQUE 4: SERVICIOS ========== -->
 <section class="servicios" id="servicios">
@@ -403,7 +438,7 @@
     </div>
     <div class="servicios-grid">
       <div class="servicio-card fade-up">
-        <img src="contenido-cliente/fotos-reales/parquet-ajedrez-brillo-02.jpg" alt="Restauraci&oacute;n residencial premium de parquet" class="servicio-img" loading="lazy">
+        <img src="img/foto-real-parquet.jpg" alt="Restauraci&oacute;n residencial premium de parquet" class="servicio-img" loading="lazy">
         <div class="servicio-body">
           <div class="servicio-badge">Residencial</div>
           <h3>Pisos para el hogar</h3>
@@ -411,7 +446,7 @@
         </div>
       </div>
       <div class="servicio-card fade-up">
-        <img src="contenido-cliente/fotos-reales/local-comercial-piso-brillante.jpg" alt="Piso de local comercial pulido brillante" class="servicio-img" loading="lazy">
+        <img src="img/foto-real-comercial.jpg" alt="Piso de local comercial pulido brillante" class="servicio-img" loading="lazy">
         <div class="servicio-body">
           <div class="servicio-badge">Industrial y Comercial</div>
           <h3>Pisos de alto tr&aacute;fico</h3>
