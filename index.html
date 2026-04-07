@@ -40,7 +40,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Syncopate:wght@400;700&display=swap" rel="stylesheet">
   <style>
     *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
     :root{
@@ -694,11 +694,11 @@ document.querySelectorAll('.fade-up').forEach(function(el){obs.observe(el)});
   function dibujarLogoOculto() {
       ctx.clearRect(0, 0, logicalWidth, logicalHeight);
       ctx.fillStyle = "white";
-      ctx.letterSpacing = "3px"; 
-      ctx.font = "800 28px 'Syncopate', sans-serif";
-      ctx.textAlign = "left";
+      ctx.letterSpacing = "2px";
+      ctx.font = "700 26px 'Syncopate', sans-serif";
+      ctx.textAlign = "center";
       ctx.textBaseline = "middle";
-      ctx.fillText("AMERICA PULIDO SPA", 5, logicalHeight / 2);
+      ctx.fillText("AMERICA PULIDO SPA", logicalWidth / 2, logicalHeight / 2);
   }
 
   function inicializar() {
@@ -782,6 +782,7 @@ document.querySelectorAll('.fade-up').forEach(function(el){obs.observe(el)});
   });
 
 })();
+
 </script>
 </body>
 </html>
