@@ -8,15 +8,15 @@ America Pulido SPA es una empresa chilena con más de 10 años de experiencia en
 
 ## Servicios
 
-- **Pulido de Madera y Parquet**: Lijado sin polvo, vitrificado mate, satinado o brillante
-- **Pulido de Mármol y Piedras Naturales**: Recuperación de brillo espejo, sellado hidrófugo
-- **Pulido de Hormigón Industrial**: Endurecimiento técnico, acabado brillante para galpones y locales
+- **Pulido y Vitrificado de Madera**: Parquet, entablado, lijado sin polvo, acabados mate/brillante.
+- **Pulido y Abrillantado de Mármol**: Recuperación de brillo natural, sellado protector.
+- **Pulido de Hormigón y Cemento**: Acabado industrial, endurecimiento para galpones y locales.
 - **Pulido de Baldosas Graníticas**: Limpieza profunda de fragüe, recuperación de color
 - **Restauración de Pisos en General**: Madera, mármol, terrazo, cemento, baldosa
 
 ## Cobertura
 
-Región Metropolitana completa — con especialización en Santiago Oriente.
+Región Metropolitana (RM), V Región (Valparaíso) y VI Región (O'Higgins).
 
 ## Contacto
 
@@ -40,5 +40,6 @@ La landing page presenta:
 - Slider antes/después interactivo
 - Grid de servicios residenciales e industriales
 - Sección de garantías
-- CTAs directos a WhatsApp con mensajes pre-escritos
+- Sección de Venta de Productos e Insumos (Discos de resina, diamantados, saca bocados, bases para pulir)
+- CTAs directos a WhatsApp con mensajes pre-escritos para compras y cotizaciones por mayor
 - Footer con datos de contacto y cobertura geográfica
