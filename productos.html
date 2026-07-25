@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo de Productos e Insumos de Pulido | America Pulido SPA</title>
+
+  <!-- SEO Metadata -->
+  <meta name="description" content="Catálogo completo de discos de resina, insumos diamantados, saca bocados para grifería y herramientas de pulido profesional en Santiago, Chile. Venta directa y envíos a todo Chile.">
+  <meta name="keywords" content="saca bocado diamantado, discos de resina pulido, copa diamantada desbaste, piedra conica pulido, insumos pulido pisos santiago, america pulido spa">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.americapulidospa.cl/productos.html">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Catálogo de Productos e Insumos | America Pulido SPA">
+  <meta property="og:description" content="Venta directa de insumos y herramientas profesionales para pulido de pisos. Discos de resina, copas diamantadas y saca bocados.">
+  <meta property="og:image" content="https://www.americapulidospa.cl/img/productos/prod_sacabocado_35mm.jpg">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon & Fonts -->
+  <link rel="icon" type="image/jpeg" href="img/logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Syncopate:wght@700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --dark: #0a0a0a;
+      --dark-card: #121212;
+      --dark-border: rgba(255,255,255,0.06);
+      --brand-green: #8dc63f;
+      --brand-orange: #f7931e;
+      --brand-purple: #662d91;
+      --brand-gold: #D4A843;
+      --gradient-brand: linear-gradient(135deg, #D4A843 0%, #E8C875 50%, #B8912E 100%);
+      --glow-brand: 0 0 24px rgba(212, 168, 67, 0.35);
+      --white: #ffffff;
+      --gray-300: #d1d5db;
+      --gray-400: #9ca3af;
+      --gray-500: #6b7280;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+    body { background-color: var(--dark); color: var(--white); line-height: 1.6; overflow-x: hidden; }
+
+    /* ========== NAV ========== */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(10,10,10,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--dark-border); padding: 0 5%; height: 72px; display: flex; align-items: center; }
+    .nav-inner { max-width: 1200px; width: 100%; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-family: 'Syncopate', sans-serif; font-size: 1.1rem; font-weight: 800; color: var(--white); text-decoration: none; display: flex; align-items: center; gap: 10px; }
+    .nav-links { display: flex; align-items: center; gap: 32px; }
+    .nav-links a { color: var(--gray-300); text-decoration: none; font-size: 0.9rem; font-weight: 600; transition: all 0.3s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--brand-gold); }
+    .nav-cta { padding: 10px 20px; border-radius: 50px; background: var(--gradient-brand); color: var(--white) !important; font-weight: 800 !important; font-size: 0.8rem !important; box-shadow: var(--glow-brand); letter-spacing: 0.5px; }
+
+    /* ========== HERO PAGE HEADER ========== */
+    .page-header { padding: 140px 5% 60px; background: radial-gradient(circle at 50% 20%, rgba(212,168,67,0.12) 0%, rgba(10,10,10,1) 70%); text-align: center; border-bottom: 1px solid var(--dark-border); }
+    .page-header-inner { max-width: 800px; margin: 0 auto; }
+    .page-tag { display: inline-flex; align-items: center; gap: 8px; color: var(--brand-gold); font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 16px; }
+    .page-header h1 { font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 900; letter-spacing: -1.5px; margin-bottom: 16px; line-height: 1.2; }
+    .page-header p { color: var(--gray-400); font-size: 1.1rem; max-width: 640px; margin: 0 auto; }
+
+    /* ========== PRODUCT CATALOG SECTION ========== */
+    .catalog-section { padding: 60px 5% 100px; }
+    .catalog-inner { max-width: 1200px; margin: 0 auto; }
+
+    /* Filter buttons */
+    .productos-filter { display: flex; justify-content: center; gap: 12px; margin-bottom: 48px; flex-wrap: wrap; }
+    .prod-filter-btn { padding: 12px 24px; border-radius: 50px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); color: var(--gray-300); font-size: 0.88rem; font-weight: 700; cursor: pointer; transition: all 0.3s; }
+    .prod-filter-btn:hover, .prod-filter-btn.active { background: var(--gradient-brand); color: var(--white); border-color: transparent; box-shadow: var(--glow-brand); }
+
+    /* Grid */
+    .productos-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    .producto-card { background: var(--dark-card); border: 1px solid rgba(255,255,255,0.06); border-radius: 24px; overflow: hidden; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); display: flex; flex-direction: column; position: relative; }
+    .producto-card:hover { transform: translateY(-8px); border-color: var(--brand-gold); box-shadow: 0 24px 60px rgba(0,0,0,0.8); }
+    .producto-badge { position: absolute; top: 16px; right: 16px; z-index: 2; padding: 6px 14px; border-radius: 50px; background: rgba(10,10,10,0.85); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.15); color: var(--brand-green); font-size: 0.72rem; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; }
+    .producto-badge.star { background: linear-gradient(135deg, #D4A843, #B8912E); color: var(--dark); border: none; box-shadow: 0 4px 15px rgba(212,168,67,0.4); }
+
+    /* Clean Product Image Container */
+    .producto-img-wrap { width: 100%; height: 260px; overflow: hidden; background: #151515; position: relative; }
+    .producto-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+    .producto-card:hover .producto-img { transform: scale(1.06); }
+
+    .producto-body { padding: 28px 24px; display: flex; flex-direction: column; flex: 1; }
+    .producto-category { font-size: 0.72rem; font-weight: 800; color: var(--brand-orange); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px; }
+    .producto-card h3 { font-size: 1.25rem; font-weight: 800; color: var(--white); margin-bottom: 10px; line-height: 1.3; }
+    .producto-card p { color: var(--gray-400); font-size: 0.88rem; line-height: 1.6; margin-bottom: 20px; flex: 1; }
+    .producto-specs { display: flex; gap: 10px; margin-bottom: 24px; flex-wrap: wrap; }
+    .producto-specs span { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); padding: 4px 12px; border-radius: 8px; font-size: 0.76rem; color: var(--gray-300); font-weight: 600; }
+
+    .producto-footer { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,0.06); margin-top: auto; }
+    .producto-price { font-size: 1.45rem; font-weight: 900; color: var(--brand-gold); letter-spacing: -0.5px; }
+    .price-unit { font-size: 0.75rem; font-weight: 500; color: var(--gray-400); }
+    .btn-prod-wa { display: inline-flex; align-items: center; gap: 8px; padding: 12px 18px; border-radius: 14px; background: #25D366; color: #fff; text-decoration: none; font-size: 0.85rem; font-weight: 800; transition: all 0.3s; }
+    .btn-prod-wa:hover { background: #20ba5a; transform: scale(1.04); box-shadow: 0 4px 20px rgba(37,211,102,0.4); }
+
+    /* Wholesale banner */
+    .productos-wholesale { margin-top: 64px; padding: 40px; border-radius: 28px; background: linear-gradient(135deg, rgba(212,168,67,0.1) 0%, rgba(18,18,18,0.95) 100%); border: 1px solid rgba(212,168,67,0.25); display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+    .wholesale-content h3 { font-size: 1.3rem; font-weight: 800; color: var(--white); margin-bottom: 8px; }
+    .wholesale-content p { color: var(--gray-300); font-size: 0.95rem; max-width: 650px; }
+
+    /* ========== FOOTER ========== */
+    footer { background: #fcfcfc; border-top: 1px solid #eee; padding: 80px 5% 40px; color: #333; }
+    .footer-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1fr 1.2fr 1fr; gap: 48px; }
+    .footer-col h4 { font-size: .85rem; font-weight: 800; color: #1a1a1a; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 24px; position: relative; display: inline-block; }
+    .footer-col h4::after { content: ''; position: absolute; bottom: -8px; left: 0; width: 30px; height: 2px; background: var(--brand-orange); }
+    .footer-brand .logo-wrap { width: 200px; overflow: hidden; margin-bottom: 16px; background: #fcfcfc; }
+    .footer-brand .logo-img { width: 100%; display: block; margin-top: -37%; margin-bottom: -26%; }
+    .footer-brand p { color: #666; font-size: .85rem; line-height: 1.7; max-width: 260px; }
+    .footer-links-list { list-style: none; padding: 0; }
+    .footer-links-list li { margin-bottom: 12px; }
+    .footer-links-list a { color: #666; text-decoration: none; font-size: .85rem; transition: all .3s; }
+    .footer-links-list a:hover { color: var(--brand-orange); }
+    .footer-contact-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px; color: #666; font-size: .85rem; }
+    .footer-contact-item svg { width: 18px; height: 18px; color: var(--brand-orange); flex-shrink: 0; }
+    .footer-contact-item a { color: inherit; text-decoration: none; }
+    .footer-bottom { max-width: 1200px; margin: 60px auto 0; padding-top: 30px; border-top: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; }
+    .footer-bottom p { color: #888; font-size: .75rem; }
+
+    /* Floating WA */
+    .wa-float { position: fixed; bottom: 28px; right: 28px; z-index: 999; width: 60px; height: 60px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 4px 24px rgba(37,211,102,.4); transition: all .3s; }
+    .wa-float:hover { transform: scale(1.1); box-shadow: 0 8px 40px rgba(37,211,102,.6); }
+    .wa-float svg { width: 28px; height: 28px; fill: white; }
+
+    @media(max-width:992px){ .productos-grid{grid-template-columns:repeat(2,1fr)} .footer-grid{grid-template-columns:1fr 1fr} }
+    @media(max-width:600px){ .productos-grid{grid-template-columns:1fr} .productos-wholesale{flex-direction:column;text-align:center} .footer-grid{grid-template-columns:1fr} }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="logo" aria-label="Inicio America Pulido">
+        <canvas id="logoCanvas" style="display:block; width:180px; height:45px;"></canvas>
+      </a>
+      <div class="nav-links">
+        <a href="index.html#servicios">Servicios</a>
+        <a href="productos.html" class="active">Productos</a>
+        <a href="index.html#garantias">Garantías</a>
+        <a href="https://wa.me/56978685664?text=Hola%20America%20Pulido%2C%20quiero%20cotizar%20insumos%20y%20herramientas." target="_blank" class="nav-cta">COMPRAR POR WHATSAPP</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <header class="page-header">
+    <div class="page-header-inner">
+      <div class="page-tag">Venta de Insumos Profesionales</div>
+      <h1>Catálogo de Herramientas y Productos para Pulido</h1>
+      <p>Insumos diamantados, discos de resina, saca bocados para grifería y soportes para maestros pulidores, constructoras y particulares en todo Chile.</p>
+    </div>
+  </header>
+
+  <!-- CATALOG SECTION -->
+  <section class="catalog-section">
+    <div class="catalog-inner">
+      
+      <!-- Filter -->
+      <div class="productos-filter">
+        <button class="prod-filter-btn active" onclick="filterProducts('todos', this)">Todos los Productos</button>
+        <button class="prod-filter-btn" onclick="filterProducts('resinas', this)">Discos de Resina</button>
+        <button class="prod-filter-btn" onclick="filterProducts('diamantados', this)">Diamantados y Coronas</button>
+        <button class="prod-filter-btn" onclick="filterProducts('bases', this)">Bases y Accesorios</button>
+      </div>
+
+      <!-- Grid -->
+      <div class="productos-grid">
+        
+        <!-- 1. Saca Bocado 35mm (PRODUCTO ESTRELLA) -->
+        <div class="producto-card" data-category="diamantados">
+          <div class="producto-badge star">⭐ Producto Estrella</div>
+          <div class="producto-img-wrap">
+            <img src="img/productos/prod_sacabocado_35mm.jpg" alt="Saca Bocado Diamantado 35mm para Grifería America Pulido" class="producto-img" loading="lazy">
+          </div>
+          <div class="producto-body">
+            <div class="producto-category">Perforación / Grifería</div>
+            <h3>Saca Bocado Diamantado 35mm</h3>
+            <p>Perforación de alta velocidad sin fisuras ni despostillamientos en porcelanato, mármol, granito y baldosas. Medida ideal para grifería y cañerías.</p>
+            <div class="producto-specs">
+              <span>Diámetros: 12 a 50 mm</span>
+              <span>Uso: Seco / Húmedo</span>
+            </div>
+            <div class="producto-footer">
+              <div class="producto-price">$7.500 <span class="price-unit">c/u</span></div>
+              <a href="https://wa.me/56978685664?text=Hola%20America%20Pulido%2C%20quisiera%20comprar%20el%20Saca%20Bocado%20Diamantado%2035mm%20(%247.500)." target="_blank" class="btn-prod-wa">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                Comprar por WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Disco de Resina Premium -->
+        <div class="producto-card" data-category="resinas">
+          <div class="producto-badge">Calidad Superior</div>
+          <div class="producto-img-wrap">
+            <img src="img/productos/prod_disco_resina.jpg" alt="Disco de Resina Premium America Pulido" class="producto-img" loading="lazy">
+          </div>
+          <div class="producto-body">
+            <div class="producto-category">Discos de Resina</div>
+            <h3>Disco de Resina Premium</h3>
+            <p>Máxima densidad diamantada para un refinado rápido y brillo espejo uniforme en mármol, hormigón y terrazo.</p>
+            <div class="producto-specs">
+              <span>Granos: 50 a 3000</span>
+              <span>Uso: Seco / Húmedo</span>
+            </div>
+            <div class="producto-footer">
+              <div class="producto-price">$6.500 <span class="price-unit">c/u</span></div>
+              <a href="https://wa.me/56978685664?text=Hola%20America%20Pulido%2C%20quisiera%20comprar%20Discos%20de%20Resina%20Premium%20(%246.500)." target="_blank" class="btn-prod-wa">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                Comprar por WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Disco de Resina en Seco -->
+        <div class="producto-card" data-category="resinas">
+          <div class="producto-img-wrap">
+            <img src="img/productos/image4.jpeg" alt="Disco de Resina en Seco" class="producto-img" loading="lazy">
+          </div>
+          <div class="producto-body">
+            <div class="producto-category">Discos de Resina</div>
+            <h3>Disco de Resina en Seco</h3>
+            <p>Diseñado para abrillantado en seco sin desprendimiento de polvo ni quemaduras en la piedra.</p>
+            <div class="producto-specs">
+              <span>Granos: 50 a 3000</span>
+              <span>Uso: Seco</span>
+            </div>
+            <div class="producto-footer">
+              <div class="producto-price">$2.800 <span class="price-unit">c/u</span></div>
+              <a href="https://wa.me/56978685664?text=Hola%20America%20Pulido%2C%20quisiera%20comprar%20Discos%20de%20Resina%20en%20Seco%20(%242.800)." target="_blank" class="btn-prod-wa">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                Comprar por WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Disco de Resina Húmedo -->
+        <div class="producto-card" data-category="resinas">
+          <div class="producto-img-wrap">
+            <img src="img/productos/image5.jpeg" alt="Disco de Resina Húmedo" class="producto-img" loading="lazy">
+          </div>
+          <div class="producto-body">
+            <div class="producto-category">Discos de Resina</div>
+            <h3>Disco de Resina Húmedo</h3>
+            <p>Optimizado para pulido asistido por agua en baldosas graníticas y superficies delicadas.</p>
+            <div class="producto-specs">
+              <span>Granos: 50 a 3000</span>
+              <span>Uso: Húmedo</span>
+            </div>
+            <div class="producto-footer">
+              <div class="producto-price">$1.700 <span class="price-unit">c/u</span></div>
+              <a href="https://wa.me/56978685664?text=Hola%20America%20Pulido%2C%20quisiera%20comprar%20Discos%20de%20Resina%20H%C3%BAmedo%20(%241.700)." target="_blank" class="btn-prod-wa">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                Comprar por WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Disco Diamantado de Desbaste -->
+        <div class="producto-card" data-category="diamantados">
+          <div class="producto-img-wrap">
+            <img src="img/productos/image6.jpeg" alt="Disco Diamantado de Desbaste" class="producto-img" loading="lazy">
+          </div>
+          <div class="producto-body">
+            <div class="producto-category">Diamantados</div>
+            <h3>Disco Diamantado de Desbaste</h3>
+            <p>Copa diamantada para remoción rápida de imperfecciones, epóxicos y nivelación inicial de pisos.</p>
+            <div class="producto-specs">
+              <span>Formato: Copa Estándar</span>
+              <span>Uso: Alto Desbaste</span>
+            </div>
+            <div class="producto-footer">
+              <div class="producto-price">$8.000 <span class="price-unit">c/u</span></div>
+              <a href="https://wa.me/56978685664?text=Hola%20America%20Pulido%2C%20quisiera%20comprar%20el%20Disco%20Diamantado%20de%20Desbaste%20(%248.000)." target="_blank" class="btn-prod-wa">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                Comprar por WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Disco Diamantado Ranurador -->
+        <div class="producto-card" data-category="diamantados">
+          <div class="producto-img-wrap">
+            <img src="disco ranurador diamantado.jpeg" alt="Disco Diamantado Ranurador 8mm o 10mm" class="producto-img" loading="lazy">
+          </div>
+          <div class="producto-body">
+            <div class="producto-category">Diamantados</div>
+            <h3>Disco Diamantado Ranurador</h3>
+            <p>Disco de precisión para ranuras de dilatación y canaletas en hormigón y piedra natural.</p>
+            <div class="producto-specs">
+              <span>Espesores: 8mm / 10mm</span>
+              <span>Uso: Ranurado</span>
+            </div>
+            <div class="producto-footer">
+              <div class="producto-price">Cotizar <span class="price-unit">por medida</span></div>
+              <a href="https://wa.me/56978685664?text=Hola%20America%20Pulido%2C%20quisiera%20cotizar%20el%20Disco%20Diamantado%20Ranurador." target="_blank" class="btn-prod-wa">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                Cotizar por WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. Base para Pulir Premium -->
+        <div class="producto-card" data-category="bases">
+          <div class="producto-badge">Reforzada</div>
+          <div class="producto-img-wrap">
+            <img src="img/productos/image3.jpeg" alt="Base para pulir premium" class="producto-img" loading="lazy">
+          </div>
+          <div class="producto-body">
+            <div class="producto-category">Bases y Accesorios</div>
+            <h3>Base para Pulir Premium</h3>
+            <p>Soporte de aluminio y goma flexible ultra resistente. Rosca M14 y agarre velcro reforzado.</p>
+            <div class="producto-specs">
+              <span>Rosca: M14</span>
+              <span>Uso: Profesional</span>
+            </div>
+            <div class="producto-footer">
+              <div class="producto-price">$4.500 <span class="price-unit">c/u</span></div>
+              <a href="https://wa.me/56978685664?text=Hola%20America%20Pulido%2C%20quisiera%20comprar%20la%20Base%20para%20Pulir%20Premium%20(%244.500)." target="_blank" class="btn-prod-wa">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                Comprar por WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8. Piedra Cónica de Desbaste -->
+        <div class="producto-card" data-category="bases">
+          <div class="producto-img-wrap">
+            <img src="img/productos/image2.jpeg" alt="Piedra Cónica Grano 36 60 80" class="producto-img" loading="lazy">
+          </div>
+          <div class="producto-body">
+            <div class="producto-category">Bases y Accesorios</div>
+            <h3>Piedra Cónica de Desbaste</h3>
+            <p>Esmerilado cónico para zócalos, esquinas y bordes difíciles de alcanzar con pulidoras planas.</p>
+            <div class="producto-specs">
+              <span>Granos: 36, 60, 80</span>
+              <span>Uso: Bordes / Esquinas</span>
+            </div>
+            <div class="producto-footer">
+              <div class="producto-price">$4.500 <span class="price-unit">c/u</span></div>
+              <a href="https://wa.me/56978685664?text=Hola%20America%20Pulido%2C%20quisiera%20comprar%20la%20Piedra%20C%C3%B3nica%20de%20Desbaste%20(%244.500)." target="_blank" class="btn-prod-wa">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                Comprar por WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 9. Rodillo Diamantado -->
+        <div class="producto-card" data-category="diamantados">
+          <div class="producto-img-wrap">
+            <img src="img/productos/image1.jpeg" alt="Rodillo diamantado" class="producto-img" loading="lazy">
+          </div>
+          <div class="producto-body">
+            <div class="producto-category">Diamantados</div>
+            <h3>Rodillo Diamantado</h3>
+            <p>Cilindro diamantado para acabado de bordes curvos, encimeras y áreas cóncavas de piedra.</p>
+            <div class="producto-specs">
+              <span>Diámetros: 30, 40, 50 mm</span>
+              <span>Uso: Curvas y Cantos</span>
+            </div>
+            <div class="producto-footer">
+              <div class="producto-price">Cotizar <span class="price-unit">por medida</span></div>
+              <a href="https://wa.me/56978685664?text=Hola%20America%20Pulido%2C%20quisiera%20cotizar%20el%20Rodillo%20Diamantado." target="_blank" class="btn-prod-wa">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                Cotizar por WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 10. Base para Pulir Económica -->
+        <div class="producto-card" data-category="bases">
+          <div class="producto-img-wrap">
+            <img src="img/productos/image3.jpeg" alt="Base para pulir económica" class="producto-img" loading="lazy">
+          </div>
+          <div class="producto-body">
+            <div class="producto-category">Bases y Accesorios</div>
+            <h3>Base para Pulir Económica</h3>
+            <p>Soporte estándar de velcro flexible para galleteadoras manuales de velocidad variable.</p>
+            <div class="producto-specs">
+              <span>Rosca: M14 / 4"</span>
+              <span>Uso: Estándar</span>
+            </div>
+            <div class="producto-footer">
+              <div class="producto-price">$1.000 <span class="price-unit">c/u</span></div>
+              <a href="https://wa.me/56978685664?text=Hola%20America%20Pulido%2C%20quisiera%20comprar%20la%20Base%20para%20Pulir%20Econ%C3%B3mica%20(%241.000)." target="_blank" class="btn-prod-wa">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                Comprar por WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Wholesale Callout -->
+      <div class="productos-wholesale">
+        <div class="wholesale-content">
+          <h3>📦 Venta por Mayor y Convenios de Insumos</h3>
+          <p>Precios especiales en volumen para empresas constructoras, maestros pulidores y distribuidores regionales. Envíos exprés a todo Chile.</p>
+        </div>
+        <a href="https://wa.me/56978685664?text=Hola%20America%20Pulido%2C%20necesito%20cotizar%20insumos%20y%20productos%20al%20por%20mayor%20para%20mi%20empresa." target="_blank" class="nav-cta" style="font-size:0.9rem !important; padding:14px 28px;">
+          Cotizar por Mayor por WhatsApp
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-col footer-brand">
+        <div class="logo-wrap">
+          <img src="img/logo.jpg" alt="Logo America Pulido SPA" class="logo-img">
+        </div>
+        <p>Líderes en restauración de pisos e insumos de pulido profesional en Chile.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Productos</h4>
+        <ul class="footer-links-list">
+          <li><a href="#diamantados">Saca Bocados Diamantados</a></li>
+          <li><a href="#resinas">Discos de Resina</a></li>
+          <li><a href="#diamantados">Copas de Desbaste</a></li>
+          <li><a href="#bases">Bases y Soportes</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <div class="footer-contact-item">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+          <a href="mailto:americapulido609@gmail.com">americapulido609@gmail.com</a>
+        </div>
+        <div class="footer-contact-item">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+          <a href="tel:+56978685664">+56 9 7868 5664</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Institucional</h4>
+        <ul class="footer-links-list">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="index.html#servicios">Servicios de Pulido</a></li>
+          <li><a href="productos.html">Tienda de Productos</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 America Pulido SPA. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- WA FLOAT -->
+  <a href="https://wa.me/56978685664?text=Hola%2C%20quisiera%20consultar%20por%20productos%20de%20pulido" target="_blank" class="wa-float" title="WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script>
+    function filterProducts(cat, btn) {
+      document.querySelectorAll('.prod-filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelectorAll('.producto-card').forEach(card => {
+        if (cat === 'todos' || card.getAttribute('data-category') === cat) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>
