@@ -7,13 +7,13 @@
 
   <!-- SEO Metadata -->
   <meta name="description" content="Catálogo completo de discos de resina, insumos diamantados, saca bocados para grifería y herramientas de pulido profesional en Santiago, Chile. Venta directa y envíos a todo Chile.">
-  <meta name="keywords" content="saca bocado diamantado, discos de resina pulido, copa diamantada desbaste, piedra conica pulido, insumos pulido pisos santiago, america pulido spa">
+  <meta name="keywords" content="saca bocado diamantado 35mm, discos de resina pulido, copa diamantada desbaste, piedra conica pulido, base para pulir velcro, insumos pulido pisos santiago, america pulido spa">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://www.americapulidospa.cl/productos.html">
+  <link rel="canonical" href="https://www.americapulidospa.cl/productos">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Catálogo de Productos e Insumos | America Pulido SPA">
-  <meta property="og:description" content="Venta directa de insumos y herramientas profesionales para pulido de pisos. Discos de resina, copas diamantadas y saca bocados.">
+  <meta property="og:description" content="Venta directa de insumos y herramientas profesionales para pulido de pisos. Discos de resina, copas diamantadas, saca bocados y soportes.">
   <meta property="og:image" content="https://www.americapulidospa.cl/img/productos/prod_sacabocado_35mm.jpg">
   <meta property="og:type" content="website">
 
@@ -59,7 +59,7 @@
     .page-header h1 { font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 900; letter-spacing: -1.5px; margin-bottom: 16px; line-height: 1.2; }
     .page-header p { color: var(--gray-400); font-size: 1.1rem; max-width: 640px; margin: 0 auto; }
 
-    /* ========== PRODUCT CATALOG SECTION ========== */
+    /* ========== CATALOG SECTION ========== */
     .catalog-section { padding: 60px 5% 100px; }
     .catalog-inner { max-width: 1200px; margin: 0 auto; }
 
@@ -72,13 +72,31 @@
     .productos-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
     .producto-card { background: var(--dark-card); border: 1px solid rgba(255,255,255,0.06); border-radius: 24px; overflow: hidden; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); display: flex; flex-direction: column; position: relative; }
     .producto-card:hover { transform: translateY(-8px); border-color: var(--brand-gold); box-shadow: 0 24px 60px rgba(0,0,0,0.8); }
-    .producto-badge { position: absolute; top: 16px; right: 16px; z-index: 2; padding: 6px 14px; border-radius: 50px; background: rgba(10,10,10,0.85); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.15); color: var(--brand-green); font-size: 0.72rem; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; }
+    
+    .producto-badge { position: absolute; top: 16px; left: 16px; z-index: 5; padding: 6px 14px; border-radius: 50px; background: rgba(10,10,10,0.85); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.15); color: var(--brand-green); font-size: 0.72rem; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; }
     .producto-badge.star { background: linear-gradient(135deg, #D4A843, #B8912E); color: var(--dark); border: none; box-shadow: 0 4px 15px rgba(212,168,67,0.4); }
 
-    /* Clean Product Image Container */
-    .producto-img-wrap { width: 100%; height: 260px; overflow: hidden; background: #151515; position: relative; }
+    /* Clean Product Image Container & Transparent Emblem Watermark */
+    .producto-img-wrap { width: 100%; height: 280px; overflow: hidden; background: #151515; position: relative; display: flex; align-items: center; justify-content: center; }
     .producto-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
     .producto-card:hover .producto-img { transform: scale(1.06); }
+
+    /* Floating Transparent Logo Emblem (No white boxes, no stickers) */
+    .brand-emblem-watermark {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 44px;
+      height: 44px;
+      z-index: 10;
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.9));
+      pointer-events: none;
+      opacity: 0.95;
+      transition: transform 0.4s ease;
+    }
+    .producto-card:hover .brand-emblem-watermark {
+      transform: scale(1.15) rotate(6deg);
+    }
 
     .producto-body { padding: 28px 24px; display: flex; flex-direction: column; flex: 1; }
     .producto-category { font-size: 0.72rem; font-weight: 800; color: var(--brand-orange); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px; }
@@ -135,7 +153,7 @@
       </a>
       <div class="nav-links">
         <a href="index.html#servicios">Servicios</a>
-        <a href="productos.html" class="active">Productos</a>
+        <a href="productos" class="active">Productos</a>
         <a href="index.html#garantias">Garantías</a>
         <a href="https://wa.me/56978685664?text=Hola%20America%20Pulido%2C%20quiero%20cotizar%20insumos%20y%20herramientas." target="_blank" class="nav-cta">COMPRAR POR WHATSAPP</a>
       </div>
@@ -170,7 +188,8 @@
         <div class="producto-card" data-category="diamantados">
           <div class="producto-badge star">⭐ Producto Estrella</div>
           <div class="producto-img-wrap">
-            <img src="img/productos/prod_sacabocado_35mm_official.jpg" alt="Saca Bocado Diamantado 35mm para Grifería America Pulido" class="producto-img" loading="lazy">
+            <img src="img/logo_spiral_transparent.png" class="brand-emblem-watermark" alt="Logo America Pulido">
+            <img src="img/productos/prod_sacabocado_35mm.jpg" alt="Saca Bocado Diamantado 35mm para Grifería America Pulido" class="producto-img" loading="lazy">
           </div>
           <div class="producto-body">
             <div class="producto-category">Perforación / Grifería</div>
@@ -194,7 +213,8 @@
         <div class="producto-card" data-category="resinas">
           <div class="producto-badge">Calidad Superior</div>
           <div class="producto-img-wrap">
-            <img src="img/productos/prod_resina_premium_official.jpg" alt="Disco de Resina Premium America Pulido" class="producto-img" loading="lazy">
+            <img src="img/logo_spiral_transparent.png" class="brand-emblem-watermark" alt="Logo America Pulido">
+            <img src="img/productos/prod_disco_resina.jpg" alt="Disco de Resina Premium America Pulido" class="producto-img" loading="lazy">
           </div>
           <div class="producto-body">
             <div class="producto-category">Discos de Resina</div>
@@ -217,7 +237,8 @@
         <!-- 3. Disco de Resina en Seco -->
         <div class="producto-card" data-category="resinas">
           <div class="producto-img-wrap">
-            <img src="img/productos/prod_resina_seco_official.jpg" alt="Disco de Resina en Seco" class="producto-img" loading="lazy">
+            <img src="img/logo_spiral_transparent.png" class="brand-emblem-watermark" alt="Logo America Pulido">
+            <img src="img/productos/image4.jpeg" alt="Disco de Resina en Seco" class="producto-img" loading="lazy">
           </div>
           <div class="producto-body">
             <div class="producto-category">Discos de Resina</div>
@@ -240,7 +261,8 @@
         <!-- 4. Disco de Resina Húmedo -->
         <div class="producto-card" data-category="resinas">
           <div class="producto-img-wrap">
-            <img src="img/productos/prod_resina_humedo_official.jpg" alt="Disco de Resina Húmedo" class="producto-img" loading="lazy">
+            <img src="img/logo_spiral_transparent.png" class="brand-emblem-watermark" alt="Logo America Pulido">
+            <img src="img/productos/image5.jpeg" alt="Disco de Resina Húmedo" class="producto-img" loading="lazy">
           </div>
           <div class="producto-body">
             <div class="producto-category">Discos de Resina</div>
@@ -263,7 +285,8 @@
         <!-- 5. Disco Diamantado de Desbaste -->
         <div class="producto-card" data-category="diamantados">
           <div class="producto-img-wrap">
-            <img src="img/productos/prod_desbaste_official.jpg" alt="Disco Diamantado de Desbaste" class="producto-img" loading="lazy">
+            <img src="img/logo_spiral_transparent.png" class="brand-emblem-watermark" alt="Logo America Pulido">
+            <img src="img/productos/image6.jpeg" alt="Disco Diamantado de Desbaste" class="producto-img" loading="lazy">
           </div>
           <div class="producto-body">
             <div class="producto-category">Diamantados</div>
@@ -286,12 +309,13 @@
         <!-- 6. Disco Diamantado Ranurador -->
         <div class="producto-card" data-category="diamantados">
           <div class="producto-img-wrap">
-            <img src="img/productos/prod_ranurador_official.jpg" alt="Disco Diamantado Ranurador 8mm o 10mm" class="producto-img" loading="lazy">
+            <img src="img/logo_spiral_transparent.png" class="brand-emblem-watermark" alt="Logo America Pulido">
+            <img src="disco ranurador diamantado.jpeg" alt="Disco Diamantado Ranurador 8mm o 10mm" class="producto-img" loading="lazy">
           </div>
           <div class="producto-body">
             <div class="producto-category">Diamantados</div>
             <h3>Disco Diamantado Ranurador</h3>
-            <p>Disco de precisión para ranuras de dilatación y canaletas en hormigón y piedra natural.</p>
+            <p>Disco azul diamantado de precisión para ranuras de dilatación y canaletas en hormigón y piedra natural.</p>
             <div class="producto-specs">
               <span>Espesores: 8mm / 10mm</span>
               <span>Uso: Ranurado</span>
@@ -310,12 +334,13 @@
         <div class="producto-card" data-category="bases">
           <div class="producto-badge">Reforzada</div>
           <div class="producto-img-wrap">
-            <img src="img/productos/prod_base_premium_official.jpg" alt="Base para pulir premium" class="producto-img" loading="lazy">
+            <img src="img/logo_spiral_transparent.png" class="brand-emblem-watermark" alt="Logo America Pulido">
+            <img src="img/productos/prod_base_pulir_premium.jpg" alt="Base para pulir premium soporte velcro" class="producto-img" loading="lazy">
           </div>
           <div class="producto-body">
             <div class="producto-category">Bases y Accesorios</div>
             <h3>Base para Pulir Premium</h3>
-            <p>Soporte de aluminio y goma flexible ultra resistente. Rosca M14 y agarre velcro reforzado.</p>
+            <p>Soporte de goma flexible de alta resistencia con acople velcro reforzado y rosca metálica M14 para galleteadora.</p>
             <div class="producto-specs">
               <span>Rosca: M14</span>
               <span>Uso: Profesional</span>
@@ -333,12 +358,13 @@
         <!-- 8. Piedra Cónica de Desbaste -->
         <div class="producto-card" data-category="bases">
           <div class="producto-img-wrap">
-            <img src="img/productos/prod_piedra_conica_official.jpg" alt="Piedra Cónica Grano 36 60 80" class="producto-img" loading="lazy">
+            <img src="img/logo_spiral_transparent.png" class="brand-emblem-watermark" alt="Logo America Pulido">
+            <img src="img/productos/image2.jpeg" alt="Piedra Cónica Grano 36 60 80" class="producto-img" loading="lazy">
           </div>
           <div class="producto-body">
             <div class="producto-category">Bases y Accesorios</div>
             <h3>Piedra Cónica de Desbaste</h3>
-            <p>Esmerilado cónico para zócalos, esquinas y bordes difíciles de alcanzar con pulidoras planas.</p>
+            <p>Esmeril cónico para zócalos, esquinas y bordes difíciles de alcanzar con pulidoras planas.</p>
             <div class="producto-specs">
               <span>Granos: 36, 60, 80</span>
               <span>Uso: Bordes / Esquinas</span>
@@ -356,7 +382,8 @@
         <!-- 9. Rodillo Diamantado -->
         <div class="producto-card" data-category="diamantados">
           <div class="producto-img-wrap">
-            <img src="img/productos/prod_rodillo_official.jpg" alt="Rodillo diamantado" class="producto-img" loading="lazy">
+            <img src="img/logo_spiral_transparent.png" class="brand-emblem-watermark" alt="Logo America Pulido">
+            <img src="img/productos/image1.jpeg" alt="Rodillo diamantado" class="producto-img" loading="lazy">
           </div>
           <div class="producto-body">
             <div class="producto-category">Diamantados</div>
@@ -379,12 +406,13 @@
         <!-- 10. Base para Pulir Económica -->
         <div class="producto-card" data-category="bases">
           <div class="producto-img-wrap">
-            <img src="img/productos/prod_base_economica_official.jpg" alt="Base para pulir económica" class="producto-img" loading="lazy">
+            <img src="img/logo_spiral_transparent.png" class="brand-emblem-watermark" alt="Logo America Pulido">
+            <img src="img/productos/prod_base_pulir_economica.jpg" alt="Base para pulir económica soporte velcro" class="producto-img" loading="lazy">
           </div>
           <div class="producto-body">
             <div class="producto-category">Bases y Accesorios</div>
             <h3>Base para Pulir Económica</h3>
-            <p>Soporte estándar de velcro flexible para galleteadoras manuales de velocidad variable.</p>
+            <p>Soporte flexible estándar de abrojo / velcro para galleteadoras manuales de velocidad variable.</p>
             <div class="producto-specs">
               <span>Rosca: M14 / 4"</span>
               <span>Uso: Estándar</span>
@@ -427,10 +455,10 @@
       <div class="footer-col">
         <h4>Productos</h4>
         <ul class="footer-links-list">
-          <li><a href="#diamantados">Saca Bocados Diamantados</a></li>
-          <li><a href="#resinas">Discos de Resina</a></li>
-          <li><a href="#diamantados">Copas de Desbaste</a></li>
-          <li><a href="#bases">Bases y Soportes</a></li>
+          <li><a href="productos">Saca Bocados Diamantados</a></li>
+          <li><a href="productos">Discos de Resina</a></li>
+          <li><a href="productos">Copas de Desbaste</a></li>
+          <li><a href="productos">Bases y Soportes Velcro</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -449,7 +477,7 @@
         <ul class="footer-links-list">
           <li><a href="index.html">Inicio</a></li>
           <li><a href="index.html#servicios">Servicios de Pulido</a></li>
-          <li><a href="productos.html">Tienda de Productos</a></li>
+          <li><a href="productos">Tienda de Productos</a></li>
         </ul>
       </div>
     </div>
