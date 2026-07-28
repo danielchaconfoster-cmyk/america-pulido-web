@@ -122,16 +122,19 @@ Cualquier cliente o IDE con soporte MCP puede conectar a Canva usando esta confi
 
 ## Assets en Canva (IDs)
 
-| Asset | ID Canva | Descripción |
-|-------|----------|-------------|
-| Folder Proyecto América Pulido | `FAHQoFboXK8` | Carpetas y proyecto principal en Canva |
-| Logo Oficial América Pulido | `MAHQoN3XQ_o` | Logo vector/PNG transparente subido vía Canva MCP |
-| Parquet limpio | `MAHGAuDXFuY` | Foto real parquet brillante — USAR para residencial |
-| Local comercial | `MAHGAm9rd-A` | Piso comercial con logo — usar con overlay |
-| Antes/Después 1 | `MAHGAK6-VfE` | Baldosa — tiene overlay verde en foto |
-| Antes/Después 2 | `MAHGAGwcJbc` | Baldosa — tiene overlay verde en foto |
-| Madera brillo | `MAHGAALbCJk` | Madera brillante horizontal |
-| Calidad brillo | `MAHGAEd6kzc` | Foto abstracta brillo |
+| Asset / Fotografía | ID Canva | Descripción |
+|---------------------|----------|-------------|
+| **Folder Proyecto América Pulido** | `FAHQoFboXK8` | Carpetas y proyecto principal en Canva |
+| **Logo Oficial América Pulido** | `MAHQoN3XQ_o` | Logo vector/PNG transparente subido vía Canva MCP |
+| **Local Comercial Pulido** | `MAHQoWZCDCc` | Foto real piso comercial con alto brillo |
+| **Antes y Después Baldosa 1** | `MAHQoZ1iW5U` | Comparativa real restauración baldosa |
+| **Antes y Después Baldosa 2** | `MAHQoRqH2Lc` | Comparativa real brillo y pulido baldosa |
+| **Hormigón Industrial** | `MAHQoWcs6CM` | Pulido industrial helicóptero para galpones |
+| **Hormigón Galpón** | `MAHQoelh9-I` | Galpón comercial con acabado espejo |
+| **Piso Parquet Madera** | `MAHQoXNxioU` | Parquet restaurado residencial |
+| **Madera Alto Brillo** | `MAHQodSwpSA` | Piso de madera vitrificado/brillante |
+| **Calidad Brillo Espejo** | `MAHQoYEAMrA` | Reflejo espejo en superficie pulida |
+| **Hero Servicios Pulido** | `MAHQoV9mhng` | Foto principal de servicios de pulido |
 
 ## Diseños Creados (IDs)
 
