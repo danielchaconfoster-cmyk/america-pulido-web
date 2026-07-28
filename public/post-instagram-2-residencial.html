@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Post Instagram 2 — Residencial Parquet</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      font-family: 'Inter', sans-serif;
+    }
+    .instagram-post {
+      width: 1080px;
+      height: 1080px;
+      background: #0A0A0A;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 70px;
+      color: #FFFFFF;
+    }
+    .bg-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('../img/fotos-limpias/parquet_limpio_real_1.jpg');
+      background-size: cover;
+      background-position: center;
+      filter: contrast(1.15) brightness(0.85);
+      z-index: 1;
+    }
+    .bg-gradient {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, rgba(10,10,10,0.92) 0%, rgba(10,10,10,0.4) 45%, rgba(10,10,10,0.96) 100%);
+      z-index: 2;
+    }
+    .gold-frame {
+      position: absolute;
+      top: 30px;
+      left: 30px;
+      right: 30px;
+      bottom: 30px;
+      border: 2px solid rgba(212, 168, 67, 0.4);
+      border-radius: 20px;
+      pointer-events: none;
+      z-index: 3;
+    }
+    .content {
+      position: relative;
+      z-index: 5;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand-logo {
+      height: 100px;
+      object-fit: contain;
+    }
+    .tag {
+      background: linear-gradient(135deg, #D4A843 0%, #B8912E 100%);
+      color: #0A0A0A;
+      font-weight: 800;
+      font-size: 18px;
+      padding: 10px 22px;
+      border-radius: 30px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .main-body {
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+    .headline {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 64px;
+      line-height: 1.1;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .headline span.gold {
+      color: #D4A843;
+    }
+    .subheadline {
+      font-size: 26px;
+      color: #E0E0E0;
+      line-height: 1.4;
+      margin-bottom: 30px;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .glass-card {
+      background: rgba(10, 10, 10, 0.65);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(212, 168, 67, 0.3);
+      padding: 18px;
+      border-radius: 14px;
+      text-align: center;
+    }
+    .glass-card .title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      color: #E8C875;
+      font-size: 20px;
+      margin-bottom: 6px;
+    }
+    .glass-card .desc {
+      font-size: 16px;
+      color: #CCCCCC;
+    }
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid rgba(212, 168, 67, 0.3);
+      padding-top: 30px;
+    }
+    .cta-btn {
+      background: #D4A843;
+      color: #0A0A0A;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 24px;
+      padding: 20px 36px;
+      border-radius: 12px;
+      text-transform: uppercase;
+    }
+    .contact-text {
+      text-align: right;
+    }
+    .contact-text .phone {
+      font-size: 30px;
+      font-weight: 800;
+      color: #FFF;
+    }
+    .contact-text .sub {
+      font-size: 18px;
+      color: #D4A843;
+    }
+  </style>
+</head>
+<body>
+  <div class="instagram-post">
+    <div class="bg-image"></div>
+    <div class="bg-gradient"></div>
+    <div class="gold-frame"></div>
+
+    <div class="content">
+      <div class="header">
+        <img src="../img/logo_spiral_transparent.png" alt="Logo América Pulido" class="brand-logo">
+        <div class="tag">Servicio Residencial Premium</div>
+      </div>
+
+      <div class="main-body">
+        <h1 class="headline">
+          ¿PARQUET DESGASTADO?<br><span class="gold">RESTAURAMOS EL BRILLO</span> ORIGINAL
+        </h1>
+        <p class="subheadline">
+          Pulido y vitrificado profesional sin necesidad de cambiar tus pisos. Trabajo 100% limpio y sin levantamiento de polvo.
+        </p>
+
+        <div class="card-grid">
+          <div class="glass-card">
+            <div class="title">SIN POLVO</div>
+            <div class="desc">Sistema de aspirado industrial integrado</div>
+          </div>
+          <div class="glass-card">
+            <div class="title">VITRIFICADO</div>
+            <div class="desc">Sellante permanente de alto tráfico</div>
+          </div>
+          <div class="glass-card">
+            <div class="title">GARANTÍA</div>
+            <div class="desc">Más de 10 años de experiencia comprobada</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <div class="cta-btn">¡SOLICITA TU VISITA GRATIS! →</div>
+        <div class="contact-text">
+          <div class="phone">+56 9 7868 5664</div>
+          <div class="sub">Santiago Oriente · Cobertura RM</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
