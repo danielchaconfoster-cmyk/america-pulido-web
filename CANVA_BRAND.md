@@ -1,7 +1,27 @@
 # Canva Brand Guide — America Pulido SPA
-> Referencia para Claude Code al crear diseños en Canva via MCP
+> Referencia universal para cualquier asistente de IA (Antigravity, Gemini, Claude, Cursor) al crear proyectos o gestionar diseños en Canva vía MCP.
 
-## Identidad de Marca
+## Configuración de Canva MCP (mcp-remote)
+
+Cualquier cliente o IDE con soporte MCP puede conectar a Canva usando esta configuración guardada en [mcp.json](file:///c:/Users/usuario/Desktop/america-pulido-web/mcp.json):
+
+```json
+{
+  "mcpServers": {
+    "Canva": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-remote@latest",
+        "https://mcp.canva.com/mcp"
+      ]
+    }
+  }
+}
+```
+
+- **Comando de ejecución:** `npx -y mcp-remote@latest https://mcp.canva.com/mcp`
+- **¿Qué es?**: Conector puente (stdio bridge) que enlaza cualquier interfaz de IA con la API oficial y remota de Canva (`https://mcp.canva.com/mcp`).
 
 | Elemento | Valor |
 |----------|-------|
@@ -104,9 +124,10 @@
 
 | Asset | ID Canva | Descripción |
 |-------|----------|-------------|
+| Folder Proyecto América Pulido | `FAHQoFboXK8` | Carpetas y proyecto principal en Canva |
+| Logo Oficial América Pulido | `MAHQoN3XQ_o` | Logo vector/PNG transparente subido vía Canva MCP |
 | Parquet limpio | `MAHGAuDXFuY` | Foto real parquet brillante — USAR para residencial |
 | Local comercial | `MAHGAm9rd-A` | Piso comercial con logo — usar con overlay |
-| Logo | `MAHGADif29o` | Logo America Pulido |
 | Antes/Después 1 | `MAHGAK6-VfE` | Baldosa — tiene overlay verde en foto |
 | Antes/Después 2 | `MAHGAGwcJbc` | Baldosa — tiene overlay verde en foto |
 | Madera brillo | `MAHGAALbCJk` | Madera brillante horizontal |

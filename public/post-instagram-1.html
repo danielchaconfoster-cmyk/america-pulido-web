@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Post Instagram 1080x1080 — América Pulido SPA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      font-family: 'Inter', sans-serif;
+    }
+    /* Post Container 1080x1080 px scaled for preview */
+    .instagram-post {
+      width: 1080px;
+      height: 1080px;
+      background: #0A0A0A;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 80px;
+      color: #FFFFFF;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+    }
+    /* Dynamic background image overlay */
+    .bg-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('../img/foto-real-parquet.jpg');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.35;
+      filter: contrast(1.1) brightness(0.9);
+      z-index: 1;
+    }
+    /* Gradient overlay */
+    .bg-gradient {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, rgba(10,10,10,0.95) 0%, rgba(10,10,10,0.65) 50%, rgba(10,10,10,0.98) 100%);
+      z-index: 2;
+    }
+    /* Decorative gold lines */
+    .gold-border-top {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 8px;
+      background: linear-gradient(90deg, #B8912E 0%, #D4A843 50%, #E8C875 100%);
+      z-index: 10;
+    }
+    .content {
+      position: relative;
+      z-index: 5;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    /* Header with Logo */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand-logo {
+      height: 110px;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 12px rgba(212, 168, 67, 0.25));
+    }
+    .badge {
+      background: rgba(212, 168, 67, 0.15);
+      border: 1px solid #D4A843;
+      color: #E8C875;
+      font-size: 20px;
+      font-weight: 600;
+      padding: 12px 24px;
+      border-radius: 50px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+    /* Main Body Headline */
+    .main-body {
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+    .headline {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 68px;
+      line-height: 1.1;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      letter-spacing: -1px;
+    }
+    .headline span.gold {
+      background: linear-gradient(135deg, #E8C875 0%, #D4A843 50%, #B8912E 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .subheadline {
+      font-size: 28px;
+      color: #CCCCCC;
+      font-weight: 400;
+      line-height: 1.4;
+      max-width: 800px;
+      margin-bottom: 40px;
+    }
+    /* Feature list */
+    .features {
+      display: flex;
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+    .feature-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 14px 22px;
+      border-radius: 12px;
+      border: 1px solid rgba(212, 168, 67, 0.2);
+      font-size: 22px;
+      font-weight: 500;
+    }
+    .feature-item .check {
+      color: #D4A843;
+      font-size: 26px;
+    }
+    /* Footer & CTA */
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      padding-top: 40px;
+    }
+    .cta-button {
+      background: linear-gradient(135deg, #D4A843 0%, #B8912E 100%);
+      color: #0A0A0A;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 26px;
+      padding: 22px 42px;
+      border-radius: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      box-shadow: 0 10px 25px rgba(212, 168, 67, 0.35);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .contact-info {
+      text-align: right;
+    }
+    .phone {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 32px;
+      font-weight: 800;
+      color: #FFFFFF;
+    }
+    .location {
+      font-size: 20px;
+      color: #D4A843;
+      margin-top: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="instagram-post">
+    <div class="gold-border-top"></div>
+    <div class="bg-image"></div>
+    <div class="bg-gradient"></div>
+
+    <div class="content">
+      <!-- Header -->
+      <div class="header">
+        <img src="../img/logo_spiral_transparent.png" alt="América Pulido SPA Logo" class="brand-logo">
+        <div class="badge">Santiago, Chile</div>
+      </div>
+
+      <!-- Main Headline & Copy -->
+      <div class="main-body">
+        <h1 class="headline">
+          TUS PISOS <span class="gold">COMO NUEVOS</span><br>SIN REEMPLAZARLOS
+        </h1>
+        <p class="subheadline">
+          Restauración y pulido profesional de Madera, Parquet, Hormigón, Mármol y Baldosas con sellado permanente.
+        </p>
+
+        <div class="features">
+          <div class="feature-item"><span class="check">✓</span> Sin Polvo</div>
+          <div class="feature-item"><span class="check">✓</span> 10+ Años Exp.</div>
+          <div class="feature-item"><span class="check">✓</span> Visita Gratis</div>
+        </div>
+      </div>
+
+      <!-- Footer CTA -->
+      <div class="footer">
+        <div class="cta-button">
+          COTIZA POR WHATSAPP →
+        </div>
+        <div class="contact-info">
+          <div class="phone">+56 9 7868 5664</div>
+          <div class="location">@americapulidospa</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

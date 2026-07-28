@@ -43,6 +43,13 @@ public/images/      # Vacío (para uso futuro)
 
 Ver archivo: `CAMPANA_META_ADS.md` para toda la info operacional de la campaña.
 
+## Canva MCP & Identidad de Marca
+- **Configuración MCP:** Archivo [mcp.json](file:///c:/Users/usuario/Desktop/america-pulido-web/mcp.json) (`npx -y mcp-remote@latest https://mcp.canva.com/mcp`)
+- **Guía completa:** Consultar `CANVA_BRAND.md` para paleta de colores (`#D4A843`), fuentes (`Montserrat`/`Inter`) y layouts.
+- **Logo ID Canva:** `MAHGADif29o` (Asset oficial subido en Canva)
+- **Logo Local:** `img/logo_spiral_transparent.png`
+- **Diseños de Canva creados:** Carrusel Residencial (`DAHGD4pNGWY`), Carrusel Industrial (`DAHGDxTMIE8`)
+
 ## RESTRICCIÓN CRÍTICA
 - NO instalar dependencias innecesarias — es HTML estático intencional
 - NO agregar frameworks — el cliente no necesita complejidad
