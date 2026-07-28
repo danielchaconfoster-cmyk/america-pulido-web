@@ -140,10 +140,12 @@ Cualquier cliente o IDE con soporte MCP puede conectar a Canva usando esta confi
 
 | Diseño | ID | Link edición |
 |--------|----|--------------|
-| Post Instagram 1 (Nuevo) | `DAHQoJWA3h0` | https://www.canva.com/d/gO1vU9QAFVo5UgK |
-| Carrusel Residencial | `DAHGD4pNGWY` | https://www.canva.com/d/L48gPZxz1gBEHaN |
-| Carrusel Industrial | `DAHGDxTMIE8` | https://www.canva.com/d/vAyMcUOjy5mJwTq |
-| Industrial (borrador) | `DAHGAcgoJog` | https://www.canva.com/d/g1LLGafUR40KBrg |
+| **Post Instagram 1 (General)** | `DAHQoJWA3h0` | https://www.canva.com/d/gO1vU9QAFVo5UgK |
+| **Post Instagram 2 (Parquet Residencial)** | `DAHQoSYbYeI` | https://www.canva.com/d/dZQy_eV-5YJxn58 |
+| **Post Instagram 3 (Hormigón Industrial)** | `DAHQoe5ZV8I` | https://www.canva.com/d/V6Jj87lh_21NmSi |
+| **Carrusel Residencial** | `DAHGD4pNGWY` | https://www.canva.com/d/L48gPZxz1gBEHaN |
+| **Carrusel Industrial** | `DAHGDxTMIE8` | https://www.canva.com/d/vAyMcUOjy5mJwTq |
+| **Industrial (borrador)** | `DAHGAcgoJog` | https://www.canva.com/d/g1LLGafUR40KBrg |
 
 ## Limitaciones Actuales (Canva Free)
 
