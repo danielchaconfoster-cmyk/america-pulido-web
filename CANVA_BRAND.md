@@ -137,6 +137,7 @@ Cualquier cliente o IDE con soporte MCP puede conectar a Canva usando esta confi
 
 | Diseño | ID | Link edición |
 |--------|----|--------------|
+| Post Instagram 1 (Nuevo) | `DAHQoJWA3h0` | https://www.canva.com/d/gO1vU9QAFVo5UgK |
 | Carrusel Residencial | `DAHGD4pNGWY` | https://www.canva.com/d/L48gPZxz1gBEHaN |
 | Carrusel Industrial | `DAHGDxTMIE8` | https://www.canva.com/d/vAyMcUOjy5mJwTq |
 | Industrial (borrador) | `DAHGAcgoJog` | https://www.canva.com/d/g1LLGafUR40KBrg |
