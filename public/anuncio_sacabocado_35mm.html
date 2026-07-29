@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=1080, height=1080, initial-scale=1.0">
+  <title>Anuncio Meta Ads - Saca Bocado 35mm America Pulido</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      width: 1080px;
+      height: 1080px;
+      background: radial-gradient(circle at 50% 30%, #1a1a1a 0%, #0a0a0a 100%);
+      font-family: 'Inter', sans-serif;
+      color: #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 60px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    /* Gold Metallic Gradients & Borders */
+    .gold-border {
+      position: absolute;
+      top: 25px;
+      left: 25px;
+      right: 25px;
+      bottom: 25px;
+      border: 3px solid transparent;
+      border-image: linear-gradient(135deg, #E8C875, #D4A843, #B8912E) 1;
+      pointer-events: none;
+    }
+
+    /* Top Header Section */
+    .header {
+      z-index: 2;
+    }
+    .badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #D4A843, #B8912E);
+      color: #000;
+      font-weight: 800;
+      font-size: 22px;
+      padding: 10px 24px;
+      border-radius: 50px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+    .main-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 54px;
+      font-weight: 900;
+      line-height: 1.1;
+      text-transform: uppercase;
+      background: linear-gradient(180deg, #FFFFFF 0%, #E0E0E0 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 12px;
+    }
+    .gold-text {
+      background: linear-gradient(135deg, #E8C875 0%, #D4A843 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .subtitle {
+      font-size: 28px;
+      color: #cccccc;
+      font-weight: 600;
+    }
+
+    /* Main Content Section (Grid) */
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 40px;
+      align-items: center;
+      z-index: 2;
+      margin: 20px 0;
+    }
+    .product-stage {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .product-glow {
+      position: absolute;
+      width: 380px;
+      height: 380px;
+      background: radial-gradient(circle, rgba(212, 168, 67, 0.25) 0%, rgba(0,0,0,0) 70%);
+      border-radius: 50%;
+    }
+    .product-img {
+      width: 400px;
+      height: 400px;
+      object-fit: contain;
+      filter: drop-shadow(0 20px 30px rgba(0,0,0,0.8));
+      z-index: 1;
+    }
+
+    /* Specs List */
+    .features-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .feature-item {
+      background: rgba(255, 255, 255, 0.04);
+      border-left: 4px solid #D4A843;
+      padding: 16px 20px;
+      border-radius: 0 12px 12px 0;
+      backdrop-filter: blur(10px);
+    }
+    .feature-title {
+      font-size: 24px;
+      font-weight: 700;
+      color: #E8C875;
+      margin-bottom: 4px;
+    }
+    .feature-desc {
+      font-size: 20px;
+      color: #dddddd;
+    }
+
+    /* Price Badge */
+    .price-box {
+      background: linear-gradient(135deg, #1f1f1f, #141414);
+      border: 2px solid #D4A843;
+      border-radius: 16px;
+      padding: 18px 28px;
+      display: inline-flex;
+      align-items: center;
+      gap: 15px;
+      margin-top: 10px;
+    }
+    .price-label {
+      font-size: 20px;
+      color: #aaaaaa;
+      text-transform: uppercase;
+    }
+    .price-amount {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 46px;
+      font-weight: 900;
+      color: #ffffff;
+    }
+
+    /* Footer / Banners */
+    .footer {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      z-index: 2;
+    }
+    .shipping-banner {
+      background: linear-gradient(90deg, #D4A843, #E8C875, #D4A843);
+      color: #000000;
+      font-weight: 800;
+      font-size: 26px;
+      text-align: center;
+      padding: 16px;
+      border-radius: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    }
+    .wa-button {
+      background: #25D366;
+      color: #ffffff;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 32px;
+      font-weight: 900;
+      text-align: center;
+      padding: 22px;
+      border-radius: 14px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      box-shadow: 0 12px 25px rgba(37, 211, 102, 0.35);
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body data-document-role="page">
+  <div class="gold-border"></div>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="badge">⚡ OFERTA Y DESPACHO EXPRÉS</div>
+    <h1 class="main-title">SACA BOCADO <span class="gold-text">35MM</span></h1>
+    <p class="subtitle">Especial para Grifería Monomando & Cañerías</p>
+  </div>
+
+  <!-- Content Grid -->
+  <div class="content-grid">
+    <!-- Real Product Photo -->
+    <div class="product-stage">
+      <div class="product-glow"></div>
+      <img src="../img/productos/real_01_sacabocado_35mm.jpg" alt="Saca Bocado 35mm Real America Pulido" class="product-img">
+    </div>
+
+    <!-- Features & Price -->
+    <div class="features-list">
+      <div class="feature-item">
+        <div class="feature-title">💎 Segmento Diamantado</div>
+        <div class="feature-desc">Perforación perfecta sin fisurar porcelanato.</div>
+      </div>
+
+      <div class="feature-item">
+        <div class="feature-title">💧 Uso Seco / Húmedo</div>
+        <div class="feature-desc">Rosca M14 estándar para esmeril y taladro.</div>
+      </div>
+
+      <div class="price-box">
+        <div>
+          <div class="price-label">Precio Oferta</div>
+          <div class="price-amount">$17.000 <span style="font-size:22px; color:#D4A843;">CLP</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="shipping-banner">
+      🚚 ENVÍOS A TODO CHILE | RETIRO EN SANTIAGO
+    </div>
+    <div class="wa-button">
+      📲 COMPRAR POR WHATSAPP
+    </div>
+  </div>
+</body>
+</html>
