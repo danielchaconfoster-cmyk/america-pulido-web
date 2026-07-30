@@ -77,9 +77,32 @@
     .producto-badge.star { background: linear-gradient(135deg, #D4A843, #B8912E); color: var(--dark); border: none; box-shadow: 0 4px 15px rgba(212,168,67,0.4); }
 
     /* Clean Product Image Container & Transparent Emblem Watermark */
-    .producto-img-wrap { width: 100%; height: 280px; overflow: hidden; background: #141416; position: relative; display: flex; align-items: center; justify-content: center; }
-    .producto-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
-    .producto-card:hover .producto-img { transform: scale(1.05); }
+    .producto-img-wrap { 
+      width: 100%; 
+      height: 260px; 
+      overflow: hidden; 
+      background: radial-gradient(circle at 50% 45%, #1d1e26 0%, #111115 100%); 
+      position: relative; 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      padding: 24px;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .producto-img { 
+      max-width: 100%; 
+      max-height: 100%; 
+      width: auto;
+      height: auto;
+      object-fit: contain; 
+      border-radius: 12px;
+      filter: drop-shadow(0 10px 22px rgba(0,0,0,0.6));
+      transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.4s ease; 
+    }
+    .producto-card:hover .producto-img { 
+      transform: scale(1.08) translateY(-4px); 
+      filter: drop-shadow(0 18px 30px rgba(212, 168, 67, 0.35)); 
+    }
 
     /* Single Floating Transparent Logo Emblem (Top Right - Perfectly Aligned, No Rotation) */
     .brand-emblem-watermark {
@@ -191,7 +214,7 @@
           <div class="producto-badge star">⭐ Producto Estrella</div>
           <div class="producto-img-wrap">
             <img src="img/logo_spiral_transparent.png" class="brand-emblem-watermark" alt="Logo America Pulido">
-            <img src="img/productos/prod_sacabocado_35mm.png" alt="Saca Bocado Diamantado 35mm para Grifería America Pulido" class="producto-img" loading="lazy">
+            <img src="img/productos/prod_sacabocado_35mm.jpg" alt="Saca Bocado Diamantado 35mm para Grifería America Pulido" class="producto-img" loading="lazy">
           </div>
           <div class="producto-body">
             <div class="producto-category">Perforación / Grifería</div>
@@ -483,7 +506,7 @@
         <div class="producto-card" data-category="diamantados">
           <div class="producto-img-wrap">
             <img src="img/logo_spiral_transparent.png" class="brand-emblem-watermark" alt="Logo America Pulido">
-            <img src="img/productos/prod_rodillo_diamantado.png" alt="Rodillo diamantado M14" class="producto-img" loading="lazy">
+            <img src="img/productos/prod_rodillo_diamantado.jpg" alt="Rodillo diamantado M14" class="producto-img" loading="lazy">
           </div>
           <div class="producto-body">
             <div class="producto-category">Diamantados</div>
