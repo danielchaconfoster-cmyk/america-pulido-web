@@ -145,6 +145,7 @@ Cualquier cliente o IDE con soporte MCP puede conectar a Canva usando esta confi
 | **Post Instagram 3 (Hormigón Industrial)** | `DAHQoe5ZV8I` | https://www.canva.com/d/V6Jj87lh_21NmSi |
 | **Carrusel Residencial** | `DAHGD4pNGWY` | https://www.canva.com/d/L48gPZxz1gBEHaN |
 | **Carrusel Industrial** | `DAHGDxTMIE8` | https://www.canva.com/d/vAyMcUOjy5mJwTq |
+| **Anuncio Saca Bocado 35mm Real** | `DAHQyU55YBI` | https://www.canva.com/d/UuLkB38Hhu6sD6S |
 | **Industrial (borrador)** | `DAHGAcgoJog` | https://www.canva.com/d/g1LLGafUR40KBrg |
 
 ## Limitaciones Actuales (Canva Free)
