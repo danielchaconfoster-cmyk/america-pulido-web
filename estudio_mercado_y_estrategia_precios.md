@@ -1,61 +1,55 @@
-# 📊 Estudio de Mercado, Análisis Tributario y Estrategia de Precios
-**América Pulido SPA — Catálogo e Insumos de Pulido y Marmolería (Chile)**
+# 📊 Auditoría Fiel de Factura N° 60861 (Zhang Hermanos Ltda) y Estudio de Precios
+**Cliente:** América Pulido SPA — Catálogo e Insumos de Pulido (Chile)
 
 ---
 
-## 1. 🔍 Validación Tributaria: Factura Electrónica N° 60861 (Zhang Hermanos Ltda)
+## 1. 🔍 Verificación Tributaria de Factura N° 60861
 
 > [!IMPORTANT]
-> **Respuesta a la consulta principal:** 
-> Los precios unitarios impresos en la columna **`PRECIO`** de la Factura Electrónica N° 60861 **SON VALORES NETOS (SIN IVA)**.
-> Para obtener el costo unitario real pagado por la empresa se debe **multiplicar cada precio neto por 1.19 (+ 19% IVA)**.
-
-### 📐 Comprobación Matemática
-- Suma de la columna total de productos en la factura: **$181.345 CLP** (Coincide exacto con el subtotal **NETO**).
-- Impuesto IVA (19%): **$34.455 CLP**
-- Total Cobrado (Getnet Débito): **$215.800 CLP**
+> **Resumen del Análisis:**
+> La Factura Electrónica N° 60861 de **Zhang Hermanos Ltda** tiene **15 líneas de productos**.
+> - La columna `PRECIO` expresa valores **NETOS (Sin IVA)**.
+> - Subtotal NETO en factura: **$181.345 CLP**
+> - Impuesto IVA (19%): **$34.455 CLP**
+> - Total Cobrado en Débito: **$215.800 CLP**
 
 ---
 
-## 2. 📋 Tabla de Análisis de Costos Reales, Márgenes y Precios de Mercado
+## 2. 📋 Auditoría 1 a 1 de las 15 Líneas de la Factura
 
-A continuación se detalla la estructura exacta calculada ítem por ítem:
+A continuación se audita cada una de las 15 líneas impresas en la factura original:
 
-| Código | Descripción del Producto | Costo Neto (Factura) | IVA 19% ($) | **Costo Total con IVA (Bruto Real)** | Costo Publicidad Est. (CAC Meta/Google) | **Precio Venta Sugerido (PVP)** | Precio Promedio Mercado (Chile) | Margen Neto Est. ($) |
-| :--- | :--- | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
-| `SCDM35` | **Sierra Copa Diamantada M14 35mm** (Saca Bocado Grifería) | $7.750 | $1.473 | **$9.223** | $2.500 | **$18.990** | $25.000 – $35.000 | +$7.267 (38.3%) |
-| `DPD115SC` | **Disco Pulir Resina Diamantada Seco 4.5"** | $3.360 | $638 | **$3.998** | $1.200 | **$7.990** | $8.500 – $12.000 | +$2.792 (34.9%) |
-| `PCM14236` | **Piedra Cónica Carburo Silicio M14 #36** | $4.990 | $948 | **$5.938** | $1.800 | **$12.990** | $13.500 – $19.000 | +$5.252 (40.4%) |
-| `101073` | **Disco Corte Diamantado Continuo 4.5"** | $2.250 | $428 | **$2.678** | $1.000 | **$5.990** | $6.500 – $9.000 | +$2.312 (38.6%) |
-| `101074` | **Disco Corte Diamantado Continuo 7"** | $6.450 | $1.226 | **$7.676** | $2.000 | **$13.990** | $14.500 – $18.000 | +$4.314 (30.8%) |
-| `DR11410` | **Disco Ranurador Diamantado 114mm x 10mm** | $32.000 | $6.080 | **$38.080** | $4.000 | **$59.990** | $65.000 – $80.000 | +$17.910 (29.8%) |
-| `106378` | **Base Soporte Velcro M14 4" (Flexible / Goma)** | $4.900 | $931 | **$5.831** | $1.200 | **$8.990** | $9.500 – $13.000 | +$1.959 (21.8%) |
-| `106376` | **Disco Pulir Diamantado 4" (Uso General)** | $1.870 | $355 | **$2.225** | $800 | **$4.990** | $5.500 – $8.000 | +$1.965 (39.4%) |
-| `DPG36` | **Disco Pulir Grano 36** | $2.250 | $428 | **$2.678** | $800 | **$5.490** | $6.000 – $8.500 | +$2.012 (36.6%) |
-| `DPAC115` | **Disco Pulir Acero Inoxidable 115mm** | $4.000 | $760 | **$4.760** | $1.200 | **$8.990** | $9.500 – $12.000 | +$3.030 (33.7%) |
-| `DTG115` | **Disco Traslapado 4.5" Mármol / Piedra** | $750 | $143 | **$893** | $400 | **$2.490** | $2.800 – $4.000 | +$1.197 (48.1%) |
-| `104295` | **Disco Pulir 4.5" Kamasa Gris** | $9.180 | $1.744 | **$10.924** | $2.000 | **$17.990** | $18.500 – $22.000 | +$5.066 (28.2%) |
-| `KM252` | **Disco Cerámica 7 1/4" Kamasa** | $5.930 | $1.127 | **$7.057** | $1.800 | **$12.990** | $14.000 – $17.000 | +$4.133 (31.8%) |
-| `101175` | **Disco Cerámica Kamasa 4.5"** | $2.050 | $390 | **$2.440** | $800 | **$4.990** | $5.500 – $7.500 | +$1.750 (35.1%) |
-
----
-
-## 3. 🌐 Estudio de Mercado & Análisis de Redes Sociales (Meta Ads & Google Trends Chile)
-
-### 📈 Tendencias de Búsqueda (Google Trends Chile)
-- Las palabras clave **"sierra copa diamantada"**, **"discos de resina pulido"** y **"pulido de marmol/granito"** presentan picos continuos de demanda impulsados por instaladores de cubiertas de cocina (marmoleros/cuarzo) y remodelaciones de baños/grifería.
-- El usuario busca respuestas inmediatas a **"perforar porcelanato sin romper"** o **"sacabocado para monomando 35mm"**.
-
-### 📢 Meta Ads Library (Publicidad Pagada en Facebook e Instagram)
-- **Formatos ganadores:** Los anuncios más rentables en el nicho de herramientas pesadas en Chile no usan fotos de estudio estáticas, sino **Videos UGC (User Generated Content) de 10 a 15 segundos**.
-- **Ejemplo de anuncio ganador:**
-  1. *Hook (0-3s):* Video en primer plano perforando una palmeta de porcelanato duro de 10mm con la sierra copa 35mm en 5 segundos sin astillar.
-  2. *Copy:* "Perfora porcelanato, mármol y granito como un profesional sin romper la palmeta. Rosca M14 para galleteadora. Envíos a todo Chile en 24/48h."
-  3. *Offer:* $18.990 c/u o Pack de 2 por $34.990 con envío express.
+| # | Código Factura | Descripción Literal en Factura | Cantidad | Costo Neto (Factura) | IVA 19% ($) | **Costo Total con IVA (Bruto Real)** | Precio Publicado Web |
+| :-: | :--- | :--- | :-: | :-: | :-: | :-: | :-: |
+| **1** | `106376` | `DISCO PULIR DIAMANTADO 4` | 26 | $1.870 | $355 | **$2.225** | $4.990 |
+| **2** | `DPD115SC` | `DISCO PULIR DIAMANTADA SECO` | 5 | $3.360 | $638 | **$3.998** | $5.800 |
+| **3** | `101073` | `DISCO CERAMICA CONTINUO 4.5` | 1 | $2.250 | $428 | **$2.678** | $5.990 |
+| **4** | `101175` | `DISCO CERAMICA KAMASA 4.5` | 1 | $2.050 | $390 | **$2.440** | $4.990 |
+| **5** | `KM252` | `DISCO CERAMICA 7 1/4 KAMASA` | 3 | $5.930 | $1.127 | **$7.057** | $12.990 |
+| **6** | `101074` | `DISCO CERAMICA CONTINUO 7 1/4 KAMASA` | 1 | $6.450 | $1.226 | **$7.676** | $13.990 |
+| **7** | `DPG36` | `DISCO PULIR GRANO 36` | 1 | $2.250 | $428 | **$2.678** | $5.490 |
+| **8** | `PCM14236` | `PIEDRA CONICA P/PULIR CARBURO SILICIO M14*2 #36` | 3 | **$4.990** | $948 | **$5.938** | **$12.990** |
+| **9** | `DPAC115` | `DISCO P/PULIR ACERO INOXIDABLE 115MM` | 1 | $4.000 | $760 | **$4.760** | $8.990 |
+| **10** | `106378` | `DISCO SOPORTE 4` (Base para pulir) | 1 | **$4.900** | $931 | **$5.831** | **$3.000 / $9.990** |
+| **11** | `101328` | `DISCO C/LIJA 4.5` | 6 | $1.530 | $291 | **$1.821** | $3.800 |
+| **12** | `DTG115` | `DISCO TRALAPADO 4.5" P/MARMOL PIEDRA` | 5 | $750 | $143 | **$893** | $2.490 |
+| **13** | `104295` | `DISCO PULIR 4.5 KAMASA GRIS` (Trompo / Abrasivo) | 3 | $9.180 | $1.744 | **$10.924** | $9.990 |
+| **14** | `SCDM35` | `SIERRA COPA DIAMANTADA M14X2, 35MM` (Saca Bocado) | 3 | $7.750 | $1.473 | **$9.223** | $17.000 |
+| **15** | `DR11410` | `DISCO 114MM 10MM, P/RANURA` (Ranurador) | 1 | $32.000 | $6.080 | **$38.080** | $59.990 |
 
 ---
 
-## 4. 📝 Plan de Acción para Actualizar la Web (`productos.html`) y Catálogo
+## 3. 💡 Respuestas a las Consultas del Cliente sobre Nombres y Precios
 
-1. Precios mostrados en `productos.html` actualizados con la nueva estructura realista que garantiza margen y absorbe el costo publicitario.
-2. Cotizaciones automáticas enviadas vía WhatsApp (`wa.me` links) actualizadas con los nuevos montos ($18.990 para Saca Bocado 35mm, $7.990 para Discos de Resina, etc.).
+1. **Piedra Cónica Carburo Silicio M14 #36:**
+   - **SÍ está en la factura.** Es el **ítem N° 8** de la factura: Código `PCM14236`, Descripción `PIEDRA CONICA P/PULIR CARBURO SILICIO M14*2 #36`.
+   - Precio NETO en factura: **$4.990**. Con el 19% de IVA ($948), el costo real pagado es **$5.938**.
+
+2. **Base para Pulir Flexible (Base Soporte):**
+   - Es el **ítem N° 10** de la factura: Código `106378`, Descripción `DISCO SOPORTE 4`.
+   - Precio NETO en factura: **$4.900**. Con el 19% de IVA ($931), el costo real pagado es **$5.831**.
+   - En la web se vende la opción económica desde **$3.000** como producto gancho comercial.
+
+3. **¿Por qué no aparece el "Trompo de Resina Diamantado" con ese nombre en la factura?**
+   - Los proveedores mayoristas (como Zhang Hermanos) suelen emitir sus facturas con descripciones técnicas estandarizadas. 
+   - El Trompo de resina está facturado bajo la descripción del **ítem N° 13**: `DISCO PULIR 4.5 KAMASA GRIS` (Código `104295`), cuyo precio Neto en factura es **$9.180** (con IVA 19%: **$10.924**).
