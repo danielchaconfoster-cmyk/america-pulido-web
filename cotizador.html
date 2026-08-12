@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cotizador Online de Insumos y Discos | América Pulido SPA</title>
+  <meta name="description" content="Calcula y cotiza en tiempo real tus discos de pulir resina, piedras cónicas, sierras copa y más con descuentos automáticos por volumen de América Pulido SPA.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-dark: #0A0A0A;
+      --bg-card: #141414;
+      --bg-card-hover: #1E1E1E;
+      --gold-primary: #D4A843;
+      --gold-light: #E8C875;
+      --gold-dark: #B8912E;
+      --text-main: #FFFFFF;
+      --text-muted: #A0AEC0;
+      --border-color: #2D3748;
+      --green-accent: #22c55e;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
+    body { background-color: var(--bg-dark); color: var(--text-main); line-height: 1.6; padding-bottom: 60px; }
+
+    /* Navbar Header */
+    header {
+      background-color: rgba(10, 10, 10, 0.95);
+      border-bottom: 1px solid var(--border-color);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+    }
+    .nav-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-main);
+    }
+    .logo-brand img { height: 44px; }
+    .logo-brand span { font-weight: 800; font-size: 1.2rem; letter-spacing: 0.5px; }
+    .logo-brand span strong { color: var(--gold-primary); }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold-primary); }
+
+    /* Hero Section */
+    .hero-cotizador {
+      text-align: center;
+      padding: 50px 20px 30px;
+      background: radial-gradient(circle at top, rgba(212, 168, 67, 0.15) 0%, rgba(10, 10, 10, 1) 70%);
+    }
+    .hero-cotizador h1 { font-size: 2.3rem; font-weight: 800; margin-bottom: 10px; }
+    .hero-cotizador h1 span { color: var(--gold-primary); }
+    .hero-cotizador p { color: var(--text-muted); font-size: 1.1rem; max-width: 700px; margin: 0 auto; }
+
+    /* Main Container Grid */
+    .cotizador-layout {
+      max-width: 1280px;
+      margin: 30px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 30px;
+    }
+
+    @media (max-width: 992px) {
+      .cotizador-layout { grid-template-columns: 1fr; }
+    }
+
+    /* Grid de Productos */
+    .grid-productos {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .card-producto {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+    .card-producto:hover {
+      transform: translateY(-4px);
+      border-color: var(--gold-primary);
+    }
+    .img-wrapper {
+      position: relative;
+      height: 180px;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+    }
+    .img-wrapper img {
+      max-height: 100%;
+      max-width: 100%;
+      object-fit: contain;
+    }
+    .badge-cat {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba(0,0,0,0.7);
+      color: var(--gold-light);
+      padding: 4px 10px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      border-radius: 20px;
+      border: 1px solid var(--gold-primary);
+    }
+    .info-prod {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      justify-content: space-between;
+    }
+    .info-prod h3 { font-size: 1rem; font-weight: 700; margin-bottom: 10px; min-height: 2.8em; }
+    .precios-row { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 15px; }
+    .precio-base { font-size: 1.25rem; font-weight: 800; color: var(--gold-primary); }
+
+    /* Quantity Controls */
+    .cant-controls {
+      display: flex;
+      align-items: center;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      overflow: hidden;
+      background: #000;
+    }
+    .btn-qty {
+      background: #1F2937;
+      color: #fff;
+      border: none;
+      width: 40px;
+      height: 40px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn-qty:hover { background: var(--gold-primary); color: #000; }
+    .cant-controls input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      color: #fff;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: bold;
+      width: 50px;
+      -moz-appearance: textfield;
+    }
+
+    /* Sidebar Sticky Resumen */
+    .sidebar-resumen {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 24px;
+      position: sticky;
+      top: 100px;
+      height: fit-content;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+    .sidebar-resumen h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: 20px; border-bottom: 1px solid var(--border-color); padding-bottom: 12px; }
+
+    /* Hook Progress Bar */
+    .hook-card {
+      background: rgba(212, 168, 67, 0.08);
+      border: 1px solid var(--gold-primary);
+      border-radius: 10px;
+      padding: 14px;
+      margin-bottom: 20px;
+    }
+    .hook-text { font-size: 0.88rem; color: var(--text-main); margin-bottom: 10px; }
+    .progress-bar-bg {
+      background: #262626;
+      height: 10px;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    .progress-bar-fill {
+      background: linear-gradient(90deg, var(--gold-dark), var(--gold-primary), var(--gold-light));
+      height: 100%;
+      width: 0%;
+      transition: width 0.4s ease;
+    }
+
+    /* Badge Envio */
+    .badge-envio {
+      padding: 10px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .envio-gratis { background: rgba(34, 197, 94, 0.15); border: 1px solid var(--green-accent); color: var(--green-accent); }
+    .envio-normal { background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-color); color: var(--text-muted); }
+
+    /* Summary Totals Table */
+    .line-total { display: flex; justify-content: space-between; font-size: 0.95rem; margin-bottom: 10px; color: var(--text-muted); }
+    .line-total.highlight { color: var(--gold-primary); font-weight: 700; }
+    .line-total.final-price {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #fff;
+      border-top: 1px dashed var(--border-color);
+      padding-top: 15px;
+      margin-top: 15px;
+    }
+
+    /* Action CTAs */
+    .btn-action {
+      width: 100%;
+      padding: 14px;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 12px;
+      transition: transform 0.2s, opacity 0.2s;
+    }
+    .btn-action:hover { transform: translateY(-2px); opacity: 0.95; }
+    .btn-wsp { background: #25D366; color: #fff; }
+    .btn-pdf { background: var(--gold-primary); color: #000; }
+
+    /* Tabla Lista de Items */
+    .tabla-resumen-cotizacion {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 25px;
+      font-size: 0.85rem;
+    }
+    .tabla-resumen-cotizacion th {
+      text-align: left;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 8px;
+    }
+    .tabla-resumen-cotizacion td {
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .text-right { text-align: right; }
+    .text-center { text-align: center; }
+    .text-gold { color: var(--gold-primary); }
+    .bold { font-weight: 700; }
+    .empty-msg { color: var(--text-muted); font-size: 0.9rem; text-align: center; margin-top: 20px; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo-brand">
+        <img src="img/logo_spiral_transparent.png" alt="Logo América Pulido">
+        <span>AMÉRICA <strong>PULIDO</strong></span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Inicio</a>
+        <a href="productos.html">Catálogo Completo</a>
+        <a href="cotizador.html" class="active">Cotizador Online</a>
+        <a href="index.html#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero-cotizador">
+    <h1>Cotizador Dinámico con <span>Descuento por Volumen</span></h1>
+    <p>Selecciona tus discos de resina, piedras cónicas o sierras copa. A mayor cantidad de unidades, mayor es tu porcentaje de descuento automático.</p>
+  </section>
+
+  <div class="cotizador-layout">
+    
+    <!-- Lado Izquierdo: Catálogo de Productos para Elegir -->
+    <div class="main-cotizador-content">
+      <div class="grid-productos" id="grid-productos">
+        <!-- Renderizado dinámicamente con JS -->
+      </div>
+
+      <!-- Tabla Detallada de Carrito al Pie -->
+      <div style="margin-top: 40px; background: var(--bg-card); padding: 24px; border-radius: 16px; border: 1px solid var(--border-color);">
+        <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 15px;">📋 Desglose Detallado de tu Cotización</h3>
+        <div id="items-cotizados-list">
+          <!-- Renderizado dinámicamente -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Lado Derecho: Resumen y Panel de Ahorro -->
+    <aside class="sidebar-resumen">
+      <h2>Resumen de Cotización</h2>
+
+      <!-- Hook Bar -->
+      <div class="hook-card">
+        <div class="hook-text" id="hook-message">
+          Selecciona productos para calcular tu nivel de descuento.
+        </div>
+        <div class="progress-bar-bg">
+          <div class="progress-bar-fill" id="progress-bar-fill"></div>
+        </div>
+      </div>
+
+      <!-- Badge Envio -->
+      <div class="badge-envio envio-normal" id="badge-envio">
+        🚚 Agrega más productos para <strong>ENVÍO GRATIS</strong>
+      </div>
+
+      <!-- Cifras -->
+      <div class="line-total">
+        <span>Unidades Totales:</span>
+        <span id="resumen-unidades">0</span>
+      </div>
+      <div class="line-total">
+        <span>Subtotal Lista:</span>
+        <span id="resumen-subtotal">$0</span>
+      </div>
+      <div class="line-total highlight">
+        <span>Descuento Volumen (<span id="resumen-dto-pct">0%</span>):</span>
+        <span id="resumen-dto-monto">-$0</span>
+      </div>
+      <div class="line-total">
+        <span>IVA Incluido (19%):</span>
+        <span id="resumen-iva">$0</span>
+      </div>
+      <div class="line-total final-price">
+        <span>Total Final:</span>
+        <span id="resumen-total">$0</span>
+      </div>
+
+      <!-- Botones de Acción -->
+      <button type="button" class="btn-action btn-wsp" onclick="enviarWhatsApp()">
+        📱 Pedir por WhatsApp
+      </button>
+      <button type="button" class="btn-action btn-pdf" onclick="descargarPDFCotizacion()">
+        📄 Descargar PDF Oficial
+      </button>
+    </aside>
+
+  </div>
+
+  <script src="js/cotizador.js"></script>
+</body>
+</html>
