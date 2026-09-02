@@ -1,5 +1,5 @@
-// Motor de Cotizaciones y Cálculo Dinámico para América Pulido SPA
-// Soporta catálogo completo de insumos, escala de descuentos por tramos, cálculo de IVA (19%), WhatsApp prefill y generación de PDF membretado.
+// Motor de Cotizaciones Técnicas para América Pulido SPA
+// Cálculo dinámico de escala mayorista, IVA (19%), WhatsApp formal y PDF membretado.
 
 const PRODUCTOS_CATALOGO = [
   {
@@ -7,7 +7,7 @@ const PRODUCTOS_CATALOGO = [
     nombre: "Saca Bocado Diamantado 35mm (M14)",
     categoria: "diamantados",
     categoriaLabel: "Perforación / Grifería",
-    descripcion: "Medida exacta para instalación de grifería y tuberías. Perforación limpia sin despostillamientos en porcelanato, mármol y granito.",
+    descripcion: "Medida técnica para instalación de grifería y tuberías. Perforación sin despostillamientos en porcelanato, mármol y granito.",
     specs: ["Diámetro: 35 mm", "Rosca: M14 (Esmeril)", "Uso: Seco / Húmedo"],
     precioLista: 16990,
     costoBodega: 9223,
@@ -19,7 +19,7 @@ const PRODUCTOS_CATALOGO = [
     nombre: "Disco de Resina Premium 4 Pulgadas (Diamantado)",
     categoria: "resinas",
     categoriaLabel: "Discos de Resina",
-    descripcion: "Máxima densidad diamantada para un refinado rápido y brillo espejo uniforme en mármol, hormigón y terrazo.",
+    descripcion: "Alta densidad diamantada para refinado rápido y acabado uniforme en mármol, hormigón y terrazo.",
     specs: ["Granos: 50 a 3000", "Diámetro: 4 pulg / 100mm", "Fijación: Velcro"],
     precioLista: 11990,
     costoBodega: 4500,
@@ -31,7 +31,7 @@ const PRODUCTOS_CATALOGO = [
     nombre: "Disco de Resina en Seco 4.5 Pulgadas (Anti-Quemado)",
     categoria: "resinas",
     categoriaLabel: "Discos de Resina",
-    descripcion: "Diseñado específicamente para pulido y abrillantado en seco sin desprendimiento excesivo de polvo ni quemaduras en la superficie.",
+    descripcion: "Formulación especial para pulido y abrillantado en seco sin riesgo de quemado térmico en la piedra.",
     specs: ["Granos: 50 a 3000", "Diámetro: 4.5 pulg", "Uso: 100% Seco"],
     precioLista: 6490,
     costoBodega: 3998,
@@ -43,7 +43,7 @@ const PRODUCTOS_CATALOGO = [
     nombre: "Disco de Resina Húmedo 4.5 Pulgadas",
     categoria: "resinas",
     categoriaLabel: "Discos de Resina",
-    descripcion: "Optimizado para pulido asistido con agua en baldosas graníticas, mármoles delicados y piedras naturales.",
+    descripcion: "Rendimiento óptimo en procesos continuos con agua sobre baldosas graníticas y mármoles.",
     specs: ["Granos: 50 a 3000", "Diámetro: 4.5 pulg", "Uso: Húmedo"],
     precioLista: 4990,
     costoBodega: 2225,
@@ -55,8 +55,8 @@ const PRODUCTOS_CATALOGO = [
     nombre: "Disco Ranurador Diamantado 114mm x 10mm",
     categoria: "diamantados",
     categoriaLabel: "Ranurado / Marmolería",
-    descripcion: "Disco diamantado pesado de 10mm de espesor para canterías, juntas de dilatación y ranurado técnico de drenaje en cubiertas de cuarzo y mármol.",
-    specs: ["Medida: 114mm x 10mm espesor", "Uso: Heavy Duty", "Seco / Húmedo"],
+    descripcion: "Espesor de 10mm para canterías, juntas de dilatación y ranuras de escurrimiento en cubiertas.",
+    specs: ["Medida: 114mm x 10mm", "Uso: Heavy Duty", "Seco / Húmedo"],
     precioLista: 54990,
     costoBodega: 38080,
     unidad: "unidad",
@@ -67,7 +67,7 @@ const PRODUCTOS_CATALOGO = [
     nombre: "Copa Diamantada de Desbaste",
     categoria: "diamantados",
     categoriaLabel: "Desbaste Pesado",
-    descripcion: "Copa de alto rendimiento para remoción rápida de adhesivos, epóxicos, nivelación y rebaje de irregularidades en hormigón y baldosas.",
+    descripcion: "Remoción rápida de recubrimientos epóxicos, adhesivos y nivelación de hormigón.",
     specs: ["Formato: Doble hilera", "Diámetro: 4.5 pulg / 115mm", "Alto Desbaste"],
     precioLista: 12990,
     costoBodega: 6500,
@@ -79,7 +79,7 @@ const PRODUCTOS_CATALOGO = [
     nombre: "Disco Pulidor Abrasivo de Fibra",
     categoria: "bases",
     categoriaLabel: "Abrasivos y Decapado",
-    descripcion: "Disco de fibra sintética abrasiva para limpieza profunda, decapado de ceras envejecidas y preparación de superficie previo al vitrificado.",
+    descripcion: "Estructura de fibra sintética para decapado de ceras y acondicionamiento previo al vitrificado.",
     specs: ["Fibra Industrial", "Diámetro: 4.5 pulg", "Uso: Limpieza / Decapado"],
     precioLista: 9990,
     costoBodega: 4800,
@@ -91,7 +91,7 @@ const PRODUCTOS_CATALOGO = [
     nombre: "Piedra Cónica Carburo Silicio M14 #36",
     categoria: "bases",
     categoriaLabel: "Esquinas y Bordes",
-    descripcion: "Esmeril cónico con rosca directa M14 para desbaste de zócalos, esquinas y bordes difíciles inaccesibles para pulidoras planas.",
+    descripcion: "Rosca M14 para desbaste y nivelado en zócalos, esquinas y bordes inaccesibles.",
     specs: ["Rosca: M14", "Granos: #36, #60, #80", "Uso: Bordes / Zócalos"],
     precioLista: 13990,
     costoBodega: 5938,
@@ -103,7 +103,7 @@ const PRODUCTOS_CATALOGO = [
     nombre: "Disco de Silicio para Pulir",
     categoria: "resinas",
     categoriaLabel: "Abrasivos de Silicio",
-    descripcion: "Disco de carburo de silicio de alta eficiencia para abrillantado rápido y refinado en granito, mármol y piedras duras.",
+    descripcion: "Carburo de silicio de alta eficiencia para abrillantado rápido en granito y piedras naturales.",
     specs: ["Carburo de Silicio", "Diámetro: 4.5 pulg", "Fijación: Velcro"],
     precioLista: 5490,
     costoBodega: 2600,
@@ -115,7 +115,7 @@ const PRODUCTOS_CATALOGO = [
     nombre: "Trompo de Resina Diamantado (Perfilador)",
     categoria: "resinas",
     categoriaLabel: "Perfilado / Cantos",
-    descripcion: "Cilindro de resina diamantada para desbaste, pulido y refinado de bordes cóncavos, agujeros y contornos en cubiertas de cuarzo y mármol.",
+    descripcion: "Cilindro diamantado para desbaste y pulido de contornos cóncavos en cubiertas.",
     specs: ["Rosca: M14", "Diámetros: 20mm a 50mm", "Uso: Cantos Cóncavos"],
     precioLista: 15990,
     costoBodega: 10924,
@@ -127,8 +127,8 @@ const PRODUCTOS_CATALOGO = [
     nombre: "Disco Diamantado Corte Continuo 4.5 Pulgadas",
     categoria: "diamantados",
     categoriaLabel: "Corte Fino / Cerámica",
-    descripcion: "Banda continua para cortes extra limpios y sin astillamiento en porcelanatos esmaltados, cerámicas y mármol fino.",
-    specs: ["Diámetro: 115mm (4.5 pulg)", "Espesor fino: 1.2mm", "Corte limpio"],
+    descripcion: "Banda continua para cortes limpios sin desportillado en porcelanatos esmaltados y mármol.",
+    specs: ["Diámetro: 115mm (4.5 pulg)", "Espesor: 1.2mm", "Corte fino"],
     precioLista: 14990,
     costoBodega: 7200,
     unidad: "unidad",
@@ -138,8 +138,8 @@ const PRODUCTOS_CATALOGO = [
     id: "corte-segmentado",
     nombre: "Disco Diamantado Corte Segmentado 4.5 Pulgadas",
     categoria: "diamantados",
-    categoriaLabel: "Corte Rápido Hormigón",
-    descripcion: "Segmentos diamantados refrigerados por aire para corte veloz y resistente en hormigón armado, ladrillo y piedra dura.",
+    categoriaLabel: "Corte Hormigón",
+    descripcion: "Segmentos diamantados ventilados para corte rápido en hormigón armado, ladrillo y piedra.",
     specs: ["Diámetro: 115mm", "Segmentos ventilados", "Alta durabilidad"],
     precioLista: 14990,
     costoBodega: 7200,
@@ -151,7 +151,7 @@ const PRODUCTOS_CATALOGO = [
     nombre: "Base Soporte Velcrada M14 (Reforzada)",
     categoria: "bases",
     categoriaLabel: "Accesorios y Bases",
-    descripcion: "Plato de goma y cuerpo rígido con rosca de bronce M14. Velcro de grado industrial para soportar altas revoluciones sin desprenderse.",
+    descripcion: "Cuerpo reforzado con rosca de bronce M14 y velcro industrial para trabajo pesado.",
     specs: ["Rosca: M14", "Diámetro: 4 pulg (100mm)", "Velcro Heavy Duty"],
     precioLista: 9990,
     costoBodega: 5831,
@@ -163,7 +163,7 @@ const PRODUCTOS_CATALOGO = [
     nombre: "Masilla Mágica Dermax para Mármol y Granito",
     categoria: "quimicos",
     categoriaLabel: "Masillas y Reparación",
-    descripcion: "Masilla de alta adherencia para relleno de fisuras, grietas y reconstitución de esquinas en mármol, granito y baldosas.",
+    descripcion: "Masilla bicomponente de alta adherencia para relleno de fisuras y reconstrucción de cantos.",
     specs: ["Presentación: 1 Kg", "Incluye: Catalizador", "Pulible / Abrillantable"],
     precioLista: 8990,
     costoBodega: 4300,
@@ -172,20 +172,18 @@ const PRODUCTOS_CATALOGO = [
   }
 ];
 
-// Regla de Descuentos por Volumen (5 Tramos Oficiales de América Pulido SPA)
+// Escala Oficial de Descuentos por Tramo de Compra
 const TRAMOS_DESCUENTO = [
-  { minQty: 100, dto: 0.25, label: "25% DTO Mayorista Distribuidor" },
-  { minQty: 50,  dto: 0.20, label: "20% DTO Pro Constructor" },
-  { minQty: 25,  dto: 0.15, label: "15% DTO Volumen Taller" },
-  { minQty: 10,  dto: 0.08, label: "8% DTO Inicial Maestro" },
+  { minQty: 100, dto: 0.25, label: "25% Descuento Mayorista (100+ unid.)" },
+  { minQty: 50,  dto: 0.20, label: "20% Descuento Constructor (50+ unid.)" },
+  { minQty: 25,  dto: 0.15, label: "15% Descuento Taller (25+ unid.)" },
+  { minQty: 10,  dto: 0.08, label: "8% Descuento Inicial (10+ unid.)" },
   { minQty: 0,   dto: 0.00, label: "Precio Lista Directo" }
 ];
 
-// Estado global de la cotización
 let carritoCotizacion = {};
 let categoriaActiva = "todos";
 
-// Obtener tramo de descuento según cantidad
 function obtenerTramoDescuento(totalUnidades) {
   for (let tramo of TRAMOS_DESCUENTO) {
     if (totalUnidades >= tramo.minQty) {
@@ -195,7 +193,6 @@ function obtenerTramoDescuento(totalUnidades) {
   return TRAMOS_DESCUENTO[TRAMOS_DESCUENTO.length - 1];
 }
 
-// Obtener siguiente tramo
 function obtenerSiguienteTramo(totalUnidades) {
   for (let i = TRAMOS_DESCUENTO.length - 1; i >= 0; i--) {
     if (totalUnidades < TRAMOS_DESCUENTO[i].minQty) {
@@ -205,7 +202,6 @@ function obtenerSiguienteTramo(totalUnidades) {
   return null;
 }
 
-// Formatear dinero a CLP ($ X.XXX)
 function formatCLP(monto) {
   return new Intl.NumberFormat('es-CL', {
     style: 'currency',
@@ -214,7 +210,6 @@ function formatCLP(monto) {
   }).format(Math.round(monto));
 }
 
-// Inicialización de la interfaz
 function initCotizador() {
   renderizarCatalogo();
   actualizarCalculos();
@@ -226,20 +221,16 @@ if (document.readyState === 'loading') {
   initCotizador();
 }
 
-// Filtrado de productos por categoría
 function filtrarCategoria(cat, btnElement) {
   categoriaActiva = cat;
-  
   const buttons = document.querySelectorAll(".filter-pill");
   buttons.forEach(btn => btn.classList.remove("active"));
   if (btnElement) {
     btnElement.classList.add("active");
   }
-
   renderizarCatalogo();
 }
 
-// Renderizado dinámico del grid de productos
 function renderizarCatalogo() {
   const container = document.getElementById("grid-productos");
   if (!container) return;
@@ -249,7 +240,7 @@ function renderizarCatalogo() {
     : PRODUCTOS_CATALOGO.filter(p => p.categoria === categoriaActiva);
 
   if (productosFiltrados.length === 0) {
-    container.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 40px; color: var(--text-muted);">No hay productos disponibles en esta categoría.</div>';
+    container.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 40px; color: var(--text-muted);">No hay productos en esta categoría.</div>';
     return;
   }
 
@@ -259,8 +250,6 @@ function renderizarCatalogo() {
 
     return `
       <div class="card-producto ${isSelected ? 'selected' : ''}" id="card-${prod.id}">
-        
-        
         <div class="img-wrapper">
           <img src="img/logo_spiral_transparent.png" class="card-watermark" alt="Logo América Pulido">
           <img src="${prod.img}" alt="${prod.nombre}" class="prod-img" onerror="this.src='img/logo_spiral_transparent.png'">
@@ -284,7 +273,6 @@ function renderizarCatalogo() {
             ${isSelected ? `<div class="subtotal-item-pill">Subtotal: ${formatCLP(prod.precioLista * qty)}</div>` : ''}
           </div>
 
-          <!-- CONTADOR DE CANTIDADES ERGONÓMICO -->
           <div class="counter-wrapper">
             <div class="cant-controls">
               <button type="button" class="btn-qty btn-minus" aria-label="Disminuir cantidad" onclick="modificarCantidad('${prod.id}', -1)">−</button>
@@ -300,7 +288,6 @@ function renderizarCatalogo() {
               <button type="button" class="btn-qty btn-plus" aria-label="Aumentar cantidad" onclick="modificarCantidad('${prod.id}', 1)">+</button>
             </div>
 
-            <!-- Botones de incremento rápido -->
             <div class="quick-add-row">
               <button type="button" class="quick-pill" onclick="modificarCantidad('${prod.id}', 5)">+5</button>
               <button type="button" class="quick-pill" onclick="modificarCantidad('${prod.id}', 10)">+10</button>
@@ -315,14 +302,12 @@ function renderizarCatalogo() {
   }).join("");
 }
 
-// Modificar cantidad por delta (+1, -1, +5, etc)
 function modificarCantidad(id, delta) {
   const actual = carritoCotizacion[id] || 0;
   const nueva = Math.max(0, actual + delta);
   setCantidad(id, nueva);
 }
 
-// Establecer cantidad exacta
 function setCantidad(id, valor) {
   let num = parseInt(valor, 10);
   if (isNaN(num) || num < 0) num = 0;
@@ -338,7 +323,6 @@ function setCantidad(id, valor) {
     inputEl.value = num;
   }
 
-  // Actualizar tarjeta
   const cardEl = document.getElementById(`card-${id}`);
   if (cardEl) {
     if (num > 0) {
@@ -352,17 +336,15 @@ function setCantidad(id, valor) {
   renderizarCatalogo();
 }
 
-// Vaciar carrito
 function vaciarCarrito() {
   if (Object.keys(carritoCotizacion).length === 0) return;
-  if (confirm("¿Deseas reiniciar toda la cotización a cero?")) {
+  if (confirm("¿Deseas reiniciar la cotización actual a cero?")) {
     carritoCotizacion = {};
     renderizarCatalogo();
     actualizarCalculos();
   }
 }
 
-// Actualización general de cálculos de cotización
 function actualizarCalculos() {
   let totalUnidades = 0;
   let subtotalLista = 0;
@@ -380,10 +362,9 @@ function actualizarCalculos() {
   const porcentajeDto = tramoActual.dto;
   const montoDescuento = subtotalLista * porcentajeDto;
   const subtotalConDto = subtotalLista - montoDescuento;
-  const iva = subtotalConDto * 0.19; // IVA 19% Chile
+  const iva = subtotalConDto * 0.19;
   const totalFinal = subtotalConDto + iva;
 
-  // Actualizar cifras en Sidebar
   const elTotalUnid = document.getElementById("resumen-unidades");
   const elSubtotal = document.getElementById("resumen-subtotal");
   const elDtoPct = document.getElementById("resumen-dto-pct");
@@ -398,7 +379,6 @@ function actualizarCalculos() {
   if (elIva) elIva.textContent = formatCLP(iva);
   if (elTotal) elTotal.textContent = formatCLP(totalFinal);
 
-  // Barra de incentivo / Descuentos
   const elProgress = document.getElementById("progress-bar-fill");
   const elHookMsg = document.getElementById("hook-message");
   const siguienteTramo = obtenerSiguienteTramo(totalUnidades);
@@ -406,7 +386,7 @@ function actualizarCalculos() {
   if (elHookMsg && elProgress) {
     if (totalUnidades === 0) {
       elProgress.style.width = "0%";
-      elHookMsg.innerHTML = "Agrega <strong>10 unidades</strong> o más para activar escala de descuentos automáticos.";
+      elHookMsg.innerHTML = "Agrega 10 unidades o más para activar escala de descuento por volumen.";
     } else if (siguienteTramo) {
       const faltantes = siguienteTramo.minQty - totalUnidades;
       const baseAnterior = tramoActual.minQty;
@@ -415,14 +395,13 @@ function actualizarCalculos() {
       const pctProgreso = Math.min(100, Math.max(10, Math.round((avanceEnRango / rango) * 100)));
 
       elProgress.style.width = `${pctProgreso}%`;
-      elHookMsg.innerHTML = `Estás a solo <strong> ${faltantes} unidades</strong> de subir a <strong>${Math.round(siguienteTramo.dto * 100)}% de descuento total!</strong>`;
+      elHookMsg.innerHTML = `Estás a <strong>${faltantes} unidades</strong> de alcanzar un <strong>${Math.round(siguienteTramo.dto * 100)}% de descuento total</strong>.`;
     } else {
       elProgress.style.width = "100%";
-      elHookMsg.innerHTML = "Has alcanzado el nivel máximo: Cuentas con <strong>25% de Descuento Mayorista</strong> en tu compra.";
+      elHookMsg.innerHTML = "Has alcanzado el tramo máximo: <strong>25% de Descuento Mayorista</strong>.";
     }
   }
 
-  // Badge Envio Gratis
   const elEnvio = document.getElementById("badge-envio");
   if (elEnvio) {
     if (totalFinal >= 100000) {
@@ -431,14 +410,13 @@ function actualizarCalculos() {
     } else if (totalFinal > 0) {
       const leFalta = 100000 - totalFinal;
       elEnvio.className = "badge-envio envio-normal";
-      elEnvio.innerHTML = `Agrega ${formatCLP(leFalta)} más para <strong>ENVÍO GRATIS RM</strong>`;
+      elEnvio.innerHTML = `Agrega ${formatCLP(leFalta)} para <strong>Envío Gratis en RM</strong>`;
     } else {
       elEnvio.className = "badge-envio envio-normal";
       elEnvio.innerHTML = "Despacho a todo Chile · <strong>Gratis en RM sobre $100.000</strong>";
     }
   }
 
-  // Actualizar Barra Flotante Móvil
   const floatingBar = document.getElementById("floating-mobile-bar");
   const floatingUnits = document.getElementById("floating-units");
   const floatingTotal = document.getElementById("floating-total");
@@ -456,7 +434,6 @@ function actualizarCalculos() {
   renderizarTablaResumen();
 }
 
-// Renderizado de tabla detallada de desglose
 function renderizarTablaResumen() {
   const container = document.getElementById("items-cotizados-list");
   if (!container) return;
@@ -465,9 +442,8 @@ function renderizarTablaResumen() {
   if (itemsKeys.length === 0) {
     container.innerHTML = `
       <div class="empty-cart-state">
-        
-        <h4>Tu cotización está vacía</h4>
-        <p>Selecciona cantidades en los productos superiores para ver tu cotización y descuentos en tiempo real.</p>
+        <h4>Cotización sin productos seleccionados</h4>
+        <p>Ajusta las cantidades en el catálogo superior para calcular el desglose y descuentos por volumen.</p>
       </div>
     `;
     return;
@@ -530,11 +506,10 @@ function renderizarTablaResumen() {
   `;
 }
 
-// Envío a WhatsApp con mensaje estructurado
 function enviarWhatsApp() {
   const itemsKeys = Object.keys(carritoCotizacion);
   if (itemsKeys.length === 0) {
-    alert("Por favor selecciona al menos un producto antes de enviar a WhatsApp.");
+    alert("Por favor selecciona al menos un producto antes de solicitar por WhatsApp.");
     return;
   }
 
@@ -558,14 +533,14 @@ function enviarWhatsApp() {
 
   let msg = "COTIZACIÓN OFICIAL — AMÉRICA PULIDO SPA\n";
   msg += "━━━━━━━━━━━━━━━━━━━━━\n";
-  msg += "Hola! Quisiera solicitar la siguiente cotización realizada desde el Cotizador Web:\n\n";
+  msg += "Hola, solicito la siguiente cotización de insumos realizada desde la web:\n\n";
 
   itemsKeys.forEach(id => {
     const qty = carritoCotizacion[id];
     const prod = PRODUCTOS_CATALOGO.find(p => p.id === id);
     if (prod) {
       const precioUnitDto = prod.precioLista * (1 - tramo.dto);
-      msg += `▪ *${prod.nombre}*\n  Cantidad: ${qty} unid. | Precio: ${formatCLP(precioUnitDto)} c/u\n`;
+      msg += `▪ ${prod.nombre}\n  Cantidad: ${qty} unid. | Precio: ${formatCLP(precioUnitDto)} c/u\n`;
     }
   });
 
@@ -577,20 +552,19 @@ function enviarWhatsApp() {
   msg += `TOTAL FINAL: ${formatCLP(totalBruto)}\n`;
   
   if (totalBruto >= 100000) {
-    msg += "Beneficio: ¡Aplica a ENVÍO GRATIS en Santiago RM!\n";
+    msg += "Beneficio: Aplica a Envío Gratis en Santiago RM\n";
   }
-  msg += "\nSolicito confirmación de stock, datos para transferencia o pago con tarjeta y fecha de despacho. ¡Muchas gracias!";
+  msg += "\nQuedo atento a la confirmación de stock, medios de pago y fecha de despacho. Muchas gracias.";
 
   const phone = "56978685664";
   const url = `https://wa.me/${phone}?text=${encodeURIComponent(msg)}`;
   window.open(url, '_blank');
 }
 
-// Descarga / Impresión de PDF Oficial
 function descargarPDFCotizacion() {
   const itemsKeys = Object.keys(carritoCotizacion);
   if (itemsKeys.length === 0) {
-    alert("Por favor selecciona productos para generar el documento oficial en PDF.");
+    alert("Por favor selecciona productos para generar el documento formal en PDF.");
     return;
   }
 
@@ -631,7 +605,7 @@ function descargarPDFCotizacion() {
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', -apple-system, sans-serif; }
         body { color: #1e293b; padding: 40px; margin: 0; background: #ffffff; line-height: 1.5; font-size: 13px; }
         .no-print { margin-bottom: 24px; text-align: right; }
-        .btn-print { background: #D4A843; color: #000; font-weight: 800; border: none; padding: 12px 24px; font-size: 14px; border-radius: 8px; cursor: pointer; box-shadow: 0 4px 12px rgba(212,168,67,0.3); }
+        .btn-print { background: #D4A843; color: #000; font-weight: 800; border: none; padding: 12px 24px; font-size: 14px; border-radius: 8px; cursor: pointer; }
         .header-pdf { display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid #D4A843; padding-bottom: 24px; margin-bottom: 24px; }
         .logo-box { display: flex; align-items: center; gap: 14px; }
         .logo-box img { height: 60px; }
@@ -694,7 +668,7 @@ function descargarPDFCotizacion() {
         </div>
         <div class="meta-col">
           <div><strong>Cobertura Despacho:</strong> Santiago RM y Regiones (Starken / Chilexpress)</div>
-          <div><strong>Beneficio Especial:</strong> ${totalBruto >= 100000 ? '✅ ENVÍO GRATIS Santiago RM' : 'Tarifa estándar de envío'}</div>
+          <div><strong>Beneficio Especial:</strong> ${totalBruto >= 100000 ? 'Envío sin costo en Santiago RM' : 'Tarifa estándar de envío'}</div>
           <div><strong>Descuento Aplicado:</strong> <span style="color:#b45309; font-weight:bold;">${Math.round(tramo.dto * 100)}% por Tramo de Volumen</span></div>
         </div>
       </div>
