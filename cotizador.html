@@ -306,21 +306,7 @@
       position: relative;
     }
 
-    .hero-badge-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 6px 16px;
-      border-radius: 50px;
-      background: rgba(212, 168, 67, 0.1);
-      border: 1px solid var(--brand-gold);
-      color: var(--brand-gold-light);
-      font-size: 0.75rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      margin-bottom: 16px;
-    }
+    
 
     .hero-cotizador h1 {
       font-size: clamp(1.8rem, 3.8vw, 2.8rem);
@@ -1062,11 +1048,11 @@
   <!-- ========== NAVBAR UNIFICADO ========== -->
   <nav>
     <div class="nav-inner">
-      <a href="index.html" class="logo" aria-label="Inicio América Pulido">
+      <a href="index.html" class="logo" aria-label="Inicio América Pulido SPA">
         <div class="logo-icon">
-          <img src="img/logo_spiral_transparent.png" alt="Isotipo América Pulido">
+          <img src="img/logo_spiral_transparent.png" alt="América Pulido SPA">
         </div>
-        <div class="logo-text">AMÉRICA <span>PULIDO</span></div>
+        <canvas id="logoCanvas"></canvas>
       </a>
       
       <div class="nav-links" id="navLinks">
@@ -1088,7 +1074,7 @@
 
   <!-- ========== HERO COTIZADOR ========== -->
   <header class="hero-cotizador">
-    <div class="hero-badge-tag">⚡ Cotizador Inteligente B2B & Retail</div>
+    
     <h1>Cotizador Dinámico con <span>Descuento por Volumen</span></h1>
     <p>Selecciona la cantidad de discos de resina, piedras cónicas o sierras copa. A mayor volumen de compra, mayor es tu escala de descuento automático y acceso a envío gratis.</p>
   </header>
@@ -1165,10 +1151,10 @@
 
       <!-- Botones de Acción -->
       <button type="button" class="btn-action btn-wsp" onclick="enviarWhatsApp()">
-        📱 Pedir por WhatsApp
+        Pedir por WhatsApp
       </button>
       <button type="button" class="btn-action btn-pdf" onclick="descargarPDFCotizacion()">
-        📄 Descargar PDF Oficial
+        Descargar PDF Oficial
       </button>
     </aside>
 
@@ -1220,6 +1206,7 @@
     </div>
   </footer>
 
+  <script src="js/logo-particles.js"></script>
   <script src="js/cotizador.js"></script>
   <script>
     // Toggle para menú móvil

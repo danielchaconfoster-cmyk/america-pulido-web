@@ -12,7 +12,6 @@ const PRODUCTOS_CATALOGO = [
     precioLista: 16990,
     costoBodega: 9223,
     unidad: "unidad",
-    estrella: true,
     img: "img/productos/prod_sacabocado_35mm.jpg"
   },
   {
@@ -25,7 +24,6 @@ const PRODUCTOS_CATALOGO = [
     precioLista: 11990,
     costoBodega: 4500,
     unidad: "unidad",
-    estrella: false,
     img: "img/productos/prod_resina_premium.jpg"
   },
   {
@@ -38,7 +36,6 @@ const PRODUCTOS_CATALOGO = [
     precioLista: 6490,
     costoBodega: 3998,
     unidad: "unidad",
-    estrella: false,
     img: "img/productos/prod_resina_seco.jpg"
   },
   {
@@ -51,7 +48,6 @@ const PRODUCTOS_CATALOGO = [
     precioLista: 4990,
     costoBodega: 2225,
     unidad: "unidad",
-    estrella: false,
     img: "img/productos/prod_resina_humedo.jpg"
   },
   {
@@ -64,7 +60,6 @@ const PRODUCTOS_CATALOGO = [
     precioLista: 54990,
     costoBodega: 38080,
     unidad: "unidad",
-    estrella: true,
     img: "img/productos/prod_ranurador_114mm.jpg"
   },
   {
@@ -77,7 +72,6 @@ const PRODUCTOS_CATALOGO = [
     precioLista: 12990,
     costoBodega: 6500,
     unidad: "unidad",
-    estrella: false,
     img: "img/productos/prod_desbaste.jpg"
   },
   {
@@ -90,7 +84,6 @@ const PRODUCTOS_CATALOGO = [
     precioLista: 9990,
     costoBodega: 4800,
     unidad: "unidad",
-    estrella: false,
     img: "img/productos/prod_disco_pulidor.jpg"
   },
   {
@@ -103,7 +96,6 @@ const PRODUCTOS_CATALOGO = [
     precioLista: 13990,
     costoBodega: 5938,
     unidad: "unidad",
-    estrella: false,
     img: "img/productos/prod_piedra_conica.jpg"
   },
   {
@@ -116,7 +108,6 @@ const PRODUCTOS_CATALOGO = [
     precioLista: 5490,
     costoBodega: 2600,
     unidad: "unidad",
-    estrella: false,
     img: "img/productos/prod_disco_silicio.jpg"
   },
   {
@@ -129,7 +120,6 @@ const PRODUCTOS_CATALOGO = [
     precioLista: 15990,
     costoBodega: 10924,
     unidad: "unidad",
-    estrella: false,
     img: "img/productos/prod_trompo_resina.jpg"
   },
   {
@@ -142,7 +132,6 @@ const PRODUCTOS_CATALOGO = [
     precioLista: 14990,
     costoBodega: 7200,
     unidad: "unidad",
-    estrella: false,
     img: "img/productos/prod_corte_continuo.jpg"
   },
   {
@@ -155,7 +144,6 @@ const PRODUCTOS_CATALOGO = [
     precioLista: 14990,
     costoBodega: 7200,
     unidad: "unidad",
-    estrella: false,
     img: "img/productos/prod_corte_segmentado.jpg"
   },
   {
@@ -168,7 +156,6 @@ const PRODUCTOS_CATALOGO = [
     precioLista: 9990,
     costoBodega: 5831,
     unidad: "unidad",
-    estrella: false,
     img: "img/productos/prod_base_pulir_reforzada.jpg"
   },
   {
@@ -181,7 +168,6 @@ const PRODUCTOS_CATALOGO = [
     precioLista: 8990,
     costoBodega: 4300,
     unidad: "unidad",
-    estrella: false,
     img: "img/productos/prod_masilla_dermax.jpg"
   }
 ];
@@ -273,7 +259,7 @@ function renderizarCatalogo() {
 
     return `
       <div class="card-producto ${isSelected ? 'selected' : ''}" id="card-${prod.id}">
-        ${prod.estrella ? '<div class="badge-star">⭐ Estrella</div>' : ''}
+        
         
         <div class="img-wrapper">
           <img src="img/logo_spiral_transparent.png" class="card-watermark" alt="Logo América Pulido">
@@ -420,7 +406,7 @@ function actualizarCalculos() {
   if (elHookMsg && elProgress) {
     if (totalUnidades === 0) {
       elProgress.style.width = "0%";
-      elHookMsg.innerHTML = "💡 Agrega <strong>10 unidades</strong> o más para activar descuentos por volumen automáticos.";
+      elHookMsg.innerHTML = "Agrega <strong>10 unidades</strong> o más para activar escala de descuentos automáticos.";
     } else if (siguienteTramo) {
       const faltantes = siguienteTramo.minQty - totalUnidades;
       const baseAnterior = tramoActual.minQty;
@@ -429,10 +415,10 @@ function actualizarCalculos() {
       const pctProgreso = Math.min(100, Math.max(10, Math.round((avanceEnRango / rango) * 100)));
 
       elProgress.style.width = `${pctProgreso}%`;
-      elHookMsg.innerHTML = `🔥 <strong>¡Estás a solo ${faltantes} unidades</strong> de subir a <strong>${Math.round(siguienteTramo.dto * 100)}% de descuento total!</strong>`;
+      elHookMsg.innerHTML = `Estás a solo <strong> ${faltantes} unidades</strong> de subir a <strong>${Math.round(siguienteTramo.dto * 100)}% de descuento total!</strong>`;
     } else {
       elProgress.style.width = "100%";
-      elHookMsg.innerHTML = "🏆 <strong>¡Nivel Máximo Desbloqueado!</strong> Cuentas con <strong>25% de Descuento Mayorista</strong> en tu compra.";
+      elHookMsg.innerHTML = "Has alcanzado el nivel máximo: Cuentas con <strong>25% de Descuento Mayorista</strong> en tu compra.";
     }
   }
 
@@ -441,14 +427,14 @@ function actualizarCalculos() {
   if (elEnvio) {
     if (totalFinal >= 100000) {
       elEnvio.className = "badge-envio envio-gratis";
-      elEnvio.innerHTML = "🚚 <strong>¡ENVÍO GRATIS A TODO SANTIAGO RM!</strong>";
+      elEnvio.innerHTML = "<strong>ENVÍO GRATIS EN SANTIAGO RM</strong>";
     } else if (totalFinal > 0) {
       const leFalta = 100000 - totalFinal;
       elEnvio.className = "badge-envio envio-normal";
-      elEnvio.innerHTML = `🚚 Agrega ${formatCLP(leFalta)} más para <strong>ENVÍO GRATIS RM</strong>`;
+      elEnvio.innerHTML = `Agrega ${formatCLP(leFalta)} más para <strong>ENVÍO GRATIS RM</strong>`;
     } else {
       elEnvio.className = "badge-envio envio-normal";
-      elEnvio.innerHTML = "🚚 Envíos a todo Chile · <strong>Gratis en RM sobre $100.000</strong>";
+      elEnvio.innerHTML = "Despacho a todo Chile · <strong>Gratis en RM sobre $100.000</strong>";
     }
   }
 
@@ -479,7 +465,7 @@ function renderizarTablaResumen() {
   if (itemsKeys.length === 0) {
     container.innerHTML = `
       <div class="empty-cart-state">
-        <div style="font-size: 2.5rem; margin-bottom: 10px;">🛒</div>
+        
         <h4>Tu cotización está vacía</h4>
         <p>Selecciona cantidades en los productos superiores para ver tu cotización y descuentos en tiempo real.</p>
       </div>
@@ -570,7 +556,7 @@ function enviarWhatsApp() {
   const iva = subtotalNeto * 0.19;
   const totalBruto = subtotalNeto + iva;
 
-  let msg = "*COTIZACIÓN OFICIAL — AMÉRICA PULIDO SPA*\n";
+  let msg = "COTIZACIÓN OFICIAL — AMÉRICA PULIDO SPA\n";
   msg += "━━━━━━━━━━━━━━━━━━━━━\n";
   msg += "Hola! Quisiera solicitar la siguiente cotización realizada desde el Cotizador Web:\n\n";
 
@@ -584,14 +570,14 @@ function enviarWhatsApp() {
   });
 
   msg += "\n━━━━━━━━━━━━━━━━━━━━━\n";
-  msg += `📦 *Total Unidades:* ${totalUnidades} unid.\n`;
-  msg += `🏷️ *Descuento Aplicado:* ${Math.round(tramo.dto * 100)}% (-${formatCLP(montoDto)})\n`;
-  msg += `💰 *Subtotal Neto:* ${formatCLP(subtotalNeto)}\n`;
-  msg += `📄 *IVA 19%:* ${formatCLP(iva)}\n`;
-  msg += `✅ *TOTAL FINAL:* ${formatCLP(totalBruto)}\n`;
+  msg += `Total Unidades: ${totalUnidades} unid.\n`;
+  msg += `Descuento Aplicado: ${Math.round(tramo.dto * 100)}% (-${formatCLP(montoDto)})\n`;
+  msg += `Subtotal Neto: ${formatCLP(subtotalNeto)}\n`;
+  msg += `IVA 19%: ${formatCLP(iva)}\n`;
+  msg += `TOTAL FINAL: ${formatCLP(totalBruto)}\n`;
   
   if (totalBruto >= 100000) {
-    msg += "🚚 *Beneficio:* ¡Aplica a ENVÍO GRATIS en Santiago RM!\n";
+    msg += "Beneficio: ¡Aplica a ENVÍO GRATIS en Santiago RM!\n";
   }
   msg += "\nSolicito confirmación de stock, datos para transferencia o pago con tarjeta y fecha de despacho. ¡Muchas gracias!";
 
@@ -676,7 +662,7 @@ function descargarPDFCotizacion() {
     </head>
     <body>
       <div class="no-print">
-        <button class="btn-print" onclick="window.print()">🖨️ Imprimir / Guardar como PDF</button>
+        <button class="btn-print" onclick="window.print()">Imprimir / Guardar como PDF</button>
       </div>
 
       <div class="header-pdf">
