@@ -4,243 +4,809 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cotizador Online de Insumos y Discos | América Pulido SPA</title>
-  <meta name="description" content="Calcula y cotiza en tiempo real tus discos de pulir resina, piedras cónicas, sierras copa y más con descuentos automáticos por volumen de América Pulido SPA.">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   
+  <!-- SEO Metadata -->
+  <meta name="description" content="Calcula y cotiza en tiempo real tus discos de pulir resina, piedras cónicas, copas diamantadas y sierras copa con escala automática de descuentos por volumen de América Pulido SPA.">
+  <meta name="keywords" content="cotizador insumos pulido, discos de resina precio mayorista, saca bocado 35mm, copas diamantadas, insumos marmol chile, america pulido spa">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.americapulidospa.cl/cotizador">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Cotizador Online de Insumos y Discos | América Pulido SPA">
+  <meta property="og:description" content="Cotiza insumos diamantados y discos de resina con descuentos por volumen en tiempo real y despacho a todo Chile.">
+  <meta property="og:image" content="https://www.americapulidospa.cl/img/productos/prod_sacabocado_35mm.jpg">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon & Fonts -->
+  <link rel="icon" type="image/jpeg" href="img/logo.jpg">
+  <link rel="apple-touch-icon" href="img/logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;600;700;800;900&family=Syncopate:wght@700;800&display=swap" rel="stylesheet">
+  
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window,document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1530673331820178');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1530673331820178&ev=PageView&noscript=1" /></noscript>
+  <!-- End Meta Pixel Code -->
+
   <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     :root {
-      --bg-dark: #0A0A0A;
-      --bg-card: #141414;
-      --bg-card-hover: #1E1E1E;
-      --gold-primary: #D4A843;
-      --gold-light: #E8C875;
-      --gold-dark: #B8912E;
+      --dark: #0A0A0A;
+      --dark-card: #121214;
+      --dark-card-hover: #1A1A1E;
+      --dark-border: rgba(255, 255, 255, 0.08);
+      --dark-border-hover: rgba(212, 168, 67, 0.5);
+      
+      --brand-green: #8dc63f;
+      --brand-orange: #f7931e;
+      --brand-red: #ed1c24;
+      --brand-purple: #662d91;
+      --brand-gold: #D4A843;
+      --brand-gold-light: #E8C875;
+      --brand-gold-dark: #B8912E;
+
       --text-main: #FFFFFF;
-      --text-muted: #A0AEC0;
-      --border-color: #2D3748;
-      --green-accent: #22c55e;
+      --text-muted: #9CA3AF;
+      --text-dim: #6B7280;
+      
+      --gradient-brand: linear-gradient(135deg, var(--brand-orange) 0%, var(--brand-red) 50%, var(--brand-purple) 100%);
+      --gradient-gold: linear-gradient(135deg, #D4A843 0%, #E8C875 50%, #B8912E 100%);
+      --glow-gold: 0 0 24px rgba(212, 168, 67, 0.35);
+      --glow-brand: 0 8px 32px rgba(247, 147, 30, 0.3);
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
-    body { background-color: var(--bg-dark); color: var(--text-main); line-height: 1.6; padding-bottom: 60px; }
+    html {
+      scroll-behavior: smooth;
+    }
 
-    /* Navbar Header */
-    header {
-      background-color: rgba(10, 10, 10, 0.95);
-      border-bottom: 1px solid var(--border-color);
-      position: sticky;
+    body {
+      background-color: var(--dark);
+      color: var(--text-main);
+      font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+      padding-bottom: 80px;
+    }
+
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--dark); }
+    ::-webkit-scrollbar-thumb { background: var(--brand-gold-dark); border-radius: 3px; }
+
+    /* ============ NAVBAR UNIFICADO & CONSISTENTE ============ */
+    nav {
+      position: fixed;
       top: 0;
-      z-index: 100;
-      backdrop-filter: blur(10px);
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 72px;
+      z-index: 1000;
+      background: rgba(10, 10, 10, 0.92);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border-bottom: 1px solid var(--dark-border);
+      padding: 0 5%;
+      transition: all 0.3s ease;
     }
-    .nav-container {
-      max-width: 1280px;
+
+    .nav-inner {
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 15px 20px;
+      height: 100%;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-    .logo-brand {
+
+    .logo {
       display: flex;
       align-items: center;
       gap: 12px;
       text-decoration: none;
       color: var(--text-main);
+      font-weight: 800;
+      font-size: 1.1rem;
+      letter-spacing: -0.3px;
     }
-    .logo-brand img { height: 44px; }
-    .logo-brand span { font-weight: 800; font-size: 1.2rem; letter-spacing: 0.5px; }
-    .logo-brand span strong { color: var(--gold-primary); }
+
+    .logo-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      overflow: hidden;
+      flex-shrink: 0;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .logo-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .logo-text {
+      font-family: 'Syncopate', sans-serif;
+      font-weight: 800;
+      font-size: 0.95rem;
+      letter-spacing: 1px;
+    }
+
+    .logo-text span {
+      background: var(--gradient-brand);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
 
     .nav-links a {
       color: var(--text-muted);
       text-decoration: none;
-      margin-left: 20px;
-      font-weight: 500;
-      transition: color 0.3s;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      transition: color 0.3s ease;
+      position: relative;
     }
-    .nav-links a:hover, .nav-links a.active { color: var(--gold-primary); }
 
-    /* Hero Section */
+    .nav-links a:hover {
+      color: var(--brand-gold);
+    }
+
+    .nav-links a.active {
+      color: var(--brand-gold);
+      font-weight: 700;
+    }
+
+    .nav-links a.active::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--gradient-gold);
+      border-radius: 2px;
+    }
+
+    .nav-cta {
+      position: relative;
+      background: transparent !important;
+      color: var(--text-main) !important;
+      padding: 9px 20px;
+      border-radius: 50px;
+      font-weight: 800 !important;
+      font-size: 0.78rem !important;
+      letter-spacing: 0.5px !important;
+      transition: all 0.3s !important;
+      z-index: 1;
+      overflow: hidden;
+      display: inline-block;
+      text-decoration: none;
+    }
+
+    .nav-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 50px;
+      padding: 2px;
+      background: var(--gradient-brand);
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      z-index: -1;
+    }
+
+    .nav-cta:hover {
+      box-shadow: var(--glow-brand);
+      transform: translateY(-1px);
+    }
+
+    /* Mobile hamburger button */
+    .mobile-menu-btn {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 40px;
+      height: 40px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      z-index: 1001;
+      padding: 8px;
+    }
+
+    .mobile-menu-btn span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background: var(--text-main);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    .mobile-menu-btn.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .mobile-menu-btn.active span:nth-child(2) { opacity: 0; }
+    .mobile-menu-btn.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    @media (max-width: 992px) {
+      .mobile-menu-btn {
+        display: flex;
+      }
+
+      .nav-links {
+        position: fixed;
+        top: 72px;
+        left: 0;
+        right: 0;
+        height: calc(100vh - 72px);
+        background: #0A0A0A;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.9);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 40px 20px;
+        gap: 28px;
+        transform: translateY(-120%);
+        opacity: 0;
+        visibility: hidden;
+        transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease, visibility 0.35s ease;
+        z-index: 1000;
+        border-bottom: 1px solid var(--dark-border);
+        overflow-y: auto;
+      }
+
+      .nav-links.open {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .nav-links a {
+        font-size: 1.15rem;
+        padding: 8px 16px;
+      }
+    }
+
+    /* ============ HERO DEL COTIZADOR ============ */
     .hero-cotizador {
+      padding: 130px 5% 40px;
       text-align: center;
-      padding: 50px 20px 30px;
-      background: radial-gradient(circle at top, rgba(212, 168, 67, 0.15) 0%, rgba(10, 10, 10, 1) 70%);
+      background: radial-gradient(circle at 50% 15%, rgba(212, 168, 67, 0.15) 0%, rgba(10, 10, 10, 1) 75%);
+      border-bottom: 1px solid var(--dark-border);
+      position: relative;
     }
-    .hero-cotizador h1 { font-size: 2.3rem; font-weight: 800; margin-bottom: 10px; }
-    .hero-cotizador h1 span { color: var(--gold-primary); }
-    .hero-cotizador p { color: var(--text-muted); font-size: 1.1rem; max-width: 700px; margin: 0 auto; }
 
-    /* Main Container Grid */
+    .hero-badge-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      border-radius: 50px;
+      background: rgba(212, 168, 67, 0.1);
+      border: 1px solid var(--brand-gold);
+      color: var(--brand-gold-light);
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 16px;
+    }
+
+    .hero-cotizador h1 {
+      font-size: clamp(1.8rem, 3.8vw, 2.8rem);
+      font-weight: 900;
+      letter-spacing: -1px;
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+
+    .hero-cotizador h1 span {
+      background: var(--gradient-gold);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-cotizador p {
+      color: var(--text-muted);
+      font-size: 1rem;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    /* ============ CATEGORY FILTER PILLS ============ */
+    .category-filter-bar {
+      max-width: 1200px;
+      margin: 24px auto 0;
+      padding: 0 20px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .filter-pill {
+      padding: 8px 18px;
+      border-radius: 50px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--dark-border);
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .filter-pill:hover {
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text-main);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .filter-pill.active {
+      background: var(--gradient-gold);
+      color: #000;
+      font-weight: 800;
+      border-color: transparent;
+      box-shadow: 0 4px 16px rgba(212, 168, 67, 0.3);
+    }
+
+    /* ============ LAYOUT PRINCIPAL DEL COTIZADOR ============ */
     .cotizador-layout {
-      max-width: 1280px;
+      max-width: 1240px;
       margin: 30px auto;
       padding: 0 20px;
       display: grid;
       grid-template-columns: 1fr 380px;
-      gap: 30px;
+      gap: 32px;
+      align-items: start;
     }
 
     @media (max-width: 992px) {
-      .cotizador-layout { grid-template-columns: 1fr; }
+      .cotizador-layout {
+        grid-template-columns: 1fr;
+      }
     }
 
-    /* Grid de Productos */
+    /* ============ GRID DE PRODUCTOS ============ */
     .grid-productos {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
       gap: 20px;
     }
 
+    @media (max-width: 600px) {
+      .grid-productos {
+        grid-template-columns: 1fr;
+      }
+    }
+
     .card-producto {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: 12px;
+      background: var(--dark-card);
+      border: 1px solid var(--dark-border);
+      border-radius: 18px;
       overflow: hidden;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      transition: transform 0.3s, border-color 0.3s;
+      position: relative;
+      transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.3s ease, box-shadow 0.3s ease;
     }
+
     .card-producto:hover {
       transform: translateY(-4px);
-      border-color: var(--gold-primary);
+      border-color: var(--dark-border-hover);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6);
     }
+
+    .card-producto.selected {
+      border-color: var(--brand-gold);
+      box-shadow: 0 0 20px rgba(212, 168, 67, 0.25);
+      background: #15151a;
+    }
+
+    .badge-star {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      z-index: 5;
+      padding: 4px 10px;
+      border-radius: 50px;
+      background: linear-gradient(135deg, #D4A843, #B8912E);
+      color: #000;
+      font-size: 0.7rem;
+      font-weight: 800;
+      box-shadow: 0 4px 12px rgba(212, 168, 67, 0.4);
+    }
+
     .img-wrapper {
       position: relative;
-      height: 180px;
-      background: #000;
+      height: 190px;
+      background: radial-gradient(circle at 50% 45%, #1e1e24 0%, #0d0d10 100%);
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 10px;
+      padding: 16px;
+      border-bottom: 1px solid var(--dark-border);
+      overflow: hidden;
     }
-    .img-wrapper img {
+
+    .prod-img {
       max-height: 100%;
       max-width: 100%;
+      width: auto;
+      height: auto;
       object-fit: contain;
+      filter: drop-shadow(0 8px 16px rgba(0,0,0,0.6));
+      transition: transform 0.3s ease;
     }
-    .badge-cat {
+
+    .card-producto:hover .prod-img {
+      transform: scale(1.06);
+    }
+
+    .card-watermark {
       position: absolute;
       top: 10px;
-      left: 10px;
-      background: rgba(0,0,0,0.7);
-      color: var(--gold-light);
-      padding: 4px 10px;
-      font-size: 0.75rem;
-      font-weight: 700;
-      border-radius: 20px;
-      border: 1px solid var(--gold-primary);
+      right: 10px;
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+      opacity: 0.9;
+      pointer-events: none;
+      z-index: 4;
     }
+
+    .badge-cat {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      background: rgba(10, 10, 10, 0.85);
+      backdrop-filter: blur(6px);
+      color: var(--brand-gold-light);
+      padding: 3px 8px;
+      font-size: 0.68rem;
+      font-weight: 700;
+      border-radius: 6px;
+      border: 1px solid rgba(212, 168, 67, 0.3);
+    }
+
+    .badge-qty-selected {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      background: var(--brand-gold);
+      color: #000;
+      padding: 3px 8px;
+      font-size: 0.7rem;
+      font-weight: 800;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    }
+
     .info-prod {
-      padding: 16px;
+      padding: 18px 16px 16px;
       display: flex;
       flex-direction: column;
       flex-grow: 1;
       justify-content: space-between;
     }
-    .info-prod h3 { font-size: 1rem; font-weight: 700; margin-bottom: 10px; min-height: 2.8em; }
-    .precios-row { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 15px; }
-    .precio-base { font-size: 1.25rem; font-weight: 800; color: var(--gold-primary); }
 
-    /* Quantity Controls */
+    .info-prod h3 {
+      font-size: 0.98rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 6px;
+      line-height: 1.35;
+      min-height: 2.7em;
+    }
+
+    .prod-desc {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+      margin-bottom: 10px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .prod-specs-pills {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+
+    .prod-specs-pills span {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-size: 0.68rem;
+      color: #ccc;
+    }
+
+    .precios-row {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 14px;
+      padding-top: 8px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .precio-label {
+      font-size: 0.7rem;
+      color: var(--text-dim);
+      display: block;
+    }
+
+    .precio-base {
+      font-size: 1.22rem;
+      font-weight: 900;
+      color: var(--brand-gold);
+      letter-spacing: -0.5px;
+    }
+
+    .subtotal-item-pill {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #8dc63f;
+      background: rgba(141, 198, 63, 0.12);
+      padding: 2px 8px;
+      border-radius: 6px;
+    }
+
+    /* ============ CONTADOR ERGONÓMICO ============ */
+    .counter-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
     .cant-controls {
       display: flex;
       align-items: center;
-      border: 1px solid var(--border-color);
-      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 10px;
       overflow: hidden;
       background: #000;
     }
+
     .btn-qty {
-      background: #1F2937;
+      background: #1a1a20;
       color: #fff;
       border: none;
-      width: 40px;
-      height: 40px;
-      font-size: 1.2rem;
-      font-weight: bold;
+      width: 44px;
+      height: 38px;
+      font-size: 1.25rem;
+      font-weight: 800;
       cursor: pointer;
-      transition: background 0.2s;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      user-select: none;
     }
-    .btn-qty:hover { background: var(--gold-primary); color: #000; }
-    .cant-controls input {
+
+    .btn-qty:hover {
+      background: var(--brand-gold);
+      color: #000;
+    }
+
+    .btn-qty:active {
+      transform: scale(0.92);
+    }
+
+    .input-qty {
       flex: 1;
       background: transparent;
       border: none;
       color: #fff;
       text-align: center;
-      font-size: 1.1rem;
-      font-weight: bold;
+      font-size: 1.05rem;
+      font-weight: 800;
       width: 50px;
       -moz-appearance: textfield;
+      outline: none;
     }
 
-    /* Sidebar Sticky Resumen */
+    .input-qty::-webkit-outer-spin-button,
+    .input-qty::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    .quick-add-row {
+      display: flex;
+      gap: 6px;
+    }
+
+    .quick-pill {
+      flex: 1;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--text-muted);
+      padding: 4px 0;
+      font-size: 0.72rem;
+      font-weight: 700;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-align: center;
+    }
+
+    .quick-pill:hover {
+      background: rgba(212, 168, 67, 0.15);
+      border-color: var(--brand-gold);
+      color: var(--brand-gold-light);
+    }
+
+    .quick-pill.pill-clear {
+      flex: 0 0 28px;
+      color: #ff6b6b;
+      border-color: rgba(255, 107, 107, 0.2);
+    }
+
+    .quick-pill.pill-clear:hover {
+      background: rgba(255, 107, 107, 0.15);
+      border-color: #ff6b6b;
+    }
+
+    /* ============ SIDEBAR STICKY RESUMEN ============ */
     .sidebar-resumen {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: 16px;
+      background: var(--dark-card);
+      border: 1px solid var(--dark-border);
+      border-radius: 20px;
       padding: 24px;
       position: sticky;
-      top: 100px;
-      height: fit-content;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      top: 90px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
     }
-    .sidebar-resumen h2 { font-size: 1.3rem; font-weight: 800; margin-bottom: 20px; border-bottom: 1px solid var(--border-color); padding-bottom: 12px; }
 
-    /* Hook Progress Bar */
-    .hook-card {
-      background: rgba(212, 168, 67, 0.08);
-      border: 1px solid var(--gold-primary);
-      border-radius: 10px;
-      padding: 14px;
-      margin-bottom: 20px;
+    .sidebar-title {
+      font-size: 1.25rem;
+      font-weight: 900;
+      letter-spacing: -0.3px;
+      margin-bottom: 18px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--dark-border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
-    .hook-text { font-size: 0.88rem; color: var(--text-main); margin-bottom: 10px; }
+
+    .sidebar-title span {
+      background: var(--gradient-gold);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Barra de Enganche Descuentos */
+    .hook-card {
+      background: rgba(212, 168, 67, 0.06);
+      border: 1px solid rgba(212, 168, 67, 0.35);
+      border-radius: 12px;
+      padding: 14px;
+      margin-bottom: 18px;
+    }
+
+    .hook-text {
+      font-size: 0.84rem;
+      color: var(--text-main);
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+
+    .hook-text strong {
+      color: var(--brand-gold-light);
+    }
+
     .progress-bar-bg {
-      background: #262626;
-      height: 10px;
-      border-radius: 5px;
+      background: #202026;
+      height: 8px;
+      border-radius: 4px;
       overflow: hidden;
     }
+
     .progress-bar-fill {
-      background: linear-gradient(90deg, var(--gold-dark), var(--gold-primary), var(--gold-light));
+      background: linear-gradient(90deg, var(--brand-gold-dark), var(--brand-gold), var(--brand-gold-light));
       height: 100%;
       width: 0%;
       transition: width 0.4s ease;
     }
 
-    /* Badge Envio */
+    /* Badge Envío */
     .badge-envio {
-      padding: 10px;
-      border-radius: 8px;
-      font-size: 0.85rem;
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-size: 0.82rem;
       text-align: center;
       margin-bottom: 20px;
+      line-height: 1.4;
     }
-    .envio-gratis { background: rgba(34, 197, 94, 0.15); border: 1px solid var(--green-accent); color: var(--green-accent); }
-    .envio-normal { background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-color); color: var(--text-muted); }
 
-    /* Summary Totals Table */
-    .line-total { display: flex; justify-content: space-between; font-size: 0.95rem; margin-bottom: 10px; color: var(--text-muted); }
-    .line-total.highlight { color: var(--gold-primary); font-weight: 700; }
+    .envio-gratis {
+      background: rgba(141, 198, 63, 0.12);
+      border: 1px solid var(--brand-green);
+      color: var(--brand-green);
+    }
+
+    .envio-normal {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--dark-border);
+      color: var(--text-muted);
+    }
+
+    /* Cifras de Totales */
+    .line-total {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.92rem;
+      margin-bottom: 10px;
+      color: var(--text-muted);
+    }
+
+    .line-total.highlight {
+      color: var(--brand-gold);
+      font-weight: 700;
+    }
+
     .line-total.final-price {
-      font-size: 1.4rem;
-      font-weight: 800;
+      font-size: 1.45rem;
+      font-weight: 900;
       color: #fff;
-      border-top: 1px dashed var(--border-color);
-      padding-top: 15px;
-      margin-top: 15px;
+      border-top: 1px dashed var(--dark-border);
+      padding-top: 16px;
+      margin-top: 16px;
+      letter-spacing: -0.5px;
     }
 
-    /* Action CTAs */
+    .line-total.final-price span:last-child {
+      color: var(--brand-gold);
+    }
+
+    /* Botones de Acción */
     .btn-action {
       width: 100%;
       padding: 14px;
-      border-radius: 8px;
-      font-size: 1rem;
-      font-weight: 700;
+      border-radius: 12px;
+      font-size: 0.95rem;
+      font-weight: 800;
       border: none;
       cursor: pointer;
       display: flex;
@@ -248,98 +814,337 @@
       justify-content: center;
       gap: 10px;
       margin-top: 12px;
-      transition: transform 0.2s, opacity 0.2s;
+      transition: all 0.25s ease;
+      text-decoration: none;
     }
-    .btn-action:hover { transform: translateY(-2px); opacity: 0.95; }
-    .btn-wsp { background: #25D366; color: #fff; }
-    .btn-pdf { background: var(--gold-primary); color: #000; }
 
-    /* Tabla Lista de Items */
+    .btn-action:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+    }
+
+    .btn-wsp {
+      background: #25D366;
+      color: #fff;
+    }
+
+    .btn-wsp:hover {
+      background: #20ba5a;
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+    }
+
+    .btn-pdf {
+      background: var(--gradient-gold);
+      color: #000;
+    }
+
+    .btn-pdf:hover {
+      box-shadow: 0 6px 20px rgba(212, 168, 67, 0.4);
+    }
+
+    /* ============ TABLA DETALLADA INVOICE ============ */
+    .tabla-container {
+      margin-top: 36px;
+      background: var(--dark-card);
+      padding: 24px;
+      border-radius: 20px;
+      border: 1px solid var(--dark-border);
+    }
+
+    .tabla-container h3 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
     .tabla-resumen-cotizacion {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 25px;
       font-size: 0.85rem;
     }
+
     .tabla-resumen-cotizacion th {
       text-align: left;
       color: var(--text-muted);
-      border-bottom: 1px solid var(--border-color);
-      padding-bottom: 8px;
+      border-bottom: 1px solid var(--dark-border);
+      padding: 10px 12px;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
+
     .tabla-resumen-cotizacion td {
-      padding: 10px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.05);
+      padding: 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      vertical-align: middle;
     }
+
+    .badge-table-qty {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+
+    .btn-remove-item {
+      background: transparent;
+      border: none;
+      color: #ff6b6b;
+      cursor: pointer;
+      padding: 4px 8px;
+      font-size: 0.9rem;
+      border-radius: 4px;
+      transition: background 0.2s;
+    }
+
+    .btn-remove-item:hover {
+      background: rgba(255, 107, 107, 0.15);
+    }
+
     .text-right { text-align: right; }
     .text-center { text-align: center; }
-    .text-gold { color: var(--gold-primary); }
-    .bold { font-weight: 700; }
-    .empty-msg { color: var(--text-muted); font-size: 0.9rem; text-align: center; margin-top: 20px; }
+    .text-gold { color: var(--brand-gold); }
+    .bold { font-weight: 700; color: #fff; }
+
+    .empty-cart-state {
+      text-align: center;
+      padding: 36px 20px;
+      color: var(--text-muted);
+    }
+
+    .empty-cart-state h4 {
+      font-size: 1.1rem;
+      color: var(--text-main);
+      margin-bottom: 6px;
+    }
+
+    /* ============ FLOATING MOBILE BAR ============ */
+    .floating-mobile-bar {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(18, 18, 20, 0.96);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-top: 1px solid var(--dark-border);
+      padding: 12px 20px;
+      z-index: 998;
+      box-shadow: 0 -8px 24px rgba(0,0,0,0.5);
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+
+    .floating-mobile-bar.visible {
+      transform: translateY(0);
+    }
+
+    .floating-bar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .floating-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .floating-units {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .floating-total {
+      font-size: 1.25rem;
+      font-weight: 900;
+      color: var(--brand-gold);
+    }
+
+    .btn-floating-wsp {
+      background: #25D366;
+      color: #fff;
+      font-weight: 800;
+      font-size: 0.85rem;
+      padding: 10px 18px;
+      border-radius: 10px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    @media (max-width: 992px) {
+      .floating-mobile-bar {
+        display: block;
+      }
+    }
+
+    /* ============ FOOTER ============ */
+    footer {
+      background: #080808;
+      border-top: 1px solid var(--dark-border);
+      padding: 60px 5% 30px;
+      margin-top: 60px;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-col h4 {
+      font-size: 0.85rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--text-main);
+      margin-bottom: 16px;
+    }
+
+    .footer-col p, .footer-col a {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      text-decoration: none;
+      line-height: 1.7;
+    }
+
+    .footer-col a:hover {
+      color: var(--brand-gold);
+    }
+
+    .footer-links-list {
+      list-style: none;
+    }
+
+    .footer-links-list li {
+      margin-bottom: 8px;
+    }
+
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.78rem;
+      color: var(--text-dim);
+    }
+
+    @media (max-width: 768px) {
+      .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+      .footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <header>
-    <div class="nav-container">
-      <a href="index.html" class="logo-brand">
-        <img src="img/logo_spiral_transparent.png" alt="Logo América Pulido">
-        <span>AMÉRICA <strong>PULIDO</strong></span>
+  <!-- ========== NAVBAR UNIFICADO ========== -->
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="logo" aria-label="Inicio América Pulido">
+        <div class="logo-icon">
+          <img src="img/logo_spiral_transparent.png" alt="Isotipo América Pulido">
+        </div>
+        <div class="logo-text">AMÉRICA <span>PULIDO</span></div>
       </a>
-      <nav class="nav-links">
-        <a href="index.html">Inicio</a>
-        <a href="productos.html">Catálogo Completo</a>
+      
+      <div class="nav-links" id="navLinks">
+        <a href="index.html#servicios">Servicios</a>
+        <a href="productos.html">Productos</a>
         <a href="cotizador.html" class="active">Cotizador Online</a>
+        <a href="index.html#garantias">Garantías</a>
         <a href="index.html#contacto">Contacto</a>
-      </nav>
+        <a href="https://wa.me/56978685664?text=Hola%20América%20Pulido%2C%20quisiera%20solicitar%20asesoría%20técnica%20de%20insumos." target="_blank" class="nav-cta">CONTACTAR POR WHATSAPP</a>
+      </div>
+
+      <button class="mobile-menu-btn" id="mobileMenuToggle" aria-label="Abrir Menú Móvil">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
+  </nav>
+
+  <!-- ========== HERO COTIZADOR ========== -->
+  <header class="hero-cotizador">
+    <div class="hero-badge-tag">⚡ Cotizador Inteligente B2B & Retail</div>
+    <h1>Cotizador Dinámico con <span>Descuento por Volumen</span></h1>
+    <p>Selecciona la cantidad de discos de resina, piedras cónicas o sierras copa. A mayor volumen de compra, mayor es tu escala de descuento automático y acceso a envío gratis.</p>
   </header>
 
-  <section class="hero-cotizador">
-    <h1>Cotizador Dinámico con <span>Descuento por Volumen</span></h1>
-    <p>Selecciona tus discos de resina, piedras cónicas o sierras copa. A mayor cantidad de unidades, mayor es tu porcentaje de descuento automático.</p>
-  </section>
+  <!-- ========== CATEGORY FILTER BAR ========== -->
+  <div class="category-filter-bar">
+    <button type="button" class="filter-pill active" onclick="filtrarCategoria('todos', this)">Todos los Insumos</button>
+    <button type="button" class="filter-pill" onclick="filtrarCategoria('resinas', this)">Discos y Resinas</button>
+    <button type="button" class="filter-pill" onclick="filtrarCategoria('diamantados', this)">Diamantados y Cortes</button>
+    <button type="button" class="filter-pill" onclick="filtrarCategoria('bases', this)">Bases y Accesorios</button>
+    <button type="button" class="filter-pill" onclick="filtrarCategoria('quimicos', this)">Masillas y Químicos</button>
+  </div>
 
+  <!-- ========== LAYOUT PRINCIPAL ========== -->
   <div class="cotizador-layout">
     
-    <!-- Lado Izquierdo: Catálogo de Productos para Elegir -->
-    <div class="main-cotizador-content">
+    <!-- Lado Izquierdo: Catálogo de Productos y Tabla Resumen -->
+    <main class="main-cotizador-content">
       <div class="grid-productos" id="grid-productos">
         <!-- Renderizado dinámicamente con JS -->
       </div>
 
       <!-- Tabla Detallada de Carrito al Pie -->
-      <div style="margin-top: 40px; background: var(--bg-card); padding: 24px; border-radius: 16px; border: 1px solid var(--border-color);">
-        <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 15px;">📋 Desglose Detallado de tu Cotización</h3>
+      <section class="tabla-container" aria-label="Desglose de Cotización">
+        <h3>📋 Desglose Detallado de tu Cotización</h3>
         <div id="items-cotizados-list">
-          <!-- Renderizado dinámicamente -->
+          <!-- Renderizado dinámicamente con JS -->
         </div>
+      </section>
+    </main>
+
+    <!-- Lado Derecho: Resumen Sticky y Panel de Ahorro -->
+    <aside class="sidebar-resumen" aria-label="Panel Resumen de Cotización">
+      <div class="sidebar-title">
+        Resumen <span>de Compra</span>
       </div>
-    </div>
 
-    <!-- Lado Derecho: Resumen y Panel de Ahorro -->
-    <aside class="sidebar-resumen">
-      <h2>Resumen de Cotización</h2>
-
-      <!-- Hook Bar -->
+      <!-- Hook Bar de Ahorro -->
       <div class="hook-card">
         <div class="hook-text" id="hook-message">
-          Selecciona productos para calcular tu nivel de descuento.
+          Selecciona productos para calcular tu nivel de descuento automático.
         </div>
         <div class="progress-bar-bg">
           <div class="progress-bar-fill" id="progress-bar-fill"></div>
         </div>
       </div>
 
-      <!-- Badge Envio -->
+      <!-- Badge Envío Gratis -->
       <div class="badge-envio envio-normal" id="badge-envio">
-        🚚 Agrega más productos para <strong>ENVÍO GRATIS</strong>
+        🚚 Envíos a todo Chile · <strong>Gratis en RM sobre $100.000</strong>
       </div>
 
-      <!-- Cifras -->
+      <!-- Desglose de Totales -->
       <div class="line-total">
         <span>Unidades Totales:</span>
-        <span id="resumen-unidades">0</span>
+        <span id="resumen-unidades" style="font-weight:700; color:#fff;">0 unid.</span>
       </div>
       <div class="line-total">
         <span>Subtotal Lista:</span>
@@ -369,6 +1174,72 @@
 
   </div>
 
+  <!-- ========== FLOATING MOBILE BAR ========== -->
+  <div class="floating-mobile-bar" id="floating-mobile-bar">
+    <div class="floating-bar-inner">
+      <div class="floating-info">
+        <span class="floating-units" id="floating-units">0 productos</span>
+        <span class="floating-total" id="floating-total">$0</span>
+      </div>
+      <a href="javascript:void(0)" onclick="enviarWhatsApp()" class="btn-floating-wsp">
+        📱 Pedir WhatsApp
+      </a>
+    </div>
+  </div>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-col">
+        <h4>América Pulido SPA</h4>
+        <p>Especialistas en restauración, pulido y vitrificado de pisos de hormigón, mármol, granito y maderas. Distribución de insumos diamantados profesionales para todo Chile.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navegación</h4>
+        <ul class="footer-links-list">
+          <li><a href="index.html#servicios">Servicios de Pulido</a></li>
+          <li><a href="productos.html">Catálogo Completo</a></li>
+          <li><a href="cotizador.html">Cotizador Online</a></li>
+          <li><a href="index.html#garantias">Garantías</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <p>WhatsApp: +56 9 7868 5664<br>
+        Instagram: @americapulidospa<br>
+        Dirección: Ñuñoa, Santiago, Chile</p>
+      </div>
+      <div class="footer-col">
+        <h4>Despachos</h4>
+        <p>Envíos a todo Chile vía Starken, Chilexpress y Pullman Cargo. Despacho gratis en Santiago RM por compras sobre $100.000.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>&copy; 2026 América Pulido SPA. Todos los derechos reservados.</div>
+      <div>Desarrollado con arquitectura de alta performance</div>
+    </div>
+  </footer>
+
   <script src="js/cotizador.js"></script>
+  <script>
+    // Toggle para menú móvil
+    const mobileBtn = document.getElementById('mobileMenuToggle');
+    const navLinks = document.getElementById('navLinks');
+    
+    if (mobileBtn && navLinks) {
+      mobileBtn.addEventListener('click', () => {
+        const isOpen = navLinks.classList.toggle('open');
+        mobileBtn.classList.toggle('active', isOpen);
+      });
+
+      // Cerrar al hacer click en enlaces
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navLinks.classList.remove('open');
+          mobileBtn.classList.remove('active');
+        });
+      });
+    }
+  </script>
 </body>
 </html>

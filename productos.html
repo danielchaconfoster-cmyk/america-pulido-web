@@ -43,14 +43,65 @@
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
     body { background-color: var(--dark); color: var(--white); line-height: 1.6; overflow-x: hidden; }
 
-    /* ========== NAV ========== */
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(10,10,10,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--dark-border); padding: 0 5%; height: 72px; display: flex; align-items: center; }
+    /* ========== NAV UNIFICADO ========== */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(10,10,10,0.92); backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); border-bottom: 1px solid var(--dark-border); padding: 0 5%; height: 72px; display: flex; align-items: center; }
     .nav-inner { max-width: 1200px; width: 100%; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
-    .logo { font-family: 'Syncopate', sans-serif; font-size: 1.1rem; font-weight: 800; color: var(--white); text-decoration: none; display: flex; align-items: center; gap: 10px; }
-    .nav-links { display: flex; align-items: center; gap: 32px; }
-    .nav-links a { color: var(--gray-300); text-decoration: none; font-size: 0.9rem; font-weight: 600; transition: all 0.3s; }
-    .nav-links a:hover, .nav-links a.active { color: var(--brand-gold); }
-    .nav-cta { padding: 10px 20px; border-radius: 50px; background: var(--gradient-brand); color: var(--white) !important; font-weight: 800 !important; font-size: 0.8rem !important; box-shadow: var(--glow-brand); letter-spacing: 0.5px; }
+    .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--white); font-weight: 800; font-size: 1.1rem; }
+    .logo-icon { width: 40px; height: 40px; border-radius: 50%; overflow: hidden; flex-shrink: 0; background: #000; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255, 255, 255, 0.1); }
+    .logo-icon img { width: 100%; height: 100%; object-fit: cover; }
+    .logo-text { font-family: 'Syncopate', sans-serif; font-weight: 800; font-size: 0.95rem; letter-spacing: 1px; }
+    .logo-text span { background: linear-gradient(135deg, #f7931e 0%, #ed1c24 50%, #662d91 100%); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .nav-links { display: flex; align-items: center; gap: 24px; }
+    .nav-links a { color: var(--gray-300); text-decoration: none; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.3px; transition: color 0.3s; position: relative; }
+    .nav-links a:hover { color: var(--brand-gold); }
+    .nav-links a.active { color: var(--brand-gold); font-weight: 700; }
+    .nav-links a.active::after { content: ''; position: absolute; bottom: -6px; left: 0; right: 0; height: 2px; background: var(--gradient-brand); border-radius: 2px; }
+    .nav-cta { position: relative; background: transparent !important; color: var(--white) !important; padding: 9px 20px; border-radius: 50px; font-weight: 800 !important; font-size: 0.78rem !important; letter-spacing: 0.5px !important; transition: all 0.3s !important; z-index: 1; overflow: hidden; display: inline-block; text-decoration: none; }
+    .nav-cta::before { content: ''; position: absolute; inset: 0; border-radius: 50px; padding: 2px; background: linear-gradient(135deg, #f7931e 0%, #ed1c24 50%, #662d91 100%); mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; z-index: -1; }
+    .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 8px 32px rgba(247,147,30,0.3); }
+
+        .mobile-menu-btn.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .mobile-menu-btn.active span:nth-child(2) { opacity: 0; }
+    .mobile-menu-btn.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    @media (max-width: 992px) {
+      .mobile-menu-btn {
+        display: flex;
+      }
+
+      .nav-links {
+        position: fixed;
+        top: 72px;
+        left: 0;
+        right: 0;
+        height: calc(100vh - 72px);
+        background: #0A0A0A;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.9);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 40px 20px;
+        gap: 28px;
+        transform: translateY(-120%);
+        opacity: 0;
+        visibility: hidden;
+        transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease, visibility 0.35s ease;
+        z-index: 1000;
+        border-bottom: 1px solid var(--dark-border);
+        overflow-y: auto;
+      }
+
+      .nav-links.open {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .nav-links a {
+        font-size: 1.15rem;
+        padding: 8px 16px;
+      }
+    }
 
     /* ========== HERO PAGE HEADER ========== */
     .page-header { padding: 140px 5% 60px; background: radial-gradient(circle at 50% 20%, rgba(212,168,67,0.12) 0%, rgba(10,10,10,1) 70%); text-align: center; border-bottom: 1px solid var(--dark-border); }
@@ -169,19 +220,28 @@
 </head>
 <body>
 
-  <!-- NAV -->
+  <!-- NAV UNIFICADO -->
   <nav>
     <div class="nav-inner">
-      <a href="index.html" class="logo" aria-label="Inicio America Pulido">
-        <canvas id="logoCanvas" style="display:block; width:180px; height:45px;"></canvas>
+      <a href="index.html" class="logo" aria-label="Inicio América Pulido">
+        <div class="logo-icon">
+          <img src="img/logo_spiral_transparent.png" alt="Isotipo América Pulido">
+        </div>
+        <div class="logo-text">AMÉRICA <span>PULIDO</span></div>
       </a>
-      <div class="nav-links">
+      <div class="nav-links" id="navLinks">
         <a href="index.html#servicios">Servicios</a>
         <a href="productos.html" class="active">Productos</a>
-        <a href="cotizador.html" style="color:var(--brand-orange, #D4A843);font-weight:bold;">Cotizador Online</a>
+        <a href="cotizador.html" style="color:var(--brand-gold);font-weight:700;">Cotizador Online</a>
         <a href="index.html#garantias">Garantías</a>
-        <a href="https://wa.me/56978685664?text=Hola%20America%20Pulido%2C%20quiero%20cotizar%20insumos%20y%20herramientas." target="_blank" class="nav-cta">COMPRAR POR WHATSAPP</a>
+        <a href="index.html#contacto">Contacto</a>
+        <a href="https://wa.me/56978685664?text=Hola%20América%20Pulido%2C%20quiero%20cotizar%20insumos%20y%20herramientas." target="_blank" class="nav-cta">COMPRAR POR WHATSAPP</a>
       </div>
+      <button class="mobile-menu-btn" id="mobileMenuToggle" aria-label="Abrir Menú Móvil">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </nav>
 
@@ -703,5 +763,25 @@
     }
   </script>
 
+
+  <script>
+        const mobileBtn = document.getElementById('mobileMenuToggle');
+    const navLinks = document.getElementById('navLinks');
+    
+    if (mobileBtn && navLinks) {
+      mobileBtn.addEventListener('click', () => {
+        const isOpen = navLinks.classList.toggle('open');
+        mobileBtn.classList.toggle('active', isOpen);
+      });
+
+      // Cerrar al hacer click en enlaces
+      navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navLinks.classList.remove('open');
+          mobileBtn.classList.remove('active');
+        });
+      });
+    }
+  </script>
 </body>
 </html>

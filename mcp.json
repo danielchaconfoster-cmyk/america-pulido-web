@@ -7,6 +7,14 @@
         "mcp-remote@latest",
         "https://mcp.canva.com/mcp"
       ]
+    },
+    "metricool": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-remote@latest",
+        "https://ai.metricool.com/mcp"
+      ]
     }
   }
 }
