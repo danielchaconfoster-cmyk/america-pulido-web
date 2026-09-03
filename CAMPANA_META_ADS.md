@@ -143,6 +143,16 @@ Es el período donde el algoritmo de Meta aprende qué personas responden mejor 
       Audiencia: Visitaron landing en últimos 30 días
 
       📄 Anuncio 3A: "¿Aún buscas pulir tus pisos?"
+
+   📂 Ad Set 4: "Venta de Insumos y Herramientas — Santiago & Todo Chile"
+      Presupuesto: $2.000 - $4.000/día (Escala de Alto Retorno / Ticket Rápido)
+      Audiencia: Maestros marmoleros, pulidores, albañiles, constructores, ceramistas y contratistas en RM y Regiones
+      Ubicaciones: Feed Instagram + Feed Facebook + Stories / Reels
+      Objetivo: Mensajes a WhatsApp / Tráfico Web Directo
+
+      📄 Anuncio 4A: "Saca Bocado Diamantado 35mm" (Creativo Ganador CPL $685)
+      📄 Anuncio 4B: "Piedra Cónica de Desbaste M14" (NUEVO - Acceso directo a web/WhatsApp)
+      📄 Anuncio 4C: "Disco Diamantado de Desbaste" (NUEVO - Acceso directo a web/WhatsApp)
 ```
 
 ---
@@ -200,6 +210,104 @@ En 30 minutos te decimos exactamente qué necesita tu piso y cuánto cuesta.
 Escríbenos hoy — respondemos rápido 🔥
 ```
 **CTA:** Enviar mensaje (WhatsApp)
+
+---
+
+### Anuncio 4A — Saca Bocado Diamantado 35mm (Insumos)
+**Título:** Saca Bocado 35mm — Perforaciones sin romper porcelanato
+**Texto principal:**
+```
+🔥 ¡Perforaciones limpias y rápidas en porcelanato, mármol y baldosas sin fisuras! 💎
+
+Especialmente diseñado para perforar la medida exacta de griferías monomando y cañerías.
+
+✅ Diámetro: 35mm estándar para grifería
+✅ Rosca universal para esmeril / galleteadora
+✅ Uso en seco o con refrigeración de agua
+
+💰 PRECIO: $16.990 CLP c/u
+
+🔗 Ver ficha en la web: https://www.americapulidospa.cl/productos/sacabocado-diamantado-35mm.html
+📲 Haz tu pedido directo por WhatsApp:
+```
+**Destino Web:** `https://www.americapulidospa.cl/productos/sacabocado-diamantado-35mm.html?utm_source=meta_ads&utm_medium=cpc&utm_campaign=insumos_herramientas&utm_content=sacabocado_35mm`  
+**Destino WhatsApp:** `https://wa.me/56978685664?text=Hola%20Am%C3%A9rica%20Pulido%2C%20quiero%20comprar%20el%20Saca%20Bocado%20Diamantado%2035mm%20(%2416.990).`  
+**Creativo:** `img/productos/anuncio_meta_sacabocado_35mm.jpg`  
+**CTA:** Comprar / Enviar mensaje por WhatsApp
+
+---
+
+### Anuncio 4B — Piedra Cónica de Desbaste M14 (NUEVO)
+**Título:** Piedra Cónica M14 — Llega a zócalos y esquinas difíciles
+**Texto principal:**
+```
+📐 ¿Problemas para emparejar o pulir zócalos, esquinas y bordes donde no entra la pulidora plana? 🪨
+
+Nuestra Piedra Cónica de Carburo de Silicio (Rosca M14) es la herramienta clave para terminaciones precisas en mármol, granito, baldosas y hormigón.
+
+✅ Granos disponibles: 36 (desbaste rápido), 60 y 80 (refinado)
+✅ Rosca directa M14 estándar para galleteadora / esmeril
+✅ Acabados perfectos en cantos y encuentros de muro
+
+💰 PRECIO: $13.990 CLP c/u
+
+🚚 PAGO CONTRA ENTREGA EN SANTIAGO: Paga al momento de recibir en tu obra.
+📦 DESPACHO A TODO CHILE: Envíos rápidos a regiones.
+
+🔗 Acceso directo al producto en nuestra web:
+https://www.americapulidospa.cl/productos/piedra-conica-desbaste.html
+
+📲 ¡Pide la tuya hoy mismo por WhatsApp! 👇
+```
+**Destino Web:** `https://www.americapulidospa.cl/productos/piedra-conica-desbaste.html?utm_source=meta_ads&utm_medium=cpc&utm_campaign=insumos_herramientas&utm_content=piedra_conica`  
+**Destino WhatsApp Directo:** `https://wa.me/56978685664?text=Hola%20Am%C3%A9rica%20Pulido%2C%20vi%20el%20anuncio%20de%20la%20Piedra%20C%C3%B3nica%20de%20Desbaste%20(%2413.990)%20y%20quiero%20pedir%20la%20m%C3%ADa.`  
+**Creativo:** `img/productos/anuncio_meta_piedra_conica.jpg`  
+**CTA:** Comprar / Enviar mensaje por WhatsApp
+
+---
+
+### Anuncio 4C — Disco Diamantado de Desbaste (NUEVO)
+**Título:** Copa Diamantada de Desbaste — Nivelación y remoción agresiva
+**Texto principal:**
+```
+⚡ ¿Necesitas nivelar radieres, retirar adhesivos viejos de cerámica o remover pintura epóxica en segundos? 🏗️
+
+Nuestra Copa Diamantada de Desbaste Turbo 4 1/2" ofrece remoción rápida y pareja sin sobrecalentar el motor.
+
+✅ Diámetro: 4.5 pulgadas (115mm)
+✅ Segmentos turbo doble hilera de alto rebaje
+✅ Uso en seco o refrigerado
+
+💰 PRECIO: $12.990 CLP c/u
+
+🚚 PAGO CONTRA ENTREGA EN SANTIAGO / ENVÍOS A TODO CHILE.
+
+🔗 Ver ficha en la web:
+https://www.americapulidospa.cl/productos/disco-diamantado-desbaste.html
+```
+**Destino Web:** `https://www.americapulidospa.cl/productos/disco-diamantado-desbaste.html?utm_source=meta_ads&utm_medium=cpc&utm_campaign=insumos_herramientas&utm_content=disco_desbaste`
+⚡ ¿Necesitas remover capas de epóxico, pintura vieja o nivelar sobrelosa de hormigón en minutos? 🏢🔨
+
+El Disco Diamantado de Desbaste (Copa Diamantada Pesada) ofrece máxima velocidad de arranque de material sin desgaste prematuro.
+
+✅ Alto poder abrasivo diamantado para concreto, baldosas y piedra
+✅ Formato copa estándar para esmeril angular
+✅ Ideal para preparación de pisos previa a vitrificado o revestimiento
+
+💰 PRECIO: $12.990 CLP c/u
+
+🚚 PAGO CONTRA ENTREGA EXCLUSIVO EN SANTIAGO (RM).
+📦 ENVÍOS A TODO CHILE en 24 a 48 hrs.
+
+🔗 Acceso directo al producto en nuestra web:
+https://www.americapulidospa.cl/productos.html#disco-desbaste
+
+📲 Pide tu disco ahora directo por WhatsApp:
+```
+**Destino Web:** `https://www.americapulidospa.cl/productos.html#disco-desbaste?utm_source=meta_ads&utm_medium=cpc&utm_campaign=insumos_herramientas&utm_content=disco_desbaste`  
+**Destino WhatsApp Directo:** `https://wa.me/56978685664?text=Hola%20Am%C3%A9rica%20Pulido%2C%20vi%20el%20anuncio%20del%20Disco%20Diamantado%20de%20Desbaste%20(%2412.990)%20y%20quiero%20pedir%20el%20m%C3%ADo.`  
+**Creativo:** `img/productos/anuncio_meta_disco_desbaste.jpg`  
+**CTA:** Comprar / Enviar mensaje por WhatsApp
 
 ---
 

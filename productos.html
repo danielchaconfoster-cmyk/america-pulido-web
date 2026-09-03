@@ -121,8 +121,20 @@
 
     /* Grid */
     .productos-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
-    .producto-card { background: var(--dark-card); border: 1px solid rgba(255,255,255,0.06); border-radius: 24px; overflow: hidden; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); display: flex; flex-direction: column; position: relative; }
+    .producto-card { background: var(--dark-card); border: 1px solid rgba(255,255,255,0.06); border-radius: 24px; overflow: hidden; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); display: flex; flex-direction: column; position: relative; scroll-margin-top: 100px; }
     .producto-card:hover { transform: translateY(-8px); border-color: var(--brand-gold); box-shadow: 0 24px 60px rgba(0,0,0,0.8); }
+    
+    .producto-card:target,
+    .producto-card.product-highlight {
+      border-color: var(--brand-gold) !important;
+      box-shadow: 0 0 35px rgba(212, 168, 67, 0.55), 0 20px 50px rgba(0,0,0,0.9) !important;
+      animation: targetPulse 2.5s ease-out;
+    }
+    @keyframes targetPulse {
+      0% { transform: scale(1.03); box-shadow: 0 0 45px rgba(212, 168, 67, 0.7); }
+      50% { transform: scale(1.01); box-shadow: 0 0 25px rgba(212, 168, 67, 0.4); }
+      100% { transform: scale(1); }
+    }
     
     .producto-badge { position: absolute; top: 16px; left: 16px; z-index: 5; padding: 6px 14px; border-radius: 50px; background: rgba(10,10,10,0.85); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.15); color: var(--brand-green); font-size: 0.72rem; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; }
     .producto-badge.star { background: linear-gradient(135deg, #D4A843, #B8912E); color: var(--dark); border: none; box-shadow: 0 4px 15px rgba(212,168,67,0.4); }
@@ -185,6 +197,35 @@
     .price-unit { font-size: 0.75rem; font-weight: 500; color: var(--gray-400); }
     .btn-prod-wa { display: inline-flex; align-items: center; gap: 8px; padding: 12px 18px; border-radius: 14px; background: #25D366; color: #fff; text-decoration: none; font-size: 0.85rem; font-weight: 800; transition: all 0.3s; }
     .btn-prod-wa:hover { background: #20ba5a; transform: scale(1.04); box-shadow: 0 4px 20px rgba(37,211,102,0.4); }
+
+    .btn-prod-ficha {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 11px 14px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: var(--gray-300);
+      text-decoration: none;
+      font-size: 0.78rem;
+      font-weight: 700;
+      transition: all 0.3s;
+      white-space: nowrap;
+    }
+    .btn-prod-ficha:hover {
+      background: rgba(212,168,67,0.15);
+      border-color: var(--brand-gold);
+      color: var(--brand-gold);
+      transform: translateY(-2px);
+    }
+    .producto-actions-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
 
     /* Wholesale banner */
     .productos-wholesale { margin-top: 64px; padding: 40px; border-radius: 28px; background: linear-gradient(135deg, rgba(212,168,67,0.1) 0%, rgba(18,18,18,0.95) 100%); border: 1px solid rgba(212,168,67,0.25); display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
@@ -271,7 +312,7 @@
       <div class="productos-grid">
         
         <!-- 1. Saca Bocado 35mm (PRODUCTO ESTRELLA) -->
-        <div class="producto-card" data-category="diamantados">
+        <div class="producto-card" id="sacabocado-35mm" data-category="diamantados">
           
           <div class="producto-img-wrap">
             <img src="img/logo_spiral_transparent.png" class="brand-emblem-watermark" alt="Logo America Pulido">
@@ -287,16 +328,19 @@
             </div>
             <div class="producto-footer">
               <div class="producto-price">$16.990 <span class="price-unit">c/u</span></div>
-              <a href="https://wa.me/56978685664?text=Hola%20America%20Pulido%2C%20quisiera%20comprar%20el%20Saca%20Bocado%20Diamantado%2035mm%20(%2416.990)." target="_blank" class="btn-prod-wa">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-                Comprar por WhatsApp
-              </a>
+              <div class="producto-actions-row">
+                <a href="productos/sacabocado-diamantado-35mm.html" class="btn-prod-ficha">Ficha Técnica →</a>
+                <a href="https://wa.me/56978685664?text=Hola%20America%20Pulido%2C%20quisiera%20comprar%20el%20Saca%20Bocado%20Diamantado%2035mm%20(%2416.990)." target="_blank" class="btn-prod-wa">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                  Comprar por WhatsApp
+                </a>
+              </div>
             </div>
           </div>
         </div>
 
         <!-- 2. Disco de Resina Premium -->
-        <div class="producto-card" data-category="resinas">
+        <div class="producto-card" id="resina-premium" data-category="resinas">
           <div class="producto-badge">Calidad Superior</div>
           <div class="producto-img-wrap">
             <img src="img/logo_spiral_transparent.png" class="brand-emblem-watermark" alt="Logo America Pulido">
@@ -312,16 +356,19 @@
             </div>
             <div class="producto-footer">
               <div class="producto-price">$11.990 <span class="price-unit">c/u</span></div>
-              <a href="https://wa.me/56978685664?text=Hola%20America%20Pulido%2C%20quisiera%20comprar%20Discos%20de%20Resina%20Premium%20(%2411.990)." target="_blank" class="btn-prod-wa">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-                Comprar por WhatsApp
-              </a>
+              <div class="producto-actions-row">
+                <a href="productos/disco-resina-premium.html" class="btn-prod-ficha">Ficha Técnica →</a>
+                <a href="https://wa.me/56978685664?text=Hola%20America%20Pulido%2C%20quisiera%20comprar%20Discos%20de%20Resina%20Premium%20(%2411.990)." target="_blank" class="btn-prod-wa">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                  Comprar por WhatsApp
+                </a>
+              </div>
             </div>
           </div>
         </div>
 
         <!-- 3. Disco de Resina en Seco -->
-        <div class="producto-card" data-category="resinas">
+        <div class="producto-card" id="resina-seco" data-category="resinas">
           <div class="producto-img-wrap">
             <img src="img/logo_spiral_transparent.png" class="brand-emblem-watermark" alt="Logo America Pulido">
             <img src="img/productos/prod_resina_seco.jpg" alt="Disco de Resina en Seco" class="producto-img" loading="lazy">
@@ -336,16 +383,19 @@
             </div>
             <div class="producto-footer">
               <div class="producto-price">$6.490 <span class="price-unit">c/u</span></div>
-              <a href="https://wa.me/56978685664?text=Hola%20America%20Pulido%2C%20quisiera%20comprar%20Discos%20de%20Resina%20en%20Seco%20(%246.490)." target="_blank" class="btn-prod-wa">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-                Comprar por WhatsApp
-              </a>
+              <div class="producto-actions-row">
+                <a href="productos/disco-resina-seco.html" class="btn-prod-ficha">Ficha Técnica →</a>
+                <a href="https://wa.me/56978685664?text=Hola%20America%20Pulido%2C%20quisiera%20comprar%20Discos%20de%20Resina%20en%20Seco%20(%246.490)." target="_blank" class="btn-prod-wa">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                  Comprar por WhatsApp
+                </a>
+              </div>
             </div>
           </div>
         </div>
 
         <!-- 4. Disco Ranurador Diamantado 114mm x 10mm (NUEVO / INSUMO TÉCNICO HEAVY DUTY) -->
-        <div class="producto-card" data-category="diamantados">
+        <div class="producto-card" id="ranurador-114mm" data-category="diamantados">
           <div class="producto-badge">Alto Rendimiento</div>
           <div class="producto-img-wrap">
             <img src="img/logo_spiral_transparent.png" class="brand-emblem-watermark" alt="Logo America Pulido">
@@ -361,16 +411,19 @@
             </div>
             <div class="producto-footer">
               <div class="producto-price">$54.990 <span class="price-unit">c/u</span></div>
-              <a href="https://wa.me/56978685664?text=Hola%20America%20Pulido%2C%20quisiera%20comprar%20el%20Disco%20Ranurador%20Diamantado%20114mm%20x%2010mm%20(%2454.990)." target="_blank" class="btn-prod-wa">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-                Comprar por WhatsApp
-              </a>
+              <div class="producto-actions-row">
+                <a href="productos/disco-ranurador-114mm.html" class="btn-prod-ficha">Ficha Técnica →</a>
+                <a href="https://wa.me/56978685664?text=Hola%20America%20Pulido%2C%20quisiera%20comprar%20el%20Disco%20Ranurador%20Diamantado%20114mm%20x%2010mm%20(%2454.990)." target="_blank" class="btn-prod-wa">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                  Comprar por WhatsApp
+                </a>
+              </div>
             </div>
           </div>
         </div>
 
         <!-- 4. Disco de Resina Húmedo -->
-        <div class="producto-card" data-category="resinas">
+        <div class="producto-card" id="resina-humedo" data-category="resinas">
           <div class="producto-img-wrap">
             <img src="img/logo_spiral_transparent.png" class="brand-emblem-watermark" alt="Logo America Pulido">
             <img src="img/productos/prod_resina_humedo.jpg" alt="Disco de Resina Húmedo" class="producto-img" loading="lazy">
@@ -385,16 +438,19 @@
             </div>
             <div class="producto-footer">
               <div class="producto-price">$3.800 <span class="price-unit">c/u</span></div>
-              <a href="https://wa.me/56978685664?text=Hola%20America%20Pulido%2C%20quisiera%20comprar%20Discos%20de%20Resina%20H%C3%BAmedo%20(%243.800)." target="_blank" class="btn-prod-wa">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-                Comprar por WhatsApp
-              </a>
+              <div class="producto-actions-row">
+                <a href="productos/disco-resina-humedo.html" class="btn-prod-ficha">Ficha Técnica →</a>
+                <a href="https://wa.me/56978685664?text=Hola%20America%20Pulido%2C%20quisiera%20comprar%20Discos%20de%20Resina%20H%C3%BAmedo%20(%243.800)." target="_blank" class="btn-prod-wa">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                  Comprar por WhatsApp
+                </a>
+              </div>
             </div>
           </div>
         </div>
 
         <!-- 5. Disco Diamantado de Desbaste -->
-        <div class="producto-card" data-category="diamantados">
+        <div class="producto-card" id="disco-desbaste" data-category="diamantados">
           <div class="producto-img-wrap">
             <img src="img/logo_spiral_transparent.png" class="brand-emblem-watermark" alt="Logo America Pulido">
             <img src="img/productos/prod_desbaste.jpg" alt="Disco Diamantado de Desbaste" class="producto-img" loading="lazy">
@@ -409,16 +465,19 @@
             </div>
             <div class="producto-footer">
               <div class="producto-price">$12.990 <span class="price-unit">c/u</span></div>
-              <a href="https://wa.me/56978685664?text=Hola%20America%20Pulido%2C%20quisiera%20comprar%20el%20Disco%20Diamantado%20de%20Desbaste%20(%2412.990)." target="_blank" class="btn-prod-wa">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-                Comprar por WhatsApp
-              </a>
+              <div class="producto-actions-row">
+                <a href="productos/disco-diamantado-desbaste.html" class="btn-prod-ficha">Ficha Técnica →</a>
+                <a href="https://wa.me/56978685664?text=Hola%20America%20Pulido%2C%20quisiera%20comprar%20el%20Disco%20Diamantado%20de%20Desbaste%20(%2412.990)." target="_blank" class="btn-prod-wa">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                  Comprar por WhatsApp
+                </a>
+              </div>
             </div>
           </div>
         </div>
 
         <!-- 6. Disco Pulidor Abrasivo -->
-        <div class="producto-card" data-category="bases">
+        <div class="producto-card" id="disco-pulidor" data-category="bases">
           <div class="producto-img-wrap">
             <img src="img/logo_spiral_transparent.png" class="brand-emblem-watermark" alt="Logo America Pulido">
             <img src="img/productos/prod_disco_pulidor.jpg" alt="Disco Pulidor Abrasivo Industrial" class="producto-img" loading="lazy">
@@ -433,16 +492,19 @@
             </div>
             <div class="producto-footer">
               <div class="producto-price">$9.990 <span class="price-unit">c/u</span></div>
-              <a href="https://wa.me/56978685664?text=Hola%20America%20Pulido%2C%20quisiera%20comprar%20el%20Disco%20Pulidor%20Abrasivo%20(%249.990)." target="_blank" class="btn-prod-wa">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-                Comprar por WhatsApp
-              </a>
+              <div class="producto-actions-row">
+                <a href="productos/disco-pulidor-abrasivo.html" class="btn-prod-ficha">Ficha Técnica →</a>
+                <a href="https://wa.me/56978685664?text=Hola%20America%20Pulido%2C%20quisiera%20comprar%20el%20Disco%20Pulidor%20Abrasivo%20(%249.990)." target="_blank" class="btn-prod-wa">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                  Comprar por WhatsApp
+                </a>
+              </div>
             </div>
           </div>
         </div>
 
         <!-- 7. Piedra Cónica de Desbaste -->
-        <div class="producto-card" data-category="bases">
+        <div class="producto-card" id="piedra-conica" data-category="bases">
           <div class="producto-img-wrap">
             <img src="img/logo_spiral_transparent.png" class="brand-emblem-watermark" alt="Logo America Pulido">
             <img src="img/productos/prod_piedra_conica.jpg" alt="Piedra Cónica Grano 36 60 80" class="producto-img" loading="lazy">
@@ -457,16 +519,19 @@
             </div>
             <div class="producto-footer">
               <div class="producto-price">$13.990 <span class="price-unit">c/u</span></div>
-              <a href="https://wa.me/56978685664?text=Hola%20America%20Pulido%2C%20quisiera%20comprar%20la%20Piedra%20C%C3%B3nica%20de%20Desbaste%20(%2413.990)." target="_blank" class="btn-prod-wa">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-                Comprar por WhatsApp
-              </a>
+              <div class="producto-actions-row">
+                <a href="productos/piedra-conica-desbaste.html" class="btn-prod-ficha">Ficha Técnica →</a>
+                <a href="https://wa.me/56978685664?text=Hola%20America%20Pulido%2C%20quisiera%20comprar%20la%20Piedra%20C%C3%B3nica%20de%20Desbaste%20(%2413.990)." target="_blank" class="btn-prod-wa">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                  Comprar por WhatsApp
+                </a>
+              </div>
             </div>
           </div>
         </div>
 
         <!-- 8. Disco de Silicio para Pulir -->
-        <div class="producto-card" data-category="resinas">
+        <div class="producto-card" id="disco-silicio" data-category="resinas">
           <div class="producto-img-wrap">
             <img src="img/logo_spiral_transparent.png" class="brand-emblem-watermark" alt="Logo America Pulido">
             <img src="img/productos/prod_disco_silicio.jpg" alt="Disco de Silicio para Pulir" class="producto-img" loading="lazy">
@@ -481,16 +546,19 @@
             </div>
             <div class="producto-footer">
               <div class="producto-price">$5.490 <span class="price-unit">c/u</span></div>
-              <a href="https://wa.me/56978685664?text=Hola%20America%20Pulido%2C%20quisiera%20comprar%20el%20Disco%20de%20Silicio%20para%20Pulir%20(%245.490)." target="_blank" class="btn-prod-wa">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-                Comprar por WhatsApp
-              </a>
+              <div class="producto-actions-row">
+                <a href="productos/disco-silicio-pulir.html" class="btn-prod-ficha">Ficha Técnica →</a>
+                <a href="https://wa.me/56978685664?text=Hola%20America%20Pulido%2C%20quisiera%20comprar%20el%20Disco%20de%20Silicio%20para%20Pulir%20(%245.490)." target="_blank" class="btn-prod-wa">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                  Comprar por WhatsApp
+                </a>
+              </div>
             </div>
           </div>
         </div>
 
         <!-- 9. Trompo de Resina Diamantado -->
-        <div class="producto-card" data-category="resinas">
+        <div class="producto-card" id="trompo-resina" data-category="resinas">
           <div class="producto-img-wrap">
             <img src="img/logo_spiral_transparent.png" class="brand-emblem-watermark" alt="Logo America Pulido">
             <img src="img/productos/prod_trompo_resina.jpg" alt="Trompo de resina diamantado" class="producto-img" loading="lazy">
@@ -505,16 +573,19 @@
             </div>
             <div class="producto-footer">
               <div class="producto-price">$15.990 <span class="price-unit">c/u</span></div>
-              <a href="https://wa.me/56978685664?text=Hola%20America%20Pulido%2C%20quisiera%20comprar%20el%20Trompo%20de%20Resina%20Diamantado%20(%2415.990)." target="_blank" class="btn-prod-wa">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-                Comprar por WhatsApp
-              </a>
+              <div class="producto-actions-row">
+                <a href="productos/trompo-resina-diamantado.html" class="btn-prod-ficha">Ficha Técnica →</a>
+                <a href="https://wa.me/56978685664?text=Hola%20America%20Pulido%2C%20quisiera%20comprar%20el%20Trompo%20de%20Resina%20Diamantado%20(%2415.990)." target="_blank" class="btn-prod-wa">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                  Comprar por WhatsApp
+                </a>
+              </div>
             </div>
           </div>
         </div>
 
         <!-- 10. Disco Diamantado Segmentado -->
-        <div class="producto-card" data-category="diamantados">
+        <div class="producto-card" id="corte-segmentado" data-category="diamantados">
           <div class="producto-badge">Americapulido</div>
           <div class="producto-img-wrap">
             <img src="img/logo_spiral_transparent.png" class="brand-emblem-watermark" alt="Logo America Pulido">
@@ -530,16 +601,19 @@
             </div>
             <div class="producto-footer">
               <div class="producto-price">$5.990 - $13.990 <span class="price-unit">c/u</span></div>
-              <a href="https://wa.me/56978685664?text=Hola%20America%20Pulido%2C%20quisiera%20comprar%20el%20Disco%20Diamantado%20Segmentado." target="_blank" class="btn-prod-wa">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-                Comprar por WhatsApp
-              </a>
+              <div class="producto-actions-row">
+                <a href="productos/disco-diamantado-segmentado.html" class="btn-prod-ficha">Ficha Técnica →</a>
+                <a href="https://wa.me/56978685664?text=Hola%20America%20Pulido%2C%20quisiera%20comprar%20el%20Disco%20Diamantado%20Segmentado." target="_blank" class="btn-prod-wa">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                  Comprar por WhatsApp
+                </a>
+              </div>
             </div>
           </div>
         </div>
 
         <!-- 11. Disco Corte Diamantado Continuo -->
-        <div class="producto-card" data-category="diamantados">
+        <div class="producto-card" id="corte-continuo" data-category="diamantados">
           <div class="producto-badge">Americapulido</div>
           <div class="producto-img-wrap">
             <img src="img/logo_spiral_transparent.png" class="brand-emblem-watermark" alt="Logo America Pulido">
@@ -555,16 +629,19 @@
             </div>
             <div class="producto-footer">
               <div class="producto-price">$5.490 - $13.990 <span class="price-unit">c/u</span></div>
-              <a href="https://wa.me/56978685664?text=Hola%20America%20Pulido%2C%20quisiera%20comprar%20el%20Disco%20Corte%20Diamantado%20Continuo." target="_blank" class="btn-prod-wa">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-                Comprar por WhatsApp
-              </a>
+              <div class="producto-actions-row">
+                <a href="productos/disco-corte-diamantado-continuo.html" class="btn-prod-ficha">Ficha Técnica →</a>
+                <a href="https://wa.me/56978685664?text=Hola%20America%20Pulido%2C%20quisiera%20comprar%20el%20Disco%20Corte%20Diamantado%20Continuo." target="_blank" class="btn-prod-wa">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                  Comprar por WhatsApp
+                </a>
+              </div>
             </div>
           </div>
         </div>
 
         <!-- 12. Masilla Mágica Blanca / Negra -->
-        <div class="producto-card" data-category="quimicos">
+        <div class="producto-card" id="masilla-dermax" data-category="quimicos">
           <div class="producto-badge">Dermax</div>
           <div class="producto-img-wrap">
             <img src="img/logo_spiral_transparent.png" class="brand-emblem-watermark" alt="Logo America Pulido">
@@ -580,16 +657,19 @@
             </div>
             <div class="producto-footer">
               <div class="producto-price">$21.990 <span class="price-unit">c/u</span></div>
-              <a href="https://wa.me/56978685664?text=Hola%20America%20Pulido%2C%20quisiera%20comprar%20la%20Masilla%20M%C3%A1gica%20Dermax%20(%2421.990)." target="_blank" class="btn-prod-wa">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-                Comprar por WhatsApp
-              </a>
+              <div class="producto-actions-row">
+                <a href="productos/masilla-dermax-marmol.html" class="btn-prod-ficha">Ficha Técnica →</a>
+                <a href="https://wa.me/56978685664?text=Hola%20America%20Pulido%2C%20quisiera%20comprar%20la%20Masilla%20M%C3%A1gica%20Dermax%20(%2421.990)." target="_blank" class="btn-prod-wa">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                  Comprar por WhatsApp
+                </a>
+              </div>
             </div>
           </div>
         </div>
 
         <!-- 13. Rodillo Diamantado -->
-        <div class="producto-card" data-category="diamantados">
+        <div class="producto-card" id="rodillo-diamantado" data-category="diamantados">
           <div class="producto-img-wrap">
             <img src="img/logo_spiral_transparent.png" class="brand-emblem-watermark" alt="Logo America Pulido">
             <img src="img/productos/prod_rodillo_diamantado.jpg" alt="Rodillo diamantado M14" class="producto-img" loading="lazy">
@@ -604,16 +684,19 @@
             </div>
             <div class="producto-footer">
               <div class="producto-price">$59.990 <span class="price-unit">c/u</span></div>
-              <a href="https://wa.me/56978685664?text=Hola%20America%20Pulido%2C%20quisiera%20cotizar%20el%20Rodillo%20Diamantado%20M14." target="_blank" class="btn-prod-wa">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-                Comprar por WhatsApp
-              </a>
+              <div class="producto-actions-row">
+                <a href="productos/rodillo-diamantado-m14.html" class="btn-prod-ficha">Ficha Técnica →</a>
+                <a href="https://wa.me/56978685664?text=Hola%20America%20Pulido%2C%20quisiera%20cotizar%20el%20Rodillo%20Diamantado%20M14." target="_blank" class="btn-prod-wa">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                  Comprar por WhatsApp
+                </a>
+              </div>
             </div>
           </div>
         </div>
 
         <!-- 14. Base para Pulir Reforzada M14 -->
-        <div class="producto-card" data-category="bases">
+        <div class="producto-card" id="base-pulir-reforzada" data-category="bases">
           <div class="producto-badge">Ultra Resistente</div>
           <div class="producto-img-wrap">
             <img src="img/logo_spiral_transparent.png" class="brand-emblem-watermark" alt="Logo America Pulido">
@@ -629,16 +712,19 @@
             </div>
             <div class="producto-footer">
               <div class="producto-price">$9.990 <span class="price-unit">c/u</span></div>
-              <a href="https://wa.me/56978685664?text=Hola%20America%20Pulido%2C%20quisiera%20comprar%20la%20Base%20para%20Pulir%20Reforzada%20M14%20(%249.990)." target="_blank" class="btn-prod-wa">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-                Comprar por WhatsApp
-              </a>
+              <div class="producto-actions-row">
+                <a href="productos/base-pulir-reforzada-m14.html" class="btn-prod-ficha">Ficha Técnica →</a>
+                <a href="https://wa.me/56978685664?text=Hola%20America%20Pulido%2C%20quisiera%20comprar%20la%20Base%20para%20Pulir%20Reforzada%20M14%20(%249.990)." target="_blank" class="btn-prod-wa">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                  Comprar por WhatsApp
+                </a>
+              </div>
             </div>
           </div>
         </div>
 
         <!-- 15. Base para Pulir Flexible -->
-        <div class="producto-card" data-category="bases">
+        <div class="producto-card" id="base-pulir-flexible" data-category="bases">
           <div class="producto-img-wrap">
             <img src="img/logo_spiral_transparent.png" class="brand-emblem-watermark" alt="Logo America Pulido">
             <img src="img/productos/prod_base_pulir_flexible.jpg" alt="Base para pulir flexible soporte velcro" class="producto-img" loading="lazy">
@@ -653,16 +739,19 @@
             </div>
             <div class="producto-footer">
               <div class="producto-price">$3.000 <span class="price-unit">c/u</span></div>
-              <a href="https://wa.me/56978685664?text=Hola%20America%20Pulido%2C%20quisiera%20comprar%20la%20Base%20para%20Pulir%20Flexible%20(%243.000)." target="_blank" class="btn-prod-wa">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-                Comprar por WhatsApp
-              </a>
+              <div class="producto-actions-row">
+                <a href="productos/base-pulir-flexible.html" class="btn-prod-ficha">Ficha Técnica →</a>
+                <a href="https://wa.me/56978685664?text=Hola%20America%20Pulido%2C%20quisiera%20comprar%20la%20Base%20para%20Pulir%20Flexible%20(%243.000)." target="_blank" class="btn-prod-wa">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                  Comprar por WhatsApp
+                </a>
+              </div>
             </div>
           </div>
         </div>
 
         <!-- 16. Pañete para Pulido -->
-        <div class="producto-card" data-category="bases">
+        <div class="producto-card" id="panete-pulido" data-category="bases">
           <div class="producto-img-wrap">
             <img src="img/logo_spiral_transparent.png" class="brand-emblem-watermark" alt="Logo America Pulido">
             <img src="img/productos/prod_panete.jpg" alt="Pañete industrial para pulido y lustrado" class="producto-img" loading="lazy">
@@ -677,10 +766,13 @@
             </div>
             <div class="producto-footer">
               <div class="producto-price">$19.990 <span class="price-unit">c/u</span></div>
-              <a href="https://wa.me/56978685664?text=Hola%20America%20Pulido%2C%20quisiera%20comprar%20el%20Pa%C3%B1ete%20para%20Pulido%20(%2419.990)." target="_blank" class="btn-prod-wa">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
-                Comprar por WhatsApp
-              </a>
+              <div class="producto-actions-row">
+                <a href="productos/panete-pulido-industrial.html" class="btn-prod-ficha">Ficha Técnica →</a>
+                <a href="https://wa.me/56978685664?text=Hola%20America%20Pulido%2C%20quisiera%20comprar%20el%20Pa%C3%B1ete%20para%20Pulido%20(%2419.990)." target="_blank" class="btn-prod-wa">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                  Comprar por WhatsApp
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -763,7 +855,7 @@
   <script>
     function filterProducts(cat, btn) {
       document.querySelectorAll('.prod-filter-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
+      if (btn) btn.classList.add('active');
       document.querySelectorAll('.producto-card').forEach(card => {
         if (cat === 'todos' || card.getAttribute('data-category') === cat) {
           card.style.display = 'flex';
@@ -772,6 +864,29 @@
         }
       });
     }
+
+    function handleHashTarget() {
+      const hash = window.location.hash;
+      if (!hash) return;
+      const cleanHash = hash.split('?')[0];
+      const targetEl = document.querySelector(cleanHash);
+      if (targetEl && targetEl.classList.contains('producto-card')) {
+        const category = targetEl.getAttribute('data-category');
+        const allBtn = document.querySelector('.prod-filter-btn');
+        filterProducts('todos', allBtn);
+        setTimeout(() => {
+          const navHeight = document.querySelector('nav')?.offsetHeight || 72;
+          const elRect = targetEl.getBoundingClientRect();
+          const targetY = window.pageYOffset + elRect.top - navHeight - 24;
+          window.scrollTo({ top: targetY, behavior: 'smooth' });
+          targetEl.classList.add('product-highlight');
+          setTimeout(() => targetEl.classList.remove('product-highlight'), 3500);
+        }, 150);
+      }
+    }
+
+    window.addEventListener('DOMContentLoaded', handleHashTarget);
+    window.addEventListener('hashchange', handleHashTarget);
   </script>
 
 

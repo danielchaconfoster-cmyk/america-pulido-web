@@ -1,22 +1,94 @@
 # America Pulido SPA
 
-> Empresa especialista en pulido y restauración profesional de pisos en Santiago, Chile.
+> Empresa especialista en pulido y restauración profesional de pisos y distribuidor de insumos diamantados para pulidores en Santiago y todo Chile.
 
 ## Descripción
 
-America Pulido SPA es una empresa chilena con más de 10 años de experiencia en restauración y pulido de pisos en la Región Metropolitana de Santiago. Ofrecen soluciones tanto para el hogar (residencial) como para industrias y empresas (comercial/industrial).
+America Pulido SPA es una empresa chilena con más de 10 años de experiencia en restauración y pulido de pisos en la Región Metropolitana de Santiago y venta técnica de insumos diamantados para maestros pulidores, marmolerías y constructoras.
 
 ## Servicios
 
 - **Pulido y Vitrificado de Madera**: Parquet, entablado, lijado sin polvo, acabados mate/brillante.
-- **Pulido y Abrillantado de Mármol**: Recuperación de brillo natural, sellado protector.
+- **Pulido y Abrillantado de Mármol**: Recuperación de brillo natural, sellado protector y cristalizado.
 - **Pulido de Hormigón y Cemento**: Acabado industrial, endurecimiento para galpones y locales.
-- **Pulido de Baldosas Graníticas**: Limpieza profunda de fragüe, recuperación de color
-- **Restauración de Pisos en General**: Madera, mármol, terrazo, cemento, baldosa
+- **Pulido de Baldosas Graníticas**: Limpieza profunda de fragüe, recuperación de color.
+- **Restauración de Pisos en General**: Madera, mármol, terrazo, cemento, baldosa.
+
+## Catálogo de Productos e Insumos Diamantados (Landing Pages Oficiales)
+
+Venta directa con pago contra entrega en Santiago RM y envíos a todo Chile (Starken, Chilexpress):
+
+1. **Saca Bocado Diamantado 35mm para Grifería**: $16.990 CLP
+   - Perforación limpia de alta velocidad sin fisuras en porcelanatos y mármoles.
+   - URL: https://www.americapulidospa.cl/productos/sacabocado-diamantado-35mm.html
+
+2. **Disco de Resina Premium (Granos 50 a 3000)**: $11.990 CLP
+   - Alta densidad diamantada para acabado espejo cristalino en mármol y hormigón.
+   - URL: https://www.americapulidospa.cl/productos/disco-resina-premium.html
+
+3. **Disco de Resina en Seco (Granos 50 a 3000)**: $6.490 CLP
+   - Abrillantado en seco sin agua, no mancha ni quema la piedra.
+   - URL: https://www.americapulidospa.cl/productos/disco-resina-seco.html
+
+4. **Disco Ranurador Diamantado 114mm x 10mm**: $54.990 CLP
+   - Espesor macizo de 10mm para canterías y ranuras de drenaje en cubiertas de cocina.
+   - URL: https://www.americapulidospa.cl/productos/disco-ranurador-114mm.html
+
+5. **Disco de Resina Húmedo (Granos 50 a 3000)**: $3.800 CLP
+   - Pulido asistido con agua para baldosas graníticas y mármoles.
+   - URL: https://www.americapulidospa.cl/productos/disco-resina-humedo.html
+
+6. **Disco Copa Diamantada de Desbaste 4 1/2"**: $12.990 CLP
+   - Segmentos turbo para nivelación de radieres y remoción de epóxicos y adhesivos.
+   - URL: https://www.americapulidospa.cl/productos/disco-diamantado-desbaste.html
+
+7. **Disco Pulidor Abrasivo de Fibra Sintética**: $9.990 CLP
+   - Decapado de ceras viejas y limpieza profunda sin rayar la piedra.
+   - URL: https://www.americapulidospa.cl/productos/disco-pulidor-abrasivo.html
+
+8. **Piedra Cónica de Desbaste M14**: $13.990 CLP
+   - Carburo de silicio para esquinas vivas, zócalos y encuentros pared-piso.
+   - URL: https://www.americapulidospa.cl/productos/piedra-conica-desbaste.html
+
+9. **Disco de Silicio para Pulir**: $5.490 CLP
+   - Carburo de silicio negro para refinado rápido de granito y piedras duras.
+   - URL: https://www.americapulidospa.cl/productos/disco-silicio-pulir.html
+
+10. **Trompo de Resina Diamantado M14**: $15.990 CLP
+    - Pulido interior de perforaciones de lavaplatos y cantos cóncavos.
+    - URL: https://www.americapulidospa.cl/productos/trompo-resina-diamantado.html
+
+11. **Disco Diamantado Segmentado (4 1/2" y 7")**: $5.990 - $13.990 CLP
+    - Corte rápido en concreto, ladrillo, adoquines y piedra.
+    - URL: https://www.americapulidospa.cl/productos/disco-diamantado-segmentado.html
+
+12. **Disco Corte Diamantado Continuo Extra Fino (4 1/2" y 7")**: $5.490 - $13.990 CLP
+    - Corte extra fino sin astillar en porcelanatos pulidos, mármol y cerámica.
+    - URL: https://www.americapulidospa.cl/productos/disco-corte-diamantado-continuo.html
+
+13. **Masilla Mágica Dermax con Catalizador (Blanca / Negra)**: $21.990 CLP
+    - Masilla de poliéster para unión estructural, engrapado y relleno de mármol.
+    - URL: https://www.americapulidospa.cl/productos/masilla-dermax-marmol.html
+
+14. **Rodillo Diamantado M14 para Biselado**: $59.990 CLP
+    - Cabezal diamantado cilíndrico para rectificado de cantos en encimeras.
+    - URL: https://www.americapulidospa.cl/productos/rodillo-diamantado-m14.html
+
+15. **Base para Pulir Reforzada M14 (Goma y Bronce)**: $9.990 CLP
+    - Inserto de bronce macizo y goma semi-rígida antivibración de 4".
+    - URL: https://www.americapulidospa.cl/productos/base-pulir-reforzada-m14.html
+
+16. **Base para Pulir Flexible Velcro 4"**: $3.000 CLP
+    - Soporte flexible para cantos curvos, zócalos y desniveles.
+    - URL: https://www.americapulidospa.cl/productos/base-pulir-flexible.html
+
+17. **Pañete para Pulido Textil Industrial**: $19.990 CLP
+    - Fibras compactadas para lustrado y abrillantado final espejo.
+    - URL: https://www.americapulidospa.cl/productos/panete-pulido-industrial.html
 
 ## Cobertura
 
-Región Metropolitana (RM), V Región (Valparaíso) y VI Región (O'Higgins).
+Región Metropolitana (RM), V Región (Valparaíso) y VI Región (O'Higgins) para servicios. Despacho a todo Chile para herramientas e insumos.
 
 ## Contacto
 
@@ -25,21 +97,3 @@ Región Metropolitana (RM), V Región (Valparaíso) y VI Región (O'Higgins).
 - **Instagram**: @americapulidospa
 - **Web**: https://www.americapulidospa.cl
 - **Dirección**: Carmen Covarrubias 32 Of 601, Ñuñoa, Región Metropolitana, Chile
-
-## Propuesta de Valor
-
-1. Visita técnica gratuita con evaluación y cotización detallada
-2. Trabajo limpio — aspiración de polvo directo desde la máquina
-3. Brillo permanente con selladores de alta durabilidad
-4. Transparencia total: revisión del trabajo terminado junto al cliente
-
-## Página Web
-
-La landing page presenta:
-- Hero con galería de pisos restaurados
-- Slider antes/después interactivo
-- Grid de servicios residenciales e industriales
-- Sección de garantías
-- Sección de Venta de Productos e Insumos (Discos de resina, diamantados, saca bocados, bases para pulir)
-- CTAs directos a WhatsApp con mensajes pre-escritos para compras y cotizaciones por mayor
-- Footer con datos de contacto y cobertura geográfica
