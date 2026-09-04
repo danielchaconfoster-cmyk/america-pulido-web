@@ -140,6 +140,10 @@ Cualquier cliente o IDE con soporte MCP puede conectar a Canva usando esta confi
 
 | Diseño | ID | Link edición |
 |--------|----|--------------|
+| **Tarjeta Institucional Servicios (Piso Espejo)** | `DAHUQ6a3K5A` | https://www.canva.com/d/TeEUu6oyo8zb2-Z |
+| **Tarjeta Institucional Productos (Mármol Calacatta)** | `DAHURZEwBBI` | https://www.canva.com/d/sfBDg6_rT7R9OSI |
+| **Tarjeta Presentación Servicios (Borrador)** | `DAHUQm4g6iM` | https://www.canva.com/d/BTmRvEU0Yk8b0Vg |
+| **Tarjeta Presentación Productos (Borrador)** | `DAHUQkffymk` | https://www.canva.com/d/FZca3hPhmqXgxhJ |
 | **Post Instagram 1 (General)** | `DAHQoJWA3h0` | https://www.canva.com/d/gO1vU9QAFVo5UgK |
 | **Post Instagram 2 (Parquet Residencial)** | `DAHQoSYbYeI` | https://www.canva.com/d/dZQy_eV-5YJxn58 |
 | **Post Instagram 3 (Hormigón Industrial)** | `DAHQoe5ZV8I` | https://www.canva.com/d/V6Jj87lh_21NmSi |

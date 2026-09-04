@@ -54,6 +54,8 @@ En Canva Free o Pro, se deben garantizar estrictamente los siguientes valores en
 |---------|----------|-------------------|
 | **Carpeta Principal** | `FAHQoFboXK8` | [Ver Proyecto América Pulido SPA](https://www.canva.com/folder/FAHQoFboXK8) |
 | **Logo Oficial (PNG)** | `MAHQoN3XQ_o` | Logo en alta resolución con transparencia |
+| **Tarjeta Servicios** | `DAHUQm4g6iM` | [Editar Tarjeta Servicios](https://www.canva.com/d/BTmRvEU0Yk8b0Vg) |
+| **Tarjeta Productos** | `DAHUQkffymk` | [Editar Tarjeta Productos](https://www.canva.com/d/FZca3hPhmqXgxhJ) |
 | **Post Instagram 1** | `DAHQoJWA3h0` | [Editar Post en Canva](https://www.canva.com/d/gO1vU9QAFVo5UgK) |
 | **Carrusel Residencial** | `DAHGD4pNGWY` | [Editar Carrusel en Canva](https://www.canva.com/d/L48gPZxz1gBEHaN) |
 | **Carrusel Industrial** | `DAHGDxTMIE8` | [Editar Industrial en Canva](https://www.canva.com/d/vAyMcUOjy5mJwTq) |
